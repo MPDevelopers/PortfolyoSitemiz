@@ -449,10 +449,10 @@ export default function ProjectDetail() {
                         <>
                           {activeFlow === 0 && (
                             <>
-                              <p className="text-gray-300">• React Native ile cross-platform mobil uygulama geliştirme</p>
-                              <p className="text-gray-300">• TypeScript ile tip güvenli kod yazımı</p>
-                              <p className="text-gray-300">• Redux Toolkit ile merkezi state yönetimi</p>
-                              <p className="text-gray-300">• Socket.io ile gerçek zamanlı iletişim</p>
+                              <p className="text-gray-300">• Flutter ile cross-platform mobil uygulama geliştirme</p>
+                              <p className="text-gray-300">• Firebase Realtime Database ile veri yönetimi</p>
+                              <p className="text-gray-300">• Bluetooth LE ile spirometre cihazı entegrasyonu</p>
+                              <p className="text-gray-300">• Gerçek zamanlı solunum verisi analizi</p>
                             </>
                           )}
                           {activeFlow === 1 && (

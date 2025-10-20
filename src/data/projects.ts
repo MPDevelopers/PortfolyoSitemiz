@@ -219,44 +219,53 @@ export const projects: Project[] = [
         flows: [
           {
             name: "Spiroble Uygulama Ekranları",
-            screens: [
-              {
-                title: "Ana Dashboard",
-                description: "Günlük solunum ölçümleri ve genel sağlık durumu",
-                image: "/screenshots/spiroble/dashboard.jpg",
-                icon: "📊",
-                color: "from-emerald-500 to-teal-500",
-                bgPattern: "bg-gradient-to-br from-emerald-500/20 to-teal-500/20",
-                tech: "Flutter, Dart, State Management"
-              },
-              {
-                title: "Spirometre Bağlantısı",
-                description: "Bluetooth LE ile spirometre cihazına bağlanma",
-                image: "/screenshots/spiroble/device-connection.jpg",
-                icon: "🔗",
-                color: "from-blue-500 to-cyan-500",
-                bgPattern: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
-                tech: "Bluetooth LE, Device Integration"
-              },
-              {
-                title: "Ölçüm Ekranı",
-                description: "Gerçek zamanlı solunum ölçümü ve veri toplama",
-                image: "/screenshots/spiroble/measurement.jpg",
-                icon: "📈",
-                color: "from-purple-500 to-pink-500",
-                bgPattern: "bg-gradient-to-br from-purple-500/20 to-pink-500/20",
-                tech: "Real-time Data Processing, Sensors"
-              },
-              {
-                title: "Analiz ve Raporlar",
-                description: "Detaylı solunum analizi ve sağlık raporları",
-                image: "/screenshots/spiroble/analysis.jpg",
-                icon: "📋",
-                color: "from-orange-500 to-red-500",
-                bgPattern: "bg-gradient-to-br from-orange-500/20 to-red-500/20",
-                tech: "Firebase Realtime Database, Data Visualization"
-              }
-            ]
+                screens: [
+                  {
+                    title: "Splash Screen",
+                    description: "Uygulama başlangıç ekranı ve yükleme",
+                    image: "/screenshots/spiroble/splashscreen.jpg",
+                    icon: "🚀",
+                    color: "from-emerald-500 to-teal-500",
+                    bgPattern: "bg-gradient-to-br from-emerald-500/20 to-teal-500/20",
+                    tech: "Flutter, Dart, UI/UX"
+                  },
+                  {
+                    title: "Ana Sayfa",
+                    description: "Günlük solunum ölçümleri ve genel sağlık durumu",
+                    image: "/screenshots/spiroble/anasayfa.jpg",
+                    icon: "📊",
+                    color: "from-blue-500 to-cyan-500",
+                    bgPattern: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
+                    tech: "Flutter, Dart, State Management"
+                  },
+                  {
+                    title: "Bluetooth Bağlantısı",
+                    description: "Spirometre cihazına Bluetooth ile bağlanma",
+                    image: "/screenshots/spiroble/bluetooth.jpg",
+                    icon: "🔗",
+                    color: "from-purple-500 to-pink-500",
+                    bgPattern: "bg-gradient-to-br from-purple-500/20 to-pink-500/20",
+                    tech: "Bluetooth LE, Device Integration"
+                  },
+                  {
+                    title: "Üfleme Testi",
+                    description: "Gerçek zamanlı solunum ölçümü ve veri toplama",
+                    image: "/screenshots/spiroble/üfleme.jpg",
+                    icon: "💨",
+                    color: "from-orange-500 to-red-500",
+                    bgPattern: "bg-gradient-to-br from-orange-500/20 to-red-500/20",
+                    tech: "Real-time Data Processing, Sensors"
+                  },
+                  {
+                    title: "Test Sonuçları",
+                    description: "Detaylı solunum analizi ve sağlık raporları",
+                    image: "/screenshots/spiroble/test sonuçları.jpg",
+                    icon: "📋",
+                    color: "from-indigo-500 to-purple-500",
+                    bgPattern: "bg-gradient-to-br from-indigo-500/20 to-purple-500/20",
+                    tech: "Firebase Realtime Database, Data Visualization"
+                  }
+                ]
           }
         ]
       }
