@@ -39,7 +39,7 @@ export default function Hero() {
         <div className="animate-fade-in">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Mobil ve Web Geliştirmede
-            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600 mt-2">
+            <span className="block text-white mt-2">
               Geleceği Şekillendiriyoruz
             </span>
           </h1>
@@ -51,13 +51,13 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
             <button
               onClick={() => scrollToSection('projects')}
-              className="px-8 py-4 bg-primary-600 hover:bg-primary-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              className="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
             >
               Projelerimizi Gör
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="px-8 py-4 bg-transparent border-2 border-primary-600 text-primary-400 hover:bg-primary-600 hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+              className="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
             >
               Bize Ulaş
             </button>
@@ -67,7 +67,7 @@ export default function Hero() {
 
       <button
         onClick={() => scrollToSection('about')}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-dark-400 hover:text-primary-500 transition-colors cursor-pointer animate-bounce"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 hover:text-white transition-colors cursor-pointer animate-bounce"
         aria-label="Aşağı kaydır"
       >
         <ChevronDown className="w-8 h-8" />

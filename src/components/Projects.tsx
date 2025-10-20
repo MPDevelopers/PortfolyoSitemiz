@@ -81,7 +81,7 @@ export default function Projects() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 mt-4">
               Projelerimiz
             </h2>
-            <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               Müşterilerimiz için geliştirdiğimiz başarılı projelerden bazıları
             </p>
@@ -96,11 +96,11 @@ export default function Projects() {
                   animationDelay: `${index * 0.1}s`,
                 }}
               >
-                <div className={`h-2 bg-gradient-to-r ${project.color}`}></div>
+                <div className="h-2 bg-white"></div>
 
                 <div className="p-6">
-                  <div className={`inline-block p-3 rounded-lg bg-gradient-to-r ${project.color} mb-4`}>
-                    <project.icon className="w-8 h-8 text-white" />
+                  <div className="inline-block p-3 rounded-lg bg-white mb-4">
+                    <project.icon className="w-8 h-8 text-slate-900" />
                   </div>
 
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary-400 transition-colors">
@@ -122,7 +122,7 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <button className="flex items-center space-x-2 text-primary-400 hover:text-primary-300 font-semibold group-hover:translate-x-2 transition-transform">
+                  <button className="flex items-center space-x-2 text-white hover:text-white/80 font-semibold group-hover:translate-x-2 transition-transform">
                     <span>Detayları Gör</span>
                     <ExternalLink className="w-4 h-4" />
                   </button>

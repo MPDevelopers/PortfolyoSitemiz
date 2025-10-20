@@ -5,11 +5,11 @@ export default function About() {
   const { ref, isVisible } = useScrollAnimation();
 
   const expertiseAreas = [
-    { icon: Smartphone, name: 'Flutter', color: 'text-blue-500' },
-    { icon: Smartphone, name: 'React Native', color: 'text-cyan-500' },
-    { icon: Database, name: 'Firebase', color: 'text-yellow-500' },
-    { icon: Code, name: 'Node.js', color: 'text-green-500' },
-    { icon: Palette, name: 'UI/UX Design', color: 'text-pink-500' },
+    { icon: Smartphone, name: 'Flutter', color: 'text-white' },
+    { icon: Smartphone, name: 'React Native', color: 'text-white' },
+    { icon: Database, name: 'Firebase', color: 'text-white' },
+    { icon: Code, name: 'Node.js', color: 'text-white' },
+    { icon: Palette, name: 'UI/UX Design', color: 'text-white' },
   ];
 
   return (
@@ -25,7 +25,7 @@ export default function About() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Hakkımızda
             </h2>
-            <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
           </div>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
