@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import { useState, useEffect } from 'react';
-import { ArrowLeft, Play, Download, Star, Users, Zap, Shield, Smartphone, MessageCircle, Calendar, Heart, Award, Clock, CheckCircle, Eye, Mic, Brain, Camera, Volume2, BookOpen } from 'lucide-react';
+import { ArrowLeft, Play, Download, Star, Users, Zap, Shield, Smartphone, MessageCircle, Heart, Award, Eye, Brain, Volume2, X, Activity } from 'lucide-react';
 
 export default function ProjectDetail() {
   const { slug } = useParams();
@@ -10,14 +10,34 @@ export default function ProjectDetail() {
   const [activeFlow, setActiveFlow] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+
+  // Get phone flows from project data or use fallback
+  const phoneFlows = project?.details?.screenshots?.flows || [
+    {
+      name: "Default Flow",
+      screens: [
+        { title: "Ana Ekran", description: "Modern ve kullanıcı dostu ana sayfa tasarımı", image: "", icon: "📱", color: "from-blue-500 to-cyan-500", bgPattern: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20", tech: "React Native" }
+      ]
+    }
+  ];
+
+  const currentFlow = phoneFlows[activeFlow] || phoneFlows[0];
+  const phoneScreens = currentFlow?.screens || [];
 
   useEffect(() => {
     setIsVisible(true);
-    const interval = setInterval(() => {
-      setActiveScreen((prev) => (prev + 1) % 3);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
+    // Only auto-rotate if we have screenshots and more than 1 screen
+    if (phoneScreens.length > 1) {
+      const interval = setInterval(() => {
+        setActiveScreen((prev) => (prev + 1) % phoneScreens.length);
+      }, 4000);
+      return () => clearInterval(interval);
+    }
+  }, [phoneScreens.length]);
 
   const handleSwipe = (direction: 'left' | 'right') => {
     if (isTransitioning) return;
@@ -77,182 +97,6 @@ export default function ProjectDetail() {
 
   const Icon = project.icon;
 
-  // SignAI development workflow screens
-  const phoneFlows = project?.slug === 'isaret-dili-ai-uygulamasi' ? [
-    // Flow 1: AI/ML Development
-    [
-      { 
-        title: "Computer Vision", 
-        description: "OpenCV ve TensorFlow.js ile işaret dili tanıma sistemi",
-        icon: "👁️",
-        color: "from-blue-500 to-cyan-500",
-        bgPattern: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
-        tech: "OpenCV, TensorFlow.js, MediaPipe, PoseNet"
-      },
-      { 
-        title: "Machine Learning", 
-        description: "Derin öğrenme modelleri ile işaret dili sınıflandırması",
-        icon: "🧠",
-        color: "from-purple-500 to-pink-500",
-        bgPattern: "bg-gradient-to-br from-purple-500/20 to-pink-500/20",
-        tech: "Python, TensorFlow, Keras, Scikit-learn"
-      },
-      { 
-        title: "Real-time Processing", 
-        description: "Gerçek zamanlı video işleme ve AI çıkarımı",
-        icon: "⚡",
-        color: "from-green-500 to-emerald-500",
-        bgPattern: "bg-gradient-to-br from-green-500/20 to-emerald-500/20",
-        tech: "WebRTC, Canvas API, Web Workers"
-      }
-    ],
-    // Flow 2: Mobile Development
-    [
-      { 
-        title: "Camera Integration", 
-        description: "React Native ile kamera erişimi ve video yakalama",
-        icon: "📷",
-        color: "from-indigo-500 to-blue-500",
-        bgPattern: "bg-gradient-to-br from-indigo-500/20 to-blue-500/20",
-        tech: "React Native Camera, Expo Camera, Vision API"
-      },
-      { 
-        title: "Audio Synthesis", 
-        description: "Text-to-Speech ile ses sentezi ve çıktı",
-        icon: "🔊",
-        color: "from-orange-500 to-red-500",
-        bgPattern: "bg-gradient-to-br from-orange-500/20 to-red-500/20",
-        tech: "Web Speech API, TTS, Audio Context"
-      },
-      { 
-        title: "Accessibility Features", 
-        description: "Erişilebilirlik odaklı kullanıcı arayüzü tasarımı",
-        icon: "♿",
-        color: "from-teal-500 to-cyan-500",
-        bgPattern: "bg-gradient-to-br from-teal-500/20 to-cyan-500/20",
-        tech: "Accessibility API, Screen Reader, Voice Control"
-      }
-    ],
-    // Flow 3: Data & Training
-    [
-      { 
-        title: "Dataset Creation", 
-        description: "İşaret dili veri seti oluşturma ve etiketleme",
-        icon: "📊",
-        color: "from-amber-500 to-orange-500",
-        bgPattern: "bg-gradient-to-br from-amber-500/20 to-orange-500/20",
-        tech: "Data Augmentation, Labeling Tools, Annotation"
-      },
-      { 
-        title: "Model Training", 
-        description: "Custom CNN modelleri ile eğitim süreci",
-        icon: "🎯",
-        color: "from-rose-500 to-pink-500",
-        bgPattern: "bg-gradient-to-br from-rose-500/20 to-pink-500/20",
-        tech: "PyTorch, Transfer Learning, Model Optimization"
-      },
-      { 
-        title: "Performance Optimization", 
-        description: "Model sıkıştırma ve mobil optimizasyon",
-        icon: "🚀",
-        color: "from-violet-500 to-purple-500",
-        bgPattern: "bg-gradient-to-br from-violet-500/20 to-purple-500/20",
-        tech: "TensorFlow Lite, Model Quantization, Edge Computing"
-      }
-    ]
-  ] : project?.slug === 'saglik-takip-platformu' ? [
-    // Flow 1: Frontend Development
-    [
-      { 
-        title: "UI/UX Tasarım", 
-        description: "React Native ile modern ve kullanıcı dostu arayüz tasarımı",
-        icon: "🎨",
-        color: "from-blue-500 to-cyan-500",
-        bgPattern: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
-        tech: "React Native, TypeScript, Styled Components"
-      },
-      { 
-        title: "State Management", 
-        description: "Redux Toolkit ile global state yönetimi ve veri akışı",
-        icon: "🔄",
-        color: "from-green-500 to-emerald-500",
-        bgPattern: "bg-gradient-to-br from-green-500/20 to-emerald-500/20",
-        tech: "Redux Toolkit, Context API, Async Thunk"
-      },
-      { 
-        title: "Real-time Chat", 
-        description: "Socket.io ile gerçek zamanlı mesajlaşma sistemi",
-        icon: "💬",
-        color: "from-purple-500 to-pink-500",
-        bgPattern: "bg-gradient-to-br from-purple-500/20 to-pink-500/20",
-        tech: "Socket.io, WebSocket, Event Handling"
-      }
-    ],
-    // Flow 2: Backend Development
-    [
-      { 
-        title: "API Development", 
-        description: "Node.js ve Express ile RESTful API geliştirme",
-        icon: "⚙️",
-        color: "from-indigo-500 to-blue-500",
-        bgPattern: "bg-gradient-to-br from-indigo-500/20 to-blue-500/20",
-        tech: "Node.js, Express, JWT, Middleware"
-      },
-      { 
-        title: "Database Design", 
-        description: "MongoDB ile ölçeklenebilir veritabanı mimarisi",
-        icon: "🗄️",
-        color: "from-emerald-500 to-teal-500",
-        bgPattern: "bg-gradient-to-br from-emerald-500/20 to-teal-500/20",
-        tech: "MongoDB, Mongoose, Indexing, Aggregation"
-      },
-      { 
-        title: "Authentication", 
-        description: "Güvenli kullanıcı kimlik doğrulama ve yetkilendirme",
-        icon: "🔐",
-        color: "from-rose-500 to-pink-500",
-        bgPattern: "bg-gradient-to-br from-rose-500/20 to-pink-500/20",
-        tech: "JWT, bcrypt, OAuth, Role-based Access"
-      }
-    ],
-    // Flow 3: DevOps & Deployment
-    [
-      { 
-        title: "CI/CD Pipeline", 
-        description: "GitHub Actions ile otomatik test ve deployment",
-        icon: "🚀",
-        color: "from-amber-500 to-orange-500",
-        bgPattern: "bg-gradient-to-br from-amber-500/20 to-orange-500/20",
-        tech: "GitHub Actions, Docker, AWS, Heroku"
-      },
-      { 
-        title: "Performance Optimization", 
-        description: "Uygulama performansı ve hız optimizasyonu",
-        icon: "⚡",
-        color: "from-red-500 to-rose-500",
-        bgPattern: "bg-gradient-to-br from-red-500/20 to-rose-500/20",
-        tech: "Code Splitting, Lazy Loading, Caching"
-      },
-      { 
-        title: "Monitoring & Analytics", 
-        description: "Uygulama izleme ve kullanıcı analitikleri",
-        icon: "📊",
-        color: "from-violet-500 to-purple-500",
-        bgPattern: "bg-gradient-to-br from-violet-500/20 to-purple-500/20",
-        tech: "Firebase Analytics, Sentry, Performance Monitoring"
-      }
-    ]
-  ] : [
-    [
-      { title: "Ana Ekran", description: "Modern ve kullanıcı dostu ana sayfa tasarımı" },
-      { title: "Ürün Detay", description: "Detaylı ürün bilgileri ve görsel galeri" },
-      { title: "Sepet", description: "Kolay sipariş yönetimi ve ödeme süreci" }
-    ]
-  ];
-
-  const currentFlow = phoneFlows[activeFlow] || phoneFlows[0];
-  const phoneScreens = currentFlow;
-
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#0f172a' }}>
       {/* Hero Section */}
@@ -290,65 +134,77 @@ export default function ProjectDetail() {
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-white">
-                      {project?.slug === 'isaret-dili-ai-uygulamasi' ? '95%' : '4.9'}
+                {project?.slug !== 'solunum-sagligi-uygulamasi' && (
+                  <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-white">
+                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? '95%' : '4.9'}
+                      </div>
+                      <div className="text-sm text-gray-400 flex items-center justify-center">
+                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? (
+                          <>
+                            <Brain className="w-4 h-4 text-purple-400 mr-1" />
+                            AI Doğruluk
+                          </>
+                        ) : (
+                          <>
+                            <Star className="w-4 h-4 text-yellow-400 mr-1" />
+                            App Store
+                          </>
+                        )}
+                      </div>
                     </div>
-                    <div className="text-sm text-gray-400 flex items-center justify-center">
-                      {project?.slug === 'isaret-dili-ai-uygulamasi' ? (
-                        <>
-                          <Brain className="w-4 h-4 text-purple-400 mr-1" />
-                          AI Doğruluk
-                        </>
-                      ) : (
-                        <>
-                          <Star className="w-4 h-4 text-yellow-400 mr-1" />
-                          App Store
-                        </>
-                      )}
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-white">
+                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? '15K+' : '25K+'}
+                      </div>
+                      <div className="text-sm text-gray-400 flex items-center justify-center">
+                        <Users className="w-4 h-4 text-blue-400 mr-1" />
+                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? 'Kullanıcı' : 'Aktif Kullanıcı'}
+                      </div>
+                    </div>
+                    <div className="text-center">
+                      <div className="text-3xl font-bold text-white">
+                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? '50+' : '500+'}
+                      </div>
+                      <div className="text-sm text-gray-400 flex items-center justify-center">
+                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? (
+                          <>
+                            <Eye className="w-4 h-4 text-indigo-400 mr-1" />
+                            İşaret Dili
+                          </>
+                        ) : (
+                          <>
+                            <Heart className="w-4 h-4 text-pink-400 mr-1" />
+                            Uzman Psikolog
+                          </>
+                        )}
+                      </div>
                     </div>
                   </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-white">
-                      {project?.slug === 'isaret-dili-ai-uygulamasi' ? '15K+' : '25K+'}
-                    </div>
-                    <div className="text-sm text-gray-400 flex items-center justify-center">
-                      <Users className="w-4 h-4 text-blue-400 mr-1" />
-                      {project?.slug === 'isaret-dili-ai-uygulamasi' ? 'Kullanıcı' : 'Aktif Kullanıcı'}
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold text-white">
-                      {project?.slug === 'isaret-dili-ai-uygulamasi' ? '50+' : '500+'}
-                    </div>
-                    <div className="text-sm text-gray-400 flex items-center justify-center">
-                      {project?.slug === 'isaret-dili-ai-uygulamasi' ? (
-                        <>
-                          <Eye className="w-4 h-4 text-indigo-400 mr-1" />
-                          İşaret Dili
-                        </>
-                      ) : (
-                        <>
-                          <Heart className="w-4 h-4 text-pink-400 mr-1" />
-                          Uzman Psikolog
-                        </>
-                      )}
-                    </div>
-                  </div>
-                </div>
+                )}
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <button className={`flex items-center justify-center px-8 py-4 bg-gradient-to-r ${project.color} text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-                    <Play className="w-5 h-5 mr-2" />
-                    Demo İzle
-                  </button>
-                  <button className="flex items-center justify-center px-8 py-4 bg-slate-800 text-white rounded-xl font-semibold hover:bg-slate-700 transition-all duration-300 border border-slate-700">
-                    <Download className="w-5 h-5 mr-2" />
-                    İndir
-                  </button>
-                </div>
+                {project?.slug !== 'solunum-sagligi-uygulamasi' && (
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button 
+                      onClick={() => setIsVideoModalOpen(true)}
+                      className={`flex items-center justify-center px-8 py-4 bg-gradient-to-r ${project.color} text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}
+                    >
+                      <Play className="w-5 h-5 mr-2" />
+                      Demo İzle
+                    </button>
+                    <a 
+                      href="https://appgallery.huawei.com/app/C114157203?sharePrepath=ag&locale=tr_TR&source=appshare&subsource=C114157203&shareTo=com.android.chrome&shareFrom=appmarket&shareIds=919e6ea53fa24502888bfc28205e37db_com.android.chrome&callType=SHARE"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center px-8 py-4 bg-slate-800 text-white rounded-xl font-semibold hover:bg-slate-700 transition-all duration-300 border border-slate-700"
+                    >
+                      <Download className="w-5 h-5 mr-2" />
+                      İndir
+                    </a>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -356,7 +212,7 @@ export default function ProjectDetail() {
       </section>
 
       {/* App Screens Section */}
-      {(project?.slug === 'saglik-takip-platformu' || project?.slug === 'isaret-dili-ai-uygulamasi') && (
+      {(project?.slug === 'saglik-takip-platformu' || project?.slug === 'isaret-dili-ai-uygulamasi' || project?.slug === 'solunum-sagligi-uygulamasi') && (
         <section className="py-20 bg-slate-900/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
@@ -364,7 +220,9 @@ export default function ProjectDetail() {
               <p className="text-gray-400 text-lg">
                 {project?.slug === 'saglik-takip-platformu' 
                   ? 'Geliştirme sürecindeki farklı aşamalar ve teknik detaylar'
-                  : 'AI teknolojisi ile işaret dili tanıma sürecinin farklı aşamaları'
+                  : project?.slug === 'isaret-dili-ai-uygulamasi'
+                  ? 'AI teknolojisi ile işaret dili tanıma sürecinin farklı aşamaları'
+                  : 'Spirometre cihazı entegrasyonu ve solunum sağlığı takip süreçleri'
                 }
               </p>
             </div>
@@ -372,48 +230,93 @@ export default function ProjectDetail() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left - Phone Screens */}
               <div className="relative">
-                <div className="relative mx-auto w-80 h-[600px]">
-                  {/* Flow Navigation */}
-                  <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-10">
-                    <div className="flex items-center space-x-4 bg-slate-800/80 backdrop-blur-sm rounded-full px-4 py-2 border border-slate-700">
-                      <button 
-                        onClick={() => handleSwipe('right')}
-                        className="p-2 hover:bg-slate-700 rounded-full transition-colors duration-200"
-                        disabled={isTransitioning}
-                      >
-                        <ArrowLeft className="w-4 h-4 text-white" />
-                      </button>
-                      <div className="flex space-x-2">
-                        {phoneFlows.map((_, index) => (
-                          <div
-                            key={index}
-                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                              index === activeFlow ? 'bg-white' : 'bg-gray-600'
-                            }`}
-                          />
-                        ))}
+                <div className="relative mx-auto w-64 h-[520px]">
+                  {/* Flow Navigation - Only show if multiple flows */}
+                  {phoneFlows.length > 1 && (
+                    <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-10">
+                      <div className="flex items-center space-x-4 bg-slate-800/80 backdrop-blur-sm rounded-full px-4 py-2 border border-slate-700">
+                        <button 
+                          onClick={() => handleSwipe('right')}
+                          className="p-2 hover:bg-slate-700 rounded-full transition-colors duration-200"
+                          disabled={isTransitioning}
+                        >
+                          <ArrowLeft className="w-4 h-4 text-white" />
+                        </button>
+                        <div className="flex space-x-2">
+                          {phoneFlows.map((_, index) => (
+                            <div
+                              key={index}
+                              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                index === activeFlow ? 'bg-white' : 'bg-gray-600'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                        <button 
+                          onClick={() => handleSwipe('left')}
+                          className="p-2 hover:bg-slate-700 rounded-full transition-colors duration-200"
+                          disabled={isTransitioning}
+                        >
+                          <ArrowLeft className="w-4 h-4 text-white rotate-180" />
+                        </button>
                       </div>
-                      <button 
-                        onClick={() => handleSwipe('left')}
-                        className="p-2 hover:bg-slate-700 rounded-full transition-colors duration-200"
-                        disabled={isTransitioning}
-                      >
-                        <ArrowLeft className="w-4 h-4 text-white rotate-180" />
-                      </button>
                     </div>
-                  </div>
+                  )}
 
                   {/* Phone Frame */}
-                  <div className="absolute inset-0 bg-gradient-to-b from-slate-800 to-slate-900 rounded-[3rem] p-2 shadow-2xl">
+                  <div className="absolute inset-0 bg-gradient-to-b from-slate-800 to-slate-900 rounded-[2.5rem] p-2 shadow-2xl">
                     <div 
-                      className="w-full h-full bg-black rounded-[2.5rem] overflow-hidden relative cursor-pointer"
+                      className="w-full h-full bg-black rounded-[2rem] overflow-hidden relative cursor-pointer"
                       onTouchStart={onTouchStart}
                       onTouchMove={onTouchMove}
                       onTouchEnd={onTouchEnd}
                     >
-                      {/* Screen Content - Placeholder for actual screenshots */}
-                      <div className={`absolute inset-0 transition-all duration-500 ${phoneScreens[activeScreen]?.bgPattern || 'bg-gradient-to-br from-slate-900 to-slate-800'}`}>
-                        <div className="p-6 h-full flex flex-col">
+                      {/* Screen Content - Real Screenshots */}
+                      <div className="absolute inset-0 transition-all duration-500">
+                        {phoneScreens[activeScreen]?.image ? (
+                          <div className="relative w-full h-full">
+                            
+                            {/* Real Screenshot */}
+                            <img 
+                              src={phoneScreens[activeScreen].image} 
+                              alt={phoneScreens[activeScreen].title}
+                              className="w-full h-full object-cover rounded-[2rem] bg-slate-900"
+                              onLoad={() => console.log('Image loaded successfully')}
+                              onError={(e) => {
+                                console.log('Image failed to load, showing fallback');
+                                // Fallback to placeholder if image fails to load
+                                const target = e.target as HTMLImageElement;
+                                target.style.display = 'none';
+                                const parent = target.parentElement;
+                                if (parent) {
+                                  parent.innerHTML = `
+                                    <div class="p-6 h-full flex flex-col ${phoneScreens[activeScreen]?.bgPattern || 'bg-gradient-to-br from-slate-900 to-slate-800'} rounded-[2rem]">
+                                      <div class="flex justify-between items-center text-white text-xs mb-6">
+                                        <span>9:41</span>
+                                        <div class="flex items-center space-x-1">
+                                          <div class="w-4 h-2 bg-white rounded-sm"></div>
+                                          <div class="w-4 h-2 bg-white rounded-sm"></div>
+                                          <div class="w-4 h-2 bg-white rounded-sm"></div>
+                                        </div>
+                                      </div>
+                                      <div class="flex-1 flex flex-col items-center justify-center space-y-6">
+                                        <div class="w-20 h-20 rounded-2xl bg-gradient-to-r ${phoneScreens[activeScreen]?.color || project.color} flex items-center justify-center">
+                                          <span class="text-3xl">${phoneScreens[activeScreen]?.icon || '📱'}</span>
+                                        </div>
+                                        <div class="text-center">
+                                          <h3 class="text-white font-bold text-lg mb-2">${phoneScreens[activeScreen].title}</h3>
+                                          <p class="text-gray-400 text-sm px-4">${phoneScreens[activeScreen].description}</p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  `;
+                                }
+                              }}
+                            />
+                          </div>
+                        ) : (
+                          // Fallback placeholder
+                          <div className={`p-6 h-full flex flex-col ${phoneScreens[activeScreen]?.bgPattern || 'bg-gradient-to-br from-slate-900 to-slate-800'} rounded-[2rem]`}>
                           {/* Status Bar */}
                           <div className="flex justify-between items-center text-white text-xs mb-6">
                             <span>9:41</span>
@@ -427,11 +330,7 @@ export default function ProjectDetail() {
                           {/* App Content Placeholder */}
                           <div className="flex-1 flex flex-col items-center justify-center space-y-6">
                             <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${phoneScreens[activeScreen]?.color || project.color} flex items-center justify-center transform transition-all duration-500 ${isTransitioning ? 'scale-75 opacity-50' : 'scale-100 opacity-100'}`}>
-                              {project?.slug === 'saglik-takip-platformu' ? (
-                                <span className="text-3xl">{phoneScreens[activeScreen]?.icon}</span>
-                              ) : (
-                                <Icon className="w-10 h-10 text-white" />
-                              )}
+                                <span className="text-3xl">{phoneScreens[activeScreen]?.icon || '📱'}</span>
                             </div>
                             
                             <div className="text-center">
@@ -465,6 +364,7 @@ export default function ProjectDetail() {
                             </div>
                           </div>
                         </div>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -474,27 +374,16 @@ export default function ProjectDetail() {
                   <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-500 rounded-full animate-pulse"></div>
                 </div>
 
-                {/* Flow Labels */}
-                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
-                  <div className="text-center">
-                    <p className="text-gray-400 text-sm font-semibold">
-                      {project?.slug === 'saglik-takip-platformu' && (
-                        <>
-                          {activeFlow === 0 && "Frontend Development"}
-                          {activeFlow === 1 && "Backend Development"}
-                          {activeFlow === 2 && "DevOps & Deployment"}
-                        </>
-                      )}
-                      {project?.slug === 'isaret-dili-ai-uygulamasi' && (
-                        <>
-                          {activeFlow === 0 && "AI/ML Development"}
-                          {activeFlow === 1 && "Mobile Development"}
-                          {activeFlow === 2 && "Data & Training"}
-                        </>
-                      )}
-                    </p>
+                {/* Flow Labels - Only show if multiple flows */}
+                {phoneFlows.length > 1 && (
+                  <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
+                    <div className="text-center">
+                      <p className="text-gray-400 text-sm font-semibold">
+                        {phoneFlows[activeFlow]?.name || "Development Flow"}
+                      </p>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
 
               {/* Right - Detailed Content */}
@@ -628,8 +517,8 @@ export default function ProjectDetail() {
                   color: "from-pink-500 to-rose-500",
                   tech: "Jest, GitHub Actions, AWS"
                 }
-              ].map((step, index) => (
-                <div key={index} className="group relative">
+              ].map((step) => (
+                <div key={step.step} className="group relative">
                   <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 hover:border-slate-600 transition-all duration-300 hover:scale-105 relative overflow-hidden">
                     <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-slate-700 to-transparent rounded-bl-2xl"></div>
                     <div className="relative z-10">
@@ -658,11 +547,14 @@ export default function ProjectDetail() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              {project?.slug === 'saglik-takip-platformu' ? 'MindConnect Özellikleri' : 'Özellikler'}
+              {project?.slug === 'saglik-takip-platformu' ? 'MindConnect Özellikleri' : 
+               project?.slug === 'solunum-sagligi-uygulamasi' ? 'Spiroble Özellikleri' : 'Özellikler'}
             </h2>
             <p className="text-gray-400 text-lg">
               {project?.slug === 'saglik-takip-platformu' 
                 ? 'Ruh sağlığı alanında devrim yaratan özellikler' 
+                : project?.slug === 'solunum-sagligi-uygulamasi'
+                ? 'Solunum sağlığı takibinde devrim yaratan özellikler'
                 : 'Modern teknolojilerle geliştirilmiş güçlü özellikler'
               }
             </p>
@@ -677,6 +569,10 @@ export default function ProjectDetail() {
               { icon: Brain, title: "AI-Powered Recognition", description: "TensorFlow.js ile %95 doğruluk oranında işaret dili tanıma" },
               { icon: Eye, title: "Real-time Processing", description: "OpenCV ile gerçek zamanlı video işleme ve anlık çeviri" },
               { icon: Volume2, title: "Accessibility First", description: "Erişilebilirlik odaklı tasarım ve ses sentezi özellikleri" }
+            ] : project?.slug === 'solunum-sagligi-uygulamasi' ? [
+              { icon: Activity, title: "Gerçek Zamanlı Ölçüm", description: "Bluetooth LE ile spirometre cihazından anlık solunum verisi toplama" },
+              { icon: Shield, title: "Güvenli Veri Saklama", description: "Firebase Realtime Database ile hasta verilerinin güvenli saklanması" },
+              { icon: Zap, title: "Akıllı Analiz", description: "AI destekli solunum analizi ve kişiselleştirilmiş sağlık önerileri" }
             ] : [
               { icon: Zap, title: "Hızlı Performans", description: "Optimize edilmiş kod yapısı ile yıldırım hızında çalışma" },
               { icon: Shield, title: "Güvenli", description: "End-to-end şifreleme ile verileriniz güvende" },
@@ -705,7 +601,7 @@ export default function ProjectDetail() {
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">
-            {project.technologies.map((tech, index) => (
+            {project.technologies.map((tech) => (
               <div key={tech} className="group">
                 <div className="px-8 py-4 bg-slate-800 border border-slate-700 rounded-xl hover:border-slate-600 transition-all duration-300 hover:scale-105">
                   <span className="text-white font-semibold text-lg">{tech}</span>
@@ -782,39 +678,96 @@ export default function ProjectDetail() {
       )}
 
       {/* CTA Section */}
-      <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className={`inline-block p-4 rounded-2xl bg-gradient-to-r ${project.color} mb-8`}>
-            <Icon className="w-12 h-12 text-white" />
+      {project?.slug !== 'solunum-sagligi-uygulamasi' && (
+        <section className="py-20">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className={`inline-block p-4 rounded-2xl bg-gradient-to-r ${project.color} mb-8`}>
+              <Icon className="w-12 h-12 text-white" />
+            </div>
+            <h2 className="text-4xl font-bold text-white mb-6">
+              {project?.slug === 'saglik-takip-platformu' 
+                ? 'Teknik Mükemmellik ve İnovasyon' 
+                : project?.slug === 'isaret-dili-ai-uygulamasi'
+                ? 'Yapay Zeka ile Erişilebilir İletişim'
+                : 'Projeyi Keşfetmeye Hazır mısın?'
+              }
+            </h2>
+            <p className="text-gray-400 text-lg mb-8">
+              {project?.slug === 'saglik-takip-platformu'
+                ? 'Modern teknolojilerle geliştirilmiş, ölçeklenebilir ve güvenli bir platform'
+                : project?.slug === 'isaret-dili-ai-uygulamasi'
+                ? 'AI teknolojisi ile işitme engelli bireylerin iletişimini kolaylaştıran devrim niteliğinde uygulama'
+                : 'Modern teknolojilerle geliştirilmiş bu uygulamayı deneyimleyin'
+              }
+            </p>
+          {project?.slug !== 'solunum-sagligi-uygulamasi' && (
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <button 
+                onClick={() => setIsVideoModalOpen(true)}
+                className={`px-8 py-4 bg-gradient-to-r ${project.color} text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}
+              >
+                {project?.slug === 'saglik-takip-platformu' ? 'GitHub Repo' : 
+                 project?.slug === 'isaret-dili-ai-uygulamasi' ? 'AI Demo İzle' : 'Demo İzle'}
+              </button>
+              <a 
+                href="https://appgallery.huawei.com/app/C114157203?sharePrepath=ag&locale=tr_TR&source=appshare&subsource=C114157203&shareTo=com.android.chrome&shareFrom=appmarket&shareIds=919e6ea53fa24502888bfc28205e37db_com.android.chrome&callType=SHARE"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-slate-800 text-white rounded-xl font-semibold hover:bg-slate-700 transition-all duration-300 border border-slate-700"
+              >
+                {project?.slug === 'saglik-takip-platformu' ? 'Teknik Dokümantasyon' : 
+                 project?.slug === 'isaret-dili-ai-uygulamasi' ? 'AppGallery\'den İndir' : 'Kaynak Kod'}
+              </a>
+            </div>
+          )}
           </div>
-          <h2 className="text-4xl font-bold text-white mb-6">
-            {project?.slug === 'saglik-takip-platformu' 
-              ? 'Teknik Mükemmellik ve İnovasyon' 
-              : project?.slug === 'isaret-dili-ai-uygulamasi'
-              ? 'Yapay Zeka ile Erişilebilir İletişim'
-              : 'Projeyi Keşfetmeye Hazır mısın?'
-            }
-          </h2>
-          <p className="text-gray-400 text-lg mb-8">
-            {project?.slug === 'saglik-takip-platformu'
-              ? 'Modern teknolojilerle geliştirilmiş, ölçeklenebilir ve güvenli bir platform'
-              : project?.slug === 'isaret-dili-ai-uygulamasi'
-              ? 'AI teknolojisi ile işitme engelli bireylerin iletişimini kolaylaştıran devrim niteliğinde uygulama'
-              : 'Modern teknolojilerle geliştirilmiş bu uygulamayı deneyimleyin'
-            }
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className={`px-8 py-4 bg-gradient-to-r ${project.color} text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-              {project?.slug === 'saglik-takip-platformu' ? 'GitHub Repo' : 
-               project?.slug === 'isaret-dili-ai-uygulamasi' ? 'AI Demo İzle' : 'Demo İzle'}
-            </button>
-            <button className="px-8 py-4 bg-slate-800 text-white rounded-xl font-semibold hover:bg-slate-700 transition-all duration-300 border border-slate-700">
-              {project?.slug === 'saglik-takip-platformu' ? 'Teknik Dokümantasyon' : 
-               project?.slug === 'isaret-dili-ai-uygulamasi' ? 'AI Model Detayları' : 'Kaynak Kod'}
-            </button>
+        </section>
+      )}
+
+    {/* Video Modal */}
+    {isVideoModalOpen && (
+      <div className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+        <div className="relative w-full max-w-4xl bg-slate-900 rounded-2xl overflow-hidden shadow-2xl">
+          {/* Close Button */}
+          <button
+            onClick={() => setIsVideoModalOpen(false)}
+            className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 rounded-full transition-colors duration-200"
+          >
+            <X className="w-6 h-6 text-white" />
+          </button>
+          
+          {/* Video Container */}
+          <div className="relative w-full aspect-video">
+            <video
+              className="w-full h-full object-cover"
+              controls
+              autoPlay
+              muted
+              loop
+            >
+              <source src="/screenshots/signai/demo-video.mp4" type="video/mp4" />
+              Tarayıcınız video oynatmayı desteklemiyor.
+            </video>
+          </div>
+          
+          {/* Video Info */}
+          <div className="p-6">
+            <h3 className="text-2xl font-bold text-white mb-2">
+              {project?.slug === 'isaret-dili-ai-uygulamasi' ? 'Conversign Demo Videosu' : 
+               project?.slug === 'solunum-sagligi-uygulamasi' ? 'Spiroble Demo Videosu' : 'Proje Demo Videosu'}
+            </h3>
+            <p className="text-gray-300">
+              {project?.slug === 'isaret-dili-ai-uygulamasi' 
+                ? 'Conversign uygulamasının işaret dili tanıma özelliklerini gösteren demo videosu'
+                : project?.slug === 'solunum-sagligi-uygulamasi'
+                ? 'RespiraCheck uygulamasının solunum sağlığı takip özelliklerini gösteren demo videosu'
+                : 'Projenin temel özelliklerini gösteren demo videosu'
+              }
+            </p>
+          </div>
         </div>
       </div>
-    </section>
+    )}
     </div>
   );
 }
