@@ -1,4 +1,4 @@
-import { Smartphone, Globe, ShoppingCart, Heart, Users, Calendar, Eye, Activity } from 'lucide-react';
+import { Smartphone, Globe, ShoppingCart, Heart, Users, Calendar, Eye, Activity, Newspaper } from 'lucide-react';
 
 export type Project = {
   icon: any;
@@ -363,6 +363,85 @@ export const projects: Project[] = [
                 color: "from-orange-500 to-red-500",
                 bgPattern: "bg-gradient-to-br from-orange-500/20 to-red-500/20",
                 tech: "Settings Management, User Preferences"
+              }
+            ]
+          }
+        ]
+      }
+    },
+  },
+  {
+    icon: Newspaper,
+    slug: 'haberapron-web-sitesi',
+    title: 'HaberApron - Havacılık Haber Platformu',
+    description:
+      'Modern, hızlı ve güvenilir havacılık odaklı haber platformu. React + TypeScript + Node.js + PostgreSQL teknoloji stack\'i ile geliştirilmiş profesyonel web uygulaması.',
+    technologies: ['React 18', 'TypeScript', 'Node.js', 'PostgreSQL', 'Prisma', 'Redis', 'Docker', 'Nginx'],
+    color: 'from-blue-600 to-indigo-600',
+    details: {
+      longDescription:
+        'HaberApron, havacılık sektörüne odaklanmış modern bir haber platformudur. React 18 + TypeScript + Vite ile geliştirilmiş frontend, Node.js + Express + TypeScript ile güçlendirilmiş backend ve PostgreSQL + Prisma ORM ile yönetilen veritabanı altyapısına sahiptir. Redis cache sistemi, Docker containerization, Nginx web server ve GitHub Actions CI/CD pipeline ile tam profesyonel bir web uygulamasıdır. Mobile-first responsive tasarım, WebP/AVIF görsel optimizasyonu, gelişmiş arama sistemi, yorum sistemi ve newsletter aboneliği gibi modern web özelliklerini içerir.',
+      images: [
+        'Ana sayfa - Modern haber listesi ve kategoriler',
+        'Makale sayfası - Rich text editor ile zengin içerik',
+        'Admin paneli - İçerik yönetim sistemi',
+        'Arama sonuçları - Gelişmiş filtreleme',
+        'Mobil responsive - Mobile-first tasarım'
+      ],
+      screenshots: {
+        flows: [
+          {
+            name: "Kullanıcı Deneyimi",
+            screens: [
+              {
+                title: "Ana Sayfa",
+                description: "Modern tasarım ile havacılık haberleri ve kategoriler",
+                image: "/screenshots/haberapron/homepage.jpg",
+                icon: "🏠",
+                color: "from-blue-600 to-indigo-600",
+                bgPattern: "bg-gradient-to-br from-blue-600/20 to-indigo-600/20",
+                tech: "React 18, TypeScript, Tailwind CSS, Framer Motion"
+              },
+              {
+                title: "Makale Sayfası",
+                description: "Rich text editor ile zengin içerik ve yorum sistemi",
+                image: "/screenshots/haberapron/article-page.jpg",
+                icon: "📰",
+                color: "from-purple-600 to-pink-600",
+                bgPattern: "bg-gradient-to-br from-purple-600/20 to-pink-600/20",
+                tech: "Quill.js, React Hook Form, Yup Validation"
+              },
+              {
+                title: "Arama Sonuçları",
+                description: "Full-text search ve gelişmiş filtreleme sistemi",
+                image: "/screenshots/haberapron/search-results.jpg",
+                icon: "🔍",
+                color: "from-green-600 to-emerald-600",
+                bgPattern: "bg-gradient-to-br from-green-600/20 to-emerald-600/20",
+                tech: "PostgreSQL Full-text Search, Advanced Filtering"
+              }
+            ]
+          },
+          {
+            name: "Yönetim Paneli",
+            screens: [
+              {
+                title: "Admin Dashboard",
+                description: "İçerik yönetimi ve kullanıcı yönetimi paneli",
+                image: "/screenshots/haberapron/admin-dashboard.jpg",
+                icon: "⚙️",
+                color: "from-orange-600 to-red-600",
+                bgPattern: "bg-gradient-to-br from-orange-600/20 to-red-600/20",
+                tech: "Admin Panel, Content Management, User Management"
+              },
+              {
+                title: "Mobil Responsive",
+                description: "Mobile-first yaklaşım ile responsive tasarım",
+                image: "/screenshots/haberapron/mobile-responsive.jpg",
+                icon: "📱",
+                color: "from-teal-600 to-cyan-600",
+                bgPattern: "bg-gradient-to-br from-teal-600/20 to-cyan-600/20",
+                tech: "Responsive Design, Mobile-first, Progressive Web App"
               }
             ]
           }

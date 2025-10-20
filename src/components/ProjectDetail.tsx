@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import { useState, useEffect } from 'react';
-import { ArrowLeft, Play, Download, Star, Users, Zap, Shield, Smartphone, MessageCircle, Heart, Award, Eye, Brain, Volume2, X, Activity } from 'lucide-react';
+import { ArrowLeft, Play, Download, Star, Users, Zap, Shield, Smartphone, MessageCircle, Heart, Award, Eye, Brain, Volume2, X, Activity, Monitor } from 'lucide-react';
 
 export default function ProjectDetail() {
   const { slug } = useParams();
@@ -120,8 +120,17 @@ export default function ProjectDetail() {
               <div className="space-y-8">
                 <div className="space-y-6">
                   <div className={`inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r ${project.color} text-white text-sm font-medium`}>
-                    <Smartphone className="w-4 h-4 mr-2" />
-                    Mobil Uygulama
+                    {project?.slug === 'haberapron-web-sitesi' ? (
+                      <>
+                        <Monitor className="w-4 h-4 mr-2" />
+                        Web Sitesi
+                      </>
+                    ) : (
+                      <>
+                        <Smartphone className="w-4 h-4 mr-2" />
+                        Mobil Uygulama
+                      </>
+                    )}
               </div>
                   
                   <h1 className="text-5xl lg:text-6xl font-extrabold text-white leading-tight">
@@ -138,13 +147,19 @@ export default function ProjectDetail() {
                   <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
                     <div className="text-center">
                       <div className="text-3xl font-bold text-white">
-                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? '95%' : '4.9'}
+                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? '95%' : 
+                         project?.slug === 'haberapron-web-sitesi' ? '95/100' : '4.9'}
                       </div>
                       <div className="text-sm text-gray-400 flex items-center justify-center">
                         {project?.slug === 'isaret-dili-ai-uygulamasi' ? (
                           <>
                             <Brain className="w-4 h-4 text-purple-400 mr-1" />
                             AI Doğruluk
+                          </>
+                        ) : project?.slug === 'haberapron-web-sitesi' ? (
+                          <>
+                            <Zap className="w-4 h-4 text-yellow-400 mr-1" />
+                            Lighthouse
                           </>
                         ) : (
                           <>
@@ -156,22 +171,30 @@ export default function ProjectDetail() {
                     </div>
                     <div className="text-center">
                       <div className="text-3xl font-bold text-white">
-                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? '15K+' : '25K+'}
+                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? '15K+' : 
+                         project?.slug === 'haberapron-web-sitesi' ? '1.2s' : '25K+'}
                       </div>
                       <div className="text-sm text-gray-400 flex items-center justify-center">
                         <Users className="w-4 h-4 text-blue-400 mr-1" />
-                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? 'Kullanıcı' : 'Aktif Kullanıcı'}
+                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? 'Kullanıcı' : 
+                         project?.slug === 'haberapron-web-sitesi' ? 'LCP' : 'Aktif Kullanıcı'}
                       </div>
                     </div>
                     <div className="text-center">
                       <div className="text-3xl font-bold text-white">
-                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? '50+' : '500+'}
+                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? '50+' : 
+                         project?.slug === 'haberapron-web-sitesi' ? '-82%' : '500+'}
                       </div>
                       <div className="text-sm text-gray-400 flex items-center justify-center">
                         {project?.slug === 'isaret-dili-ai-uygulamasi' ? (
                           <>
                             <Eye className="w-4 h-4 text-indigo-400 mr-1" />
                             İşaret Dili
+                          </>
+                        ) : project?.slug === 'haberapron-web-sitesi' ? (
+                          <>
+                            <Shield className="w-4 h-4 text-green-400 mr-1" />
+                            Bandwidth
                           </>
                         ) : (
                           <>
@@ -212,25 +235,179 @@ export default function ProjectDetail() {
       </section>
 
       {/* App Screens Section */}
-      {(project?.slug === 'saglik-takip-platformu' || project?.slug === 'isaret-dili-ai-uygulamasi' || project?.slug === 'solunum-sagligi-uygulamasi') && (
+      {(project?.slug === 'saglik-takip-platformu' || project?.slug === 'isaret-dili-ai-uygulamasi' || project?.slug === 'solunum-sagligi-uygulamasi' || project?.slug === 'haberapron-web-sitesi') && (
         <section className="py-20 bg-slate-900/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">Uygulama Ekranları</h2>
+              <h2 className="text-4xl font-bold text-white mb-4">
+                {project?.slug === 'haberapron-web-sitesi' ? 'Web Sitesi Ekranları' : 'Uygulama Ekranları'}
+              </h2>
               <p className="text-gray-400 text-lg">
                 {project?.slug === 'saglik-takip-platformu' 
                   ? 'Geliştirme sürecindeki farklı aşamalar ve teknik detaylar'
                   : project?.slug === 'isaret-dili-ai-uygulamasi'
                   ? 'AI teknolojisi ile işaret dili tanıma sürecinin farklı aşamaları'
+                  : project?.slug === 'haberapron-web-sitesi'
+                  ? 'Modern web teknolojileri ile geliştirilmiş haber platformu ekranları'
                   : 'Spirometre cihazı entegrasyonu ve solunum sağlığı takip süreçleri'
                 }
               </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left - Phone Screens */}
+              {/* Left - Phone/Desktop Screens */}
               <div className="relative">
-                <div className="relative mx-auto w-64 h-[520px]">
+                {project?.slug === 'haberapron-web-sitesi' ? (
+                  // Desktop Monitor for Web Projects
+                  <div className="relative mx-auto w-[600px] h-[400px]">
+                    {/* Flow Navigation - Only show if multiple flows */}
+                    {phoneFlows.length > 1 && (
+                      <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-10">
+                        <div className="flex items-center space-x-4 bg-slate-800/80 backdrop-blur-sm rounded-full px-4 py-2 border border-slate-700">
+                          <button 
+                            onClick={() => handleSwipe('right')}
+                            className="p-2 hover:bg-slate-700 rounded-full transition-colors duration-200"
+                            disabled={isTransitioning}
+                          >
+                            <ArrowLeft className="w-4 h-4 text-white" />
+                          </button>
+                          <div className="flex space-x-2">
+                            {phoneFlows.map((_, index) => (
+                              <div
+                                key={index}
+                                className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                  index === activeFlow ? 'bg-white' : 'bg-gray-600'
+                                }`}
+                              />
+                            ))}
+                          </div>
+                          <button 
+                            onClick={() => handleSwipe('left')}
+                            className="p-2 hover:bg-slate-700 rounded-full transition-colors duration-200"
+                            disabled={isTransitioning}
+                          >
+                            <ArrowLeft className="w-4 h-4 text-white rotate-180" />
+                          </button>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Desktop Monitor Frame */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl p-3 shadow-2xl">
+                      <div 
+                        className="w-full h-full bg-black rounded-xl overflow-hidden relative cursor-pointer"
+                        onTouchStart={onTouchStart}
+                        onTouchMove={onTouchMove}
+                        onTouchEnd={onTouchEnd}
+                      >
+                        {/* Screen Content - Real Screenshots */}
+                        <div className="absolute inset-0 transition-all duration-500">
+                          {phoneScreens[activeScreen]?.image ? (
+                            <div className="relative w-full h-full">
+                              {/* Real Screenshot */}
+                              <img 
+                                src={phoneScreens[activeScreen].image} 
+                                alt={phoneScreens[activeScreen].title}
+                                className="w-full h-full object-cover rounded-xl bg-slate-900"
+                                onLoad={() => console.log('Image loaded successfully')}
+                                onError={(e) => {
+                                  console.log('Image failed to load, showing fallback');
+                                  // Fallback to placeholder if image fails to load
+                                  const target = e.target as HTMLImageElement;
+                                  target.style.display = 'none';
+                                  const parent = target.parentElement;
+                                  if (parent) {
+                                    parent.innerHTML = `
+                                      <div class="p-6 h-full flex flex-col ${phoneScreens[activeScreen]?.bgPattern || 'bg-gradient-to-br from-slate-900 to-slate-800'} rounded-xl">
+                                        <div class="flex justify-between items-center text-white text-xs mb-6">
+                                          <span>HaberApron</span>
+                                          <div class="flex items-center space-x-1">
+                                            <div class="w-4 h-2 bg-white rounded-sm"></div>
+                                            <div class="w-4 h-2 bg-white rounded-sm"></div>
+                                            <div class="w-4 h-2 bg-white rounded-sm"></div>
+                                          </div>
+                                        </div>
+                                        <div class="flex-1 flex flex-col items-center justify-center space-y-6">
+                                          <div class="w-20 h-20 rounded-2xl bg-gradient-to-r ${phoneScreens[activeScreen]?.color || project.color} flex items-center justify-center">
+                                            <span class="text-3xl">${phoneScreens[activeScreen]?.icon || '🌐'}</span>
+                                          </div>
+                                          <div class="text-center">
+                                            <h3 class="text-white font-bold text-lg mb-2">${phoneScreens[activeScreen].title}</h3>
+                                            <p class="text-gray-400 text-sm px-4">${phoneScreens[activeScreen].description}</p>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    `;
+                                  }
+                                }}
+                              />
+                            </div>
+                          ) : (
+                            // Fallback placeholder
+                            <div className={`p-6 h-full flex flex-col ${phoneScreens[activeScreen]?.bgPattern || 'bg-gradient-to-br from-slate-900 to-slate-800'} rounded-xl`}>
+                              {/* Browser Bar */}
+                              <div className="flex justify-between items-center text-white text-xs mb-6">
+                                <span>HaberApron</span>
+                                <div className="flex items-center space-x-1">
+                                  <div className="w-4 h-2 bg-white rounded-sm"></div>
+                                  <div className="w-4 h-2 bg-white rounded-sm"></div>
+                                  <div className="w-4 h-2 bg-white rounded-sm"></div>
+                                </div>
+                              </div>
+
+                              {/* App Content Placeholder */}
+                              <div className="flex-1 flex flex-col items-center justify-center space-y-6">
+                                <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${phoneScreens[activeScreen]?.color || project.color} flex items-center justify-center transform transition-all duration-500 ${isTransitioning ? 'scale-75 opacity-50' : 'scale-100 opacity-100'}`}>
+                                  <span className="text-3xl">{phoneScreens[activeScreen]?.icon || '🌐'}</span>
+                                </div>
+                                
+                                <div className="text-center">
+                                  <h3 className={`text-white font-bold text-lg mb-2 transition-all duration-500 ${isTransitioning ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'}`}>
+                                    {phoneScreens[activeScreen].title}
+                                  </h3>
+                                  <p className={`text-gray-400 text-sm px-4 transition-all duration-500 delay-100 ${isTransitioning ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'}`}>
+                                    {phoneScreens[activeScreen].description}
+                                  </p>
+                                </div>
+
+                                {/* Feature Indicators */}
+                                <div className="flex space-x-2">
+                                  {phoneScreens.map((_, index) => (
+                                    <div
+                                      key={index}
+                                      className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                                        index === activeScreen ? 'bg-white' : 'bg-gray-600'
+                                      }`}
+                                    />
+                                  ))}
+                                </div>
+                              </div>
+
+                              {/* Swipe Indicators */}
+                              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                                <div className="flex items-center space-x-2 text-white/60 text-xs">
+                                  <ArrowLeft className="w-3 h-3" />
+                                  <span>Kaydır</span>
+                                  <ArrowLeft className="w-3 h-3 rotate-180" />
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Monitor Stand */}
+                    <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 w-32 h-8 bg-gradient-to-b from-slate-700 to-slate-800 rounded-b-lg"></div>
+                    <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 w-40 h-4 bg-slate-800 rounded-lg"></div>
+
+                    {/* Floating Elements */}
+                    <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-500 rounded-full animate-bounce"></div>
+                    <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-500 rounded-full animate-pulse"></div>
+                  </div>
+                ) : (
+                  // Phone Frame for Mobile Apps
+                  <div className="relative mx-auto w-64 h-[520px]">
                   {/* Flow Navigation - Only show if multiple flows */}
                   {phoneFlows.length > 1 && (
                     <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-10">
@@ -369,10 +546,11 @@ export default function ProjectDetail() {
                     </div>
                   </div>
 
-                  {/* Floating Elements */}
-                  <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-500 rounded-full animate-bounce"></div>
-                  <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-500 rounded-full animate-pulse"></div>
-                </div>
+                    {/* Floating Elements */}
+                    <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-500 rounded-full animate-bounce"></div>
+                    <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-500 rounded-full animate-pulse"></div>
+                  </div>
+                )}
 
                 {/* Flow Labels - Only show if multiple flows */}
                 {phoneFlows.length > 1 && (
@@ -548,13 +726,16 @@ export default function ProjectDetail() {
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
               {project?.slug === 'saglik-takip-platformu' ? 'MindConnect Özellikleri' : 
-               project?.slug === 'solunum-sagligi-uygulamasi' ? 'Spiroble Özellikleri' : 'Özellikler'}
+               project?.slug === 'solunum-sagligi-uygulamasi' ? 'Spiroble Özellikleri' : 
+               project?.slug === 'haberapron-web-sitesi' ? 'HaberApron Özellikleri' : 'Özellikler'}
             </h2>
             <p className="text-gray-400 text-lg">
               {project?.slug === 'saglik-takip-platformu' 
                 ? 'Ruh sağlığı alanında devrim yaratan özellikler' 
                 : project?.slug === 'solunum-sagligi-uygulamasi'
                 ? 'Solunum sağlığı takibinde devrim yaratan özellikler'
+                : project?.slug === 'haberapron-web-sitesi'
+                ? 'Modern web teknolojileri ile geliştirilmiş haber platformu özellikleri'
                 : 'Modern teknolojilerle geliştirilmiş güçlü özellikler'
               }
             </p>
@@ -573,6 +754,10 @@ export default function ProjectDetail() {
               { icon: Activity, title: "Gerçek Zamanlı Ölçüm", description: "Bluetooth LE ile spirometre cihazından anlık solunum verisi toplama" },
               { icon: Shield, title: "Güvenli Veri Saklama", description: "Firebase Realtime Database ile hasta verilerinin güvenli saklanması" },
               { icon: Zap, title: "Akıllı Analiz", description: "AI destekli solunum analizi ve kişiselleştirilmiş sağlık önerileri" }
+            ] : project?.slug === 'haberapron-web-sitesi' ? [
+              { icon: Zap, title: "Yüksek Performans", description: "Vite build tool, code splitting ve Redis cache ile %95 Lighthouse skoru" },
+              { icon: Shield, title: "Güvenli Altyapı", description: "JWT authentication, Helmet.js, rate limiting ve Docker containerization" },
+              { icon: Monitor, title: "Modern UI/UX", description: "Mobile-first responsive tasarım, dark mode ve accessibility uyumlu" }
             ] : [
               { icon: Zap, title: "Hızlı Performans", description: "Optimize edilmiş kod yapısı ile yıldırım hızında çalışma" },
               { icon: Shield, title: "Güvenli", description: "End-to-end şifreleme ile verileriniz güvende" },
@@ -689,6 +874,8 @@ export default function ProjectDetail() {
                 ? 'Teknik Mükemmellik ve İnovasyon' 
                 : project?.slug === 'isaret-dili-ai-uygulamasi'
                 ? 'Yapay Zeka ile Erişilebilir İletişim'
+                : project?.slug === 'haberapron-web-sitesi'
+                ? 'Modern Web Teknolojileri ile Haber Platformu'
                 : 'Projeyi Keşfetmeye Hazır mısın?'
               }
             </h2>
@@ -697,6 +884,8 @@ export default function ProjectDetail() {
                 ? 'Modern teknolojilerle geliştirilmiş, ölçeklenebilir ve güvenli bir platform'
                 : project?.slug === 'isaret-dili-ai-uygulamasi'
                 ? 'AI teknolojisi ile işitme engelli bireylerin iletişimini kolaylaştıran devrim niteliğinde uygulama'
+                : project?.slug === 'haberapron-web-sitesi'
+                ? 'React + TypeScript + Node.js + PostgreSQL ile geliştirilmiş, yüksek performanslı haber platformu'
                 : 'Modern teknolojilerle geliştirilmiş bu uygulamayı deneyimleyin'
               }
             </p>
@@ -707,7 +896,8 @@ export default function ProjectDetail() {
                 className={`px-8 py-4 bg-gradient-to-r ${project.color} text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}
               >
                 {project?.slug === 'saglik-takip-platformu' ? 'GitHub Repo' : 
-                 project?.slug === 'isaret-dili-ai-uygulamasi' ? 'AI Demo İzle' : 'Demo İzle'}
+                 project?.slug === 'isaret-dili-ai-uygulamasi' ? 'AI Demo İzle' : 
+                 project?.slug === 'haberapron-web-sitesi' ? 'Canlı Demo' : 'Demo İzle'}
               </button>
               <a 
                 href="https://appgallery.huawei.com/app/C114157203?sharePrepath=ag&locale=tr_TR&source=appshare&subsource=C114157203&shareTo=com.android.chrome&shareFrom=appmarket&shareIds=919e6ea53fa24502888bfc28205e37db_com.android.chrome&callType=SHARE"
@@ -716,7 +906,8 @@ export default function ProjectDetail() {
                 className="px-8 py-4 bg-slate-800 text-white rounded-xl font-semibold hover:bg-slate-700 transition-all duration-300 border border-slate-700"
               >
                 {project?.slug === 'saglik-takip-platformu' ? 'Teknik Dokümantasyon' : 
-                 project?.slug === 'isaret-dili-ai-uygulamasi' ? 'AppGallery\'den İndir' : 'Kaynak Kod'}
+                 project?.slug === 'isaret-dili-ai-uygulamasi' ? 'AppGallery\'den İndir' : 
+                 project?.slug === 'haberapron-web-sitesi' ? 'GitHub Repo' : 'Kaynak Kod'}
               </a>
             </div>
           )}
