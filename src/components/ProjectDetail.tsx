@@ -1,7 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import { useState, useEffect } from 'react';
-import { ArrowLeft, Play, Download, Star, Users, Zap, Shield, Smartphone, MessageCircle, Calendar, Heart, Award, Clock, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Play, Download, Star, Users, Zap, Shield, Smartphone, MessageCircle, Calendar, Heart, Award, Clock, CheckCircle, Eye, Mic, Brain, Camera, Volume2, BookOpen } from 'lucide-react';
 
 export default function ProjectDetail() {
   const { slug } = useParams();
@@ -77,8 +77,90 @@ export default function ProjectDetail() {
 
   const Icon = project.icon;
 
-  // MindConnect development workflow screens
-  const phoneFlows = project?.slug === 'saglik-takip-platformu' ? [
+  // SignAI development workflow screens
+  const phoneFlows = project?.slug === 'isaret-dili-ai-uygulamasi' ? [
+    // Flow 1: AI/ML Development
+    [
+      { 
+        title: "Computer Vision", 
+        description: "OpenCV ve TensorFlow.js ile işaret dili tanıma sistemi",
+        icon: "👁️",
+        color: "from-blue-500 to-cyan-500",
+        bgPattern: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
+        tech: "OpenCV, TensorFlow.js, MediaPipe, PoseNet"
+      },
+      { 
+        title: "Machine Learning", 
+        description: "Derin öğrenme modelleri ile işaret dili sınıflandırması",
+        icon: "🧠",
+        color: "from-purple-500 to-pink-500",
+        bgPattern: "bg-gradient-to-br from-purple-500/20 to-pink-500/20",
+        tech: "Python, TensorFlow, Keras, Scikit-learn"
+      },
+      { 
+        title: "Real-time Processing", 
+        description: "Gerçek zamanlı video işleme ve AI çıkarımı",
+        icon: "⚡",
+        color: "from-green-500 to-emerald-500",
+        bgPattern: "bg-gradient-to-br from-green-500/20 to-emerald-500/20",
+        tech: "WebRTC, Canvas API, Web Workers"
+      }
+    ],
+    // Flow 2: Mobile Development
+    [
+      { 
+        title: "Camera Integration", 
+        description: "React Native ile kamera erişimi ve video yakalama",
+        icon: "📷",
+        color: "from-indigo-500 to-blue-500",
+        bgPattern: "bg-gradient-to-br from-indigo-500/20 to-blue-500/20",
+        tech: "React Native Camera, Expo Camera, Vision API"
+      },
+      { 
+        title: "Audio Synthesis", 
+        description: "Text-to-Speech ile ses sentezi ve çıktı",
+        icon: "🔊",
+        color: "from-orange-500 to-red-500",
+        bgPattern: "bg-gradient-to-br from-orange-500/20 to-red-500/20",
+        tech: "Web Speech API, TTS, Audio Context"
+      },
+      { 
+        title: "Accessibility Features", 
+        description: "Erişilebilirlik odaklı kullanıcı arayüzü tasarımı",
+        icon: "♿",
+        color: "from-teal-500 to-cyan-500",
+        bgPattern: "bg-gradient-to-br from-teal-500/20 to-cyan-500/20",
+        tech: "Accessibility API, Screen Reader, Voice Control"
+      }
+    ],
+    // Flow 3: Data & Training
+    [
+      { 
+        title: "Dataset Creation", 
+        description: "İşaret dili veri seti oluşturma ve etiketleme",
+        icon: "📊",
+        color: "from-amber-500 to-orange-500",
+        bgPattern: "bg-gradient-to-br from-amber-500/20 to-orange-500/20",
+        tech: "Data Augmentation, Labeling Tools, Annotation"
+      },
+      { 
+        title: "Model Training", 
+        description: "Custom CNN modelleri ile eğitim süreci",
+        icon: "🎯",
+        color: "from-rose-500 to-pink-500",
+        bgPattern: "bg-gradient-to-br from-rose-500/20 to-pink-500/20",
+        tech: "PyTorch, Transfer Learning, Model Optimization"
+      },
+      { 
+        title: "Performance Optimization", 
+        description: "Model sıkıştırma ve mobil optimizasyon",
+        icon: "🚀",
+        color: "from-violet-500 to-purple-500",
+        bgPattern: "bg-gradient-to-br from-violet-500/20 to-purple-500/20",
+        tech: "TensorFlow Lite, Model Quantization, Edge Computing"
+      }
+    ]
+  ] : project?.slug === 'saglik-takip-platformu' ? [
     // Flow 1: Frontend Development
     [
       { 
@@ -196,38 +278,62 @@ export default function ProjectDetail() {
                   <div className={`inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r ${project.color} text-white text-sm font-medium`}>
                     <Smartphone className="w-4 h-4 mr-2" />
                     Mobil Uygulama
-                  </div>
+              </div>
                   
                   <h1 className="text-5xl lg:text-6xl font-extrabold text-white leading-tight">
                     {project.title}
                   </h1>
                   
                   <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-                    {project.details?.longDescription || project.description}
-                  </p>
+                  {project.details?.longDescription || project.description}
+                </p>
                 </div>
 
                 {/* Stats */}
                 <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white">4.9</div>
+                    <div className="text-3xl font-bold text-white">
+                      {project?.slug === 'isaret-dili-ai-uygulamasi' ? '95%' : '4.9'}
+                    </div>
                     <div className="text-sm text-gray-400 flex items-center justify-center">
-                      <Star className="w-4 h-4 text-yellow-400 mr-1" />
-                      App Store
+                      {project?.slug === 'isaret-dili-ai-uygulamasi' ? (
+                        <>
+                          <Brain className="w-4 h-4 text-purple-400 mr-1" />
+                          AI Doğruluk
+                        </>
+                      ) : (
+                        <>
+                          <Star className="w-4 h-4 text-yellow-400 mr-1" />
+                          App Store
+                        </>
+                      )}
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white">25K+</div>
+                    <div className="text-3xl font-bold text-white">
+                      {project?.slug === 'isaret-dili-ai-uygulamasi' ? '15K+' : '25K+'}
+                    </div>
                     <div className="text-sm text-gray-400 flex items-center justify-center">
                       <Users className="w-4 h-4 text-blue-400 mr-1" />
-                      Aktif Kullanıcı
+                      {project?.slug === 'isaret-dili-ai-uygulamasi' ? 'Kullanıcı' : 'Aktif Kullanıcı'}
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white">500+</div>
+                    <div className="text-3xl font-bold text-white">
+                      {project?.slug === 'isaret-dili-ai-uygulamasi' ? '50+' : '500+'}
+                    </div>
                     <div className="text-sm text-gray-400 flex items-center justify-center">
-                      <Heart className="w-4 h-4 text-pink-400 mr-1" />
-                      Uzman Psikolog
+                      {project?.slug === 'isaret-dili-ai-uygulamasi' ? (
+                        <>
+                          <Eye className="w-4 h-4 text-indigo-400 mr-1" />
+                          İşaret Dili
+                        </>
+                      ) : (
+                        <>
+                          <Heart className="w-4 h-4 text-pink-400 mr-1" />
+                          Uzman Psikolog
+                        </>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -250,12 +356,17 @@ export default function ProjectDetail() {
       </section>
 
       {/* App Screens Section */}
-      {project?.slug === 'saglik-takip-platformu' && (
+      {(project?.slug === 'saglik-takip-platformu' || project?.slug === 'isaret-dili-ai-uygulamasi') && (
         <section className="py-20 bg-slate-900/30">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-4">Uygulama Ekranları</h2>
-              <p className="text-gray-400 text-lg">Geliştirme sürecindeki farklı aşamalar ve teknik detaylar</p>
+              <p className="text-gray-400 text-lg">
+                {project?.slug === 'saglik-takip-platformu' 
+                  ? 'Geliştirme sürecindeki farklı aşamalar ve teknik detaylar'
+                  : 'AI teknolojisi ile işaret dili tanıma sürecinin farklı aşamaları'
+                }
+              </p>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -367,9 +478,20 @@ export default function ProjectDetail() {
                 <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
                   <div className="text-center">
                     <p className="text-gray-400 text-sm font-semibold">
-                      {activeFlow === 0 && "Frontend Development"}
-                      {activeFlow === 1 && "Backend Development"}
-                      {activeFlow === 2 && "DevOps & Deployment"}
+                      {project?.slug === 'saglik-takip-platformu' && (
+                        <>
+                          {activeFlow === 0 && "Frontend Development"}
+                          {activeFlow === 1 && "Backend Development"}
+                          {activeFlow === 2 && "DevOps & Deployment"}
+                        </>
+                      )}
+                      {project?.slug === 'isaret-dili-ai-uygulamasi' && (
+                        <>
+                          {activeFlow === 0 && "AI/ML Development"}
+                          {activeFlow === 1 && "Mobile Development"}
+                          {activeFlow === 2 && "Data & Training"}
+                        </>
+                      )}
                     </p>
                   </div>
                 </div>
@@ -397,9 +519,9 @@ export default function ProjectDetail() {
                       <div className="flex flex-wrap gap-3">
                         {phoneScreens[activeScreen].tech.split(', ').map((tech, index) => (
                           <span key={index} className="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-cyan-400 font-mono text-sm">
-                            {tech}
-                          </span>
-                        ))}
+                    {tech}
+                  </span>
+                ))}
                       </div>
                     </div>
                   )}
@@ -407,28 +529,59 @@ export default function ProjectDetail() {
                   <div className="space-y-4">
                     <h4 className="text-xl font-semibold text-white">Teknik Detaylar:</h4>
                     <div className="space-y-3">
-                      {activeFlow === 0 && (
+                      {project?.slug === 'isaret-dili-ai-uygulamasi' ? (
                         <>
-                          <p className="text-gray-300">• React Native ile cross-platform mobil uygulama geliştirme</p>
-                          <p className="text-gray-300">• TypeScript ile tip güvenli kod yazımı</p>
-                          <p className="text-gray-300">• Redux Toolkit ile merkezi state yönetimi</p>
-                          <p className="text-gray-300">• Socket.io ile gerçek zamanlı iletişim</p>
+                          {activeFlow === 0 && (
+                            <>
+                              <p className="text-gray-300">• OpenCV ile gerçek zamanlı video işleme ve el tespiti</p>
+                              <p className="text-gray-300">• TensorFlow.js ile browser tabanlı AI model çalıştırma</p>
+                              <p className="text-gray-300">• MediaPipe ile pose estimation ve landmark detection</p>
+                              <p className="text-gray-300">• Custom CNN modelleri ile işaret dili sınıflandırması</p>
+                            </>
+                          )}
+                          {activeFlow === 1 && (
+                            <>
+                              <p className="text-gray-300">• React Native Camera ile kamera entegrasyonu</p>
+                              <p className="text-gray-300">• Web Speech API ile text-to-speech dönüşümü</p>
+                              <p className="text-gray-300">• Accessibility API ile erişilebilirlik özellikleri</p>
+                              <p className="text-gray-300">• Real-time video streaming ve işleme</p>
+                            </>
+                          )}
+                          {activeFlow === 2 && (
+                            <>
+                              <p className="text-gray-300">• 50+ işaret dili veri seti oluşturma ve etiketleme</p>
+                              <p className="text-gray-300">• PyTorch ile custom model eğitimi ve optimizasyon</p>
+                              <p className="text-gray-300">• TensorFlow Lite ile mobil model sıkıştırma</p>
+                              <p className="text-gray-300">• Edge computing ile offline çalışma desteği</p>
+                            </>
+                          )}
                         </>
-                      )}
-                      {activeFlow === 1 && (
+                      ) : (
                         <>
-                          <p className="text-gray-300">• Node.js ve Express ile RESTful API geliştirme</p>
-                          <p className="text-gray-300">• MongoDB ile NoSQL veritabanı tasarımı</p>
-                          <p className="text-gray-300">• JWT ile güvenli authentication sistemi</p>
-                          <p className="text-gray-300">• Middleware ile request/response işleme</p>
-                        </>
-                      )}
-                      {activeFlow === 2 && (
-                        <>
-                          <p className="text-gray-300">• GitHub Actions ile CI/CD pipeline kurulumu</p>
-                          <p className="text-gray-300">• Docker ile containerization</p>
-                          <p className="text-gray-300">• AWS ile cloud deployment</p>
-                          <p className="text-gray-300">• Performance monitoring ve analytics</p>
+                          {activeFlow === 0 && (
+                            <>
+                              <p className="text-gray-300">• React Native ile cross-platform mobil uygulama geliştirme</p>
+                              <p className="text-gray-300">• TypeScript ile tip güvenli kod yazımı</p>
+                              <p className="text-gray-300">• Redux Toolkit ile merkezi state yönetimi</p>
+                              <p className="text-gray-300">• Socket.io ile gerçek zamanlı iletişim</p>
+                            </>
+                          )}
+                          {activeFlow === 1 && (
+                            <>
+                              <p className="text-gray-300">• Node.js ve Express ile RESTful API geliştirme</p>
+                              <p className="text-gray-300">• MongoDB ile NoSQL veritabanı tasarımı</p>
+                              <p className="text-gray-300">• JWT ile güvenli authentication sistemi</p>
+                              <p className="text-gray-300">• Middleware ile request/response işleme</p>
+                            </>
+                          )}
+                          {activeFlow === 2 && (
+                            <>
+                              <p className="text-gray-300">• GitHub Actions ile CI/CD pipeline kurulumu</p>
+                              <p className="text-gray-300">• Docker ile containerization</p>
+                              <p className="text-gray-300">• AWS ile cloud deployment</p>
+                              <p className="text-gray-300">• Performance monitoring ve analytics</p>
+                            </>
+                          )}
                         </>
                       )}
                     </div>
@@ -520,6 +673,10 @@ export default function ProjectDetail() {
               { icon: Shield, title: "Güvenlik & Şifreleme", description: "End-to-end şifreleme, JWT authentication ve güvenli API endpoints" },
               { icon: Zap, title: "Real-time Communication", description: "Socket.io ile gerçek zamanlı mesajlaşma ve bildirim sistemi" },
               { icon: Award, title: "Scalable Architecture", description: "MongoDB ile ölçeklenebilir veritabanı ve mikroservis mimarisi" }
+            ] : project?.slug === 'isaret-dili-ai-uygulamasi' ? [
+              { icon: Brain, title: "AI-Powered Recognition", description: "TensorFlow.js ile %95 doğruluk oranında işaret dili tanıma" },
+              { icon: Eye, title: "Real-time Processing", description: "OpenCV ile gerçek zamanlı video işleme ve anlık çeviri" },
+              { icon: Volume2, title: "Accessibility First", description: "Erişilebilirlik odaklı tasarım ve ses sentezi özellikleri" }
             ] : [
               { icon: Zap, title: "Hızlı Performans", description: "Optimize edilmiş kod yapısı ile yıldırım hızında çalışma" },
               { icon: Shield, title: "Güvenli", description: "End-to-end şifreleme ile verileriniz güvende" },
@@ -633,25 +790,31 @@ export default function ProjectDetail() {
           <h2 className="text-4xl font-bold text-white mb-6">
             {project?.slug === 'saglik-takip-platformu' 
               ? 'Teknik Mükemmellik ve İnovasyon' 
+              : project?.slug === 'isaret-dili-ai-uygulamasi'
+              ? 'Yapay Zeka ile Erişilebilir İletişim'
               : 'Projeyi Keşfetmeye Hazır mısın?'
             }
           </h2>
           <p className="text-gray-400 text-lg mb-8">
             {project?.slug === 'saglik-takip-platformu'
               ? 'Modern teknolojilerle geliştirilmiş, ölçeklenebilir ve güvenli bir platform'
+              : project?.slug === 'isaret-dili-ai-uygulamasi'
+              ? 'AI teknolojisi ile işitme engelli bireylerin iletişimini kolaylaştıran devrim niteliğinde uygulama'
               : 'Modern teknolojilerle geliştirilmiş bu uygulamayı deneyimleyin'
             }
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className={`px-8 py-4 bg-gradient-to-r ${project.color} text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-              {project?.slug === 'saglik-takip-platformu' ? 'GitHub Repo' : 'Demo İzle'}
+              {project?.slug === 'saglik-takip-platformu' ? 'GitHub Repo' : 
+               project?.slug === 'isaret-dili-ai-uygulamasi' ? 'AI Demo İzle' : 'Demo İzle'}
             </button>
             <button className="px-8 py-4 bg-slate-800 text-white rounded-xl font-semibold hover:bg-slate-700 transition-all duration-300 border border-slate-700">
-              {project?.slug === 'saglik-takip-platformu' ? 'Teknik Dokümantasyon' : 'Kaynak Kod'}
+              {project?.slug === 'saglik-takip-platformu' ? 'Teknik Dokümantasyon' : 
+               project?.slug === 'isaret-dili-ai-uygulamasi' ? 'AI Model Detayları' : 'Kaynak Kod'}
             </button>
-          </div>
         </div>
-      </section>
+      </div>
+    </section>
     </div>
   );
 }

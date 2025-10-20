@@ -1,4 +1,4 @@
-import { Smartphone, Globe, ShoppingCart, Heart, Users, Calendar } from 'lucide-react';
+import { Smartphone, Globe, ShoppingCart, Heart, Users, Calendar, Eye, Mic, Brain } from 'lucide-react';
 
 export type Project = {
   icon: any;
@@ -82,5 +82,25 @@ export const projects: Project[] = [
       'Etkinlik organizasyonu, bilet satışı ve katılımcı yönetimi için kapsamlı çözüm.',
     technologies: ['Flutter', 'Node.js', 'Stripe'],
     color: 'from-yellow-500 to-amber-500',
+  },
+  {
+    icon: Eye,
+    slug: 'isaret-dili-ai-uygulamasi',
+    title: 'SignAI - İşaret Dili AI Çevirici',
+    description:
+      'Yapay zeka ile işaret dilini gerçek zamanlı olarak sese dönüştüren mobil uygulama.',
+    technologies: ['React Native', 'TensorFlow.js', 'OpenCV', 'Python', 'Firebase'],
+    color: 'from-indigo-500 to-purple-500',
+    details: {
+      longDescription:
+        'SignAI, işitme engelli bireylerin iletişimini kolaylaştıran devrim niteliğinde bir uygulama. Gelişmiş yapay zeka algoritmaları ile işaret dilini gerçek zamanlı olarak tanıyor ve sese dönüştürüyor. Computer vision, machine learning ve natural language processing teknolojilerini bir araya getirerek erişilebilir bir iletişim platformu sunuyor.',
+      images: [
+        'Kamera görüntüsü - İşaret dili tanıma',
+        'AI işleme - Gerçek zamanlı analiz',
+        'Ses çıkışı - Metin ve ses dönüşümü',
+        'Eğitim modu - İşaret dili öğrenme',
+        'Ayarlar - Kişiselleştirme seçenekleri'
+      ]
+    },
   },
 ];
