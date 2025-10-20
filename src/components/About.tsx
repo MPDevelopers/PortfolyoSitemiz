@@ -13,7 +13,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20 bg-white">
+    <section id="about" className="py-20" style={{ backgroundColor: '#0f172a' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={ref}
@@ -22,7 +22,7 @@ export default function About() {
           }`}
         >
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-dark-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Hakkımızda
             </h2>
             <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
@@ -30,13 +30,13 @@ export default function About() {
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <p className="text-lg text-dark-700 leading-relaxed">
+              <p className="text-lg text-gray-300 leading-relaxed">
                 Mobil ve web teknolojilerinde uzman, kullanıcı deneyimine önem
                 veren geliştiricileriz. Her projede, en son teknolojileri
                 kullanarak performans odaklı ve ölçeklenebilir çözümler
                 sunuyoruz.
               </p>
-              <p className="text-lg text-dark-700 leading-relaxed">
+              <p className="text-lg text-gray-300 leading-relaxed">
                 Müşterilerimizin vizyonunu gerçeğe dönüştürmek için yaratıcı
                 düşünüyor, detaylara özen gösteriyor ve sürekli kendimizi
                 geliştiriyoruz. Amacımız, dijital dünyada fark yaratan ürünler
@@ -46,8 +46,8 @@ export default function About() {
               <div className="flex items-center space-x-4 pt-4">
                 <Zap className="w-12 h-12 text-primary-600" />
                 <div>
-                  <p className="text-2xl font-bold text-dark-900">50+</p>
-                  <p className="text-dark-600">Tamamlanan Proje</p>
+                  <p className="text-2xl font-bold text-white">50+</p>
+                  <p className="text-gray-400">Tamamlanan Proje</p>
                 </div>
               </div>
             </div>
@@ -56,13 +56,13 @@ export default function About() {
               {expertiseAreas.map((area, index) => (
                 <div
                   key={area.name}
-                  className="bg-dark-50 p-6 rounded-xl hover:bg-white hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
+                  className="bg-slate-800/50 p-6 rounded-xl hover:bg-slate-700/50 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-slate-700"
                   style={{
                     animationDelay: `${index * 0.1}s`,
                   }}
                 >
                   <area.icon className={`w-12 h-12 ${area.color} mb-4`} />
-                  <h3 className="font-semibold text-dark-900">{area.name}</h3>
+                  <h3 className="font-semibold text-white">{area.name}</h3>
                 </div>
               ))}
             </div>

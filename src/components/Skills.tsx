@@ -31,7 +31,7 @@ export default function Skills() {
   }, [isVisible]);
 
   return (
-    <section id="skills" className="py-20 bg-white">
+    <section id="skills" className="py-20" style={{ backgroundColor: '#0f172a' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={ref}
@@ -40,11 +40,11 @@ export default function Skills() {
           }`}
         >
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-dark-900 mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Yeteneklerimiz
             </h2>
             <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
-            <p className="text-lg text-dark-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               Uzman olduğumuz teknolojiler ve araçlar
             </p>
           </div>
@@ -53,14 +53,14 @@ export default function Skills() {
             {skills.map((skill, index) => (
               <div key={skill.name} className="space-y-2">
                 <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold text-dark-900">
+                  <span className="text-lg font-semibold text-white">
                     {skill.name}
                   </span>
                   <span className="text-lg font-bold text-primary-600">
                     {animatedLevels[index] || 0}%
                   </span>
                 </div>
-                <div className="w-full bg-dark-200 rounded-full h-4 overflow-hidden">
+                <div className="w-full bg-slate-700 rounded-full h-4 overflow-hidden">
                   <div
                     className={`h-full ${skill.color} rounded-full transition-all duration-1000 ease-out flex items-center justify-end pr-2`}
                     style={{
@@ -76,17 +76,17 @@ export default function Skills() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mt-16">
-            <div className="text-center p-6 bg-dark-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+            <div className="text-center p-6 bg-slate-800/50 rounded-xl hover:bg-slate-700/50 hover:shadow-lg transition-all duration-300 border border-slate-700">
               <div className="text-4xl font-bold text-primary-600 mb-2">5+</div>
-              <div className="text-dark-700">Yıllık Deneyim</div>
+              <div className="text-gray-300">Yıllık Deneyim</div>
             </div>
-            <div className="text-center p-6 bg-dark-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+            <div className="text-center p-6 bg-slate-800/50 rounded-xl hover:bg-slate-700/50 hover:shadow-lg transition-all duration-300 border border-slate-700">
               <div className="text-4xl font-bold text-primary-600 mb-2">50+</div>
-              <div className="text-dark-700">Tamamlanan Proje</div>
+              <div className="text-gray-300">Tamamlanan Proje</div>
             </div>
-            <div className="text-center p-6 bg-dark-50 rounded-xl hover:bg-white hover:shadow-lg transition-all duration-300">
+            <div className="text-center p-6 bg-slate-800/50 rounded-xl hover:bg-slate-700/50 hover:shadow-lg transition-all duration-300 border border-slate-700">
               <div className="text-4xl font-bold text-primary-600 mb-2">30+</div>
-              <div className="text-dark-700">Mutlu Müşteri</div>
+              <div className="text-gray-300">Mutlu Müşteri</div>
             </div>
           </div>
         </div>

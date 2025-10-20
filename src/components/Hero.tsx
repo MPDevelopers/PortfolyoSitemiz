@@ -19,8 +19,8 @@ export default function Hero() {
       <div className="absolute inset-0 z-0">
         <LiquidEther
           mouseForce={15}
-          cursorSize={80}
-          resolution={0.1}
+          cursorSize={50}
+          resolution={0.2}
           iterationsPoisson={16}
           iterationsViscous={16}
           BFECC={false}

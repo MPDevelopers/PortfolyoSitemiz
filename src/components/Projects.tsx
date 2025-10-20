@@ -51,7 +51,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-dark-50">
+    <section id="projects" className="py-20" style={{ backgroundColor: '#0f172a' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={ref}
@@ -78,11 +78,11 @@ export default function Projects() {
                 />
               </span>
             </h1>
-            <h2 className="text-4xl md:text-5xl font-bold text-dark-900 mb-4 mt-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 mt-4">
               Projelerimiz
             </h2>
             <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
-            <p className="text-lg text-dark-600 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               Müşterilerimiz için geliştirdiğimiz başarılı projelerden bazıları
             </p>
           </div>
@@ -91,7 +91,7 @@ export default function Projects() {
             {projects.map((project, index) => (
               <div
                 key={index}
-                className="bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group"
+                className="bg-slate-800/50 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group border border-slate-700"
                 style={{
                   animationDelay: `${index * 0.1}s`,
                 }}
@@ -103,11 +103,11 @@ export default function Projects() {
                     <project.icon className="w-8 h-8 text-white" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-dark-900 mb-3 group-hover:text-primary-600 transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary-400 transition-colors">
                     {project.title}
                   </h3>
 
-                  <p className="text-dark-600 mb-4 leading-relaxed">
+                  <p className="text-gray-300 mb-4 leading-relaxed">
                     {project.description}
                   </p>
 
@@ -115,14 +115,14 @@ export default function Projects() {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-dark-100 text-dark-700 text-sm rounded-full"
+                        className="px-3 py-1 bg-slate-700 text-gray-300 text-sm rounded-full"
                       >
                         {tech}
                       </span>
                     ))}
                   </div>
 
-                  <button className="flex items-center space-x-2 text-primary-600 hover:text-primary-700 font-semibold group-hover:translate-x-2 transition-transform">
+                  <button className="flex items-center space-x-2 text-primary-400 hover:text-primary-300 font-semibold group-hover:translate-x-2 transition-transform">
                     <span>Detayları Gör</span>
                     <ExternalLink className="w-4 h-4" />
                   </button>
