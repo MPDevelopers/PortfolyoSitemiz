@@ -1,21 +1,68 @@
 import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import { useState, useEffect } from 'react';
-import { ArrowLeft, Play, Download, Star, Users, Zap, Shield, Smartphone } from 'lucide-react';
+import { ArrowLeft, Play, Download, Star, Users, Zap, Shield, Smartphone, MessageCircle, Calendar, Heart, Award, Clock, CheckCircle } from 'lucide-react';
 
 export default function ProjectDetail() {
   const { slug } = useParams();
   const project = projects.find((p) => p.slug === slug);
   const [activeScreen, setActiveScreen] = useState(0);
+  const [activeFlow, setActiveFlow] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
     const interval = setInterval(() => {
       setActiveScreen((prev) => (prev + 1) % 3);
-    }, 3000);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
+
+  const handleSwipe = (direction: 'left' | 'right') => {
+    if (isTransitioning) return;
+    
+    setIsTransitioning(true);
+    
+    if (direction === 'left') {
+      setActiveFlow((prev) => (prev + 1) % 3);
+    } else {
+      setActiveFlow((prev) => (prev - 1 + 3) % 3);
+    }
+    
+    setTimeout(() => {
+      setIsTransitioning(false);
+    }, 500);
+  };
+
+  // Touch handling for mobile devices
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e: React.TouchEvent) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+
+    if (isLeftSwipe) {
+      handleSwipe('left');
+    } else if (isRightSwipe) {
+      handleSwipe('right');
+    }
+  };
 
   if (!project) {
     return (
@@ -30,12 +77,99 @@ export default function ProjectDetail() {
 
   const Icon = project.icon;
 
-  // Mock phone screens for demonstration
-  const phoneScreens = [
-    { title: "Ana Ekran", description: "Modern ve kullanıcı dostu ana sayfa tasarımı" },
-    { title: "Ürün Detay", description: "Detaylı ürün bilgileri ve görsel galeri" },
-    { title: "Sepet", description: "Kolay sipariş yönetimi ve ödeme süreci" }
+  // MindConnect development workflow screens
+  const phoneFlows = project?.slug === 'saglik-takip-platformu' ? [
+    // Flow 1: Frontend Development
+    [
+      { 
+        title: "UI/UX Tasarım", 
+        description: "React Native ile modern ve kullanıcı dostu arayüz tasarımı",
+        icon: "🎨",
+        color: "from-blue-500 to-cyan-500",
+        bgPattern: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
+        tech: "React Native, TypeScript, Styled Components"
+      },
+      { 
+        title: "State Management", 
+        description: "Redux Toolkit ile global state yönetimi ve veri akışı",
+        icon: "🔄",
+        color: "from-green-500 to-emerald-500",
+        bgPattern: "bg-gradient-to-br from-green-500/20 to-emerald-500/20",
+        tech: "Redux Toolkit, Context API, Async Thunk"
+      },
+      { 
+        title: "Real-time Chat", 
+        description: "Socket.io ile gerçek zamanlı mesajlaşma sistemi",
+        icon: "💬",
+        color: "from-purple-500 to-pink-500",
+        bgPattern: "bg-gradient-to-br from-purple-500/20 to-pink-500/20",
+        tech: "Socket.io, WebSocket, Event Handling"
+      }
+    ],
+    // Flow 2: Backend Development
+    [
+      { 
+        title: "API Development", 
+        description: "Node.js ve Express ile RESTful API geliştirme",
+        icon: "⚙️",
+        color: "from-indigo-500 to-blue-500",
+        bgPattern: "bg-gradient-to-br from-indigo-500/20 to-blue-500/20",
+        tech: "Node.js, Express, JWT, Middleware"
+      },
+      { 
+        title: "Database Design", 
+        description: "MongoDB ile ölçeklenebilir veritabanı mimarisi",
+        icon: "🗄️",
+        color: "from-emerald-500 to-teal-500",
+        bgPattern: "bg-gradient-to-br from-emerald-500/20 to-teal-500/20",
+        tech: "MongoDB, Mongoose, Indexing, Aggregation"
+      },
+      { 
+        title: "Authentication", 
+        description: "Güvenli kullanıcı kimlik doğrulama ve yetkilendirme",
+        icon: "🔐",
+        color: "from-rose-500 to-pink-500",
+        bgPattern: "bg-gradient-to-br from-rose-500/20 to-pink-500/20",
+        tech: "JWT, bcrypt, OAuth, Role-based Access"
+      }
+    ],
+    // Flow 3: DevOps & Deployment
+    [
+      { 
+        title: "CI/CD Pipeline", 
+        description: "GitHub Actions ile otomatik test ve deployment",
+        icon: "🚀",
+        color: "from-amber-500 to-orange-500",
+        bgPattern: "bg-gradient-to-br from-amber-500/20 to-orange-500/20",
+        tech: "GitHub Actions, Docker, AWS, Heroku"
+      },
+      { 
+        title: "Performance Optimization", 
+        description: "Uygulama performansı ve hız optimizasyonu",
+        icon: "⚡",
+        color: "from-red-500 to-rose-500",
+        bgPattern: "bg-gradient-to-br from-red-500/20 to-rose-500/20",
+        tech: "Code Splitting, Lazy Loading, Caching"
+      },
+      { 
+        title: "Monitoring & Analytics", 
+        description: "Uygulama izleme ve kullanıcı analitikleri",
+        icon: "📊",
+        color: "from-violet-500 to-purple-500",
+        bgPattern: "bg-gradient-to-br from-violet-500/20 to-purple-500/20",
+        tech: "Firebase Analytics, Sentry, Performance Monitoring"
+      }
+    ]
+  ] : [
+    [
+      { title: "Ana Ekran", description: "Modern ve kullanıcı dostu ana sayfa tasarımı" },
+      { title: "Ürün Detay", description: "Detaylı ürün bilgileri ve görsel galeri" },
+      { title: "Sepet", description: "Kolay sipariş yönetimi ve ödeme süreci" }
+    ]
   ];
+
+  const currentFlow = phoneFlows[activeFlow] || phoneFlows[0];
+  const phoneScreens = currentFlow;
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#0f172a' }}>
@@ -55,8 +189,8 @@ export default function ProjectDetail() {
               Ana sayfaya dön
             </Link>
 
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left Content */}
+            {/* Centered Content */}
+            <div className="max-w-4xl mx-auto text-center">
               <div className="space-y-8">
                 <div className="space-y-6">
                   <div className={`inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r ${project.color} text-white text-sm font-medium`}>
@@ -68,38 +202,38 @@ export default function ProjectDetail() {
                     {project.title}
                   </h1>
                   
-                  <p className="text-xl text-gray-300 leading-relaxed">
+                  <p className="text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
                     {project.details?.longDescription || project.description}
                   </p>
                 </div>
 
                 {/* Stats */}
-                <div className="grid grid-cols-3 gap-6">
+                <div className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white">4.8</div>
+                    <div className="text-3xl font-bold text-white">4.9</div>
                     <div className="text-sm text-gray-400 flex items-center justify-center">
                       <Star className="w-4 h-4 text-yellow-400 mr-1" />
                       App Store
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white">50K+</div>
+                    <div className="text-3xl font-bold text-white">25K+</div>
                     <div className="text-sm text-gray-400 flex items-center justify-center">
                       <Users className="w-4 h-4 text-blue-400 mr-1" />
-                      Kullanıcı
+                      Aktif Kullanıcı
                     </div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-white">99.9%</div>
+                    <div className="text-3xl font-bold text-white">500+</div>
                     <div className="text-sm text-gray-400 flex items-center justify-center">
-                      <Zap className="w-4 h-4 text-green-400 mr-1" />
-                      Uptime
+                      <Heart className="w-4 h-4 text-pink-400 mr-1" />
+                      Uzman Psikolog
                     </div>
                   </div>
                 </div>
 
                 {/* Action Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <button className={`flex items-center justify-center px-8 py-4 bg-gradient-to-r ${project.color} text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
                     <Play className="w-5 h-5 mr-2" />
                     Demo İzle
@@ -110,15 +244,64 @@ export default function ProjectDetail() {
                   </button>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              {/* Right Content - Phone Mockup */}
+      {/* App Screens Section */}
+      {project?.slug === 'saglik-takip-platformu' && (
+        <section className="py-20 bg-slate-900/30">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-4">Uygulama Ekranları</h2>
+              <p className="text-gray-400 text-lg">Geliştirme sürecindeki farklı aşamalar ve teknik detaylar</p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left - Phone Screens */}
               <div className="relative">
                 <div className="relative mx-auto w-80 h-[600px]">
+                  {/* Flow Navigation */}
+                  <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-10">
+                    <div className="flex items-center space-x-4 bg-slate-800/80 backdrop-blur-sm rounded-full px-4 py-2 border border-slate-700">
+                      <button 
+                        onClick={() => handleSwipe('right')}
+                        className="p-2 hover:bg-slate-700 rounded-full transition-colors duration-200"
+                        disabled={isTransitioning}
+                      >
+                        <ArrowLeft className="w-4 h-4 text-white" />
+                      </button>
+                      <div className="flex space-x-2">
+                        {phoneFlows.map((_, index) => (
+                          <div
+                            key={index}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                              index === activeFlow ? 'bg-white' : 'bg-gray-600'
+                            }`}
+                          />
+                        ))}
+                      </div>
+                      <button 
+                        onClick={() => handleSwipe('left')}
+                        className="p-2 hover:bg-slate-700 rounded-full transition-colors duration-200"
+                        disabled={isTransitioning}
+                      >
+                        <ArrowLeft className="w-4 h-4 text-white rotate-180" />
+                      </button>
+                    </div>
+                  </div>
+
                   {/* Phone Frame */}
                   <div className="absolute inset-0 bg-gradient-to-b from-slate-800 to-slate-900 rounded-[3rem] p-2 shadow-2xl">
-                    <div className="w-full h-full bg-black rounded-[2.5rem] overflow-hidden relative">
-                      {/* Screen Content */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-800">
+                    <div 
+                      className="w-full h-full bg-black rounded-[2.5rem] overflow-hidden relative cursor-pointer"
+                      onTouchStart={onTouchStart}
+                      onTouchMove={onTouchMove}
+                      onTouchEnd={onTouchEnd}
+                    >
+                      {/* Screen Content - Placeholder for actual screenshots */}
+                      <div className={`absolute inset-0 transition-all duration-500 ${phoneScreens[activeScreen]?.bgPattern || 'bg-gradient-to-br from-slate-900 to-slate-800'}`}>
                         <div className="p-6 h-full flex flex-col">
                           {/* Status Bar */}
                           <div className="flex justify-between items-center text-white text-xs mb-6">
@@ -130,15 +313,23 @@ export default function ProjectDetail() {
                             </div>
                           </div>
 
-                          {/* App Content */}
+                          {/* App Content Placeholder */}
                           <div className="flex-1 flex flex-col items-center justify-center space-y-6">
-                            <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${project.color} flex items-center justify-center`}>
-                              <Icon className="w-10 h-10 text-white" />
+                            <div className={`w-20 h-20 rounded-2xl bg-gradient-to-r ${phoneScreens[activeScreen]?.color || project.color} flex items-center justify-center transform transition-all duration-500 ${isTransitioning ? 'scale-75 opacity-50' : 'scale-100 opacity-100'}`}>
+                              {project?.slug === 'saglik-takip-platformu' ? (
+                                <span className="text-3xl">{phoneScreens[activeScreen]?.icon}</span>
+                              ) : (
+                                <Icon className="w-10 h-10 text-white" />
+                              )}
                             </div>
                             
                             <div className="text-center">
-                              <h3 className="text-white font-bold text-lg mb-2">{phoneScreens[activeScreen].title}</h3>
-                              <p className="text-gray-400 text-sm">{phoneScreens[activeScreen].description}</p>
+                              <h3 className={`text-white font-bold text-lg mb-2 transition-all duration-500 ${isTransitioning ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'}`}>
+                                {phoneScreens[activeScreen].title}
+                              </h3>
+                              <p className={`text-gray-400 text-sm px-4 transition-all duration-500 delay-100 ${isTransitioning ? 'translate-y-4 opacity-0' : 'translate-y-0 opacity-100'}`}>
+                                {phoneScreens[activeScreen].description}
+                              </p>
                             </div>
 
                             {/* Feature Indicators */}
@@ -153,6 +344,15 @@ export default function ProjectDetail() {
                               ))}
                             </div>
                           </div>
+
+                          {/* Swipe Indicators */}
+                          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
+                            <div className="flex items-center space-x-2 text-white/60 text-xs">
+                              <ArrowLeft className="w-3 h-3" />
+                              <span>Kaydır</span>
+                              <ArrowLeft className="w-3 h-3 rotate-180" />
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -162,26 +362,169 @@ export default function ProjectDetail() {
                   <div className="absolute -top-4 -right-4 w-8 h-8 bg-green-500 rounded-full animate-bounce"></div>
                   <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-500 rounded-full animate-pulse"></div>
                 </div>
+
+                {/* Flow Labels */}
+                <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2">
+                  <div className="text-center">
+                    <p className="text-gray-400 text-sm font-semibold">
+                      {activeFlow === 0 && "Frontend Development"}
+                      {activeFlow === 1 && "Backend Development"}
+                      {activeFlow === 2 && "DevOps & Deployment"}
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Right - Detailed Content */}
+              <div className="space-y-8">
+                <div className="space-y-6">
+                  <div className={`inline-flex items-center px-4 py-2 rounded-full bg-gradient-to-r ${phoneScreens[activeScreen]?.color || project.color} text-white text-sm font-medium`}>
+                    <span className="text-lg mr-2">{phoneScreens[activeScreen]?.icon}</span>
+                    {phoneScreens[activeScreen]?.title}
+                  </div>
+                  
+                  <h3 className="text-3xl lg:text-4xl font-bold text-white leading-tight">
+                    {phoneScreens[activeScreen]?.title}
+                  </h3>
+                  
+                  <p className="text-lg text-gray-300 leading-relaxed">
+                    {phoneScreens[activeScreen]?.description}
+                  </p>
+
+                  {phoneScreens[activeScreen]?.tech && (
+                    <div className="space-y-4">
+                      <h4 className="text-xl font-semibold text-white">Kullanılan Teknolojiler:</h4>
+                      <div className="flex flex-wrap gap-3">
+                        {phoneScreens[activeScreen].tech.split(', ').map((tech, index) => (
+                          <span key={index} className="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-cyan-400 font-mono text-sm">
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  <div className="space-y-4">
+                    <h4 className="text-xl font-semibold text-white">Teknik Detaylar:</h4>
+                    <div className="space-y-3">
+                      {activeFlow === 0 && (
+                        <>
+                          <p className="text-gray-300">• React Native ile cross-platform mobil uygulama geliştirme</p>
+                          <p className="text-gray-300">• TypeScript ile tip güvenli kod yazımı</p>
+                          <p className="text-gray-300">• Redux Toolkit ile merkezi state yönetimi</p>
+                          <p className="text-gray-300">• Socket.io ile gerçek zamanlı iletişim</p>
+                        </>
+                      )}
+                      {activeFlow === 1 && (
+                        <>
+                          <p className="text-gray-300">• Node.js ve Express ile RESTful API geliştirme</p>
+                          <p className="text-gray-300">• MongoDB ile NoSQL veritabanı tasarımı</p>
+                          <p className="text-gray-300">• JWT ile güvenli authentication sistemi</p>
+                          <p className="text-gray-300">• Middleware ile request/response işleme</p>
+                        </>
+                      )}
+                      {activeFlow === 2 && (
+                        <>
+                          <p className="text-gray-300">• GitHub Actions ile CI/CD pipeline kurulumu</p>
+                          <p className="text-gray-300">• Docker ile containerization</p>
+                          <p className="text-gray-300">• AWS ile cloud deployment</p>
+                          <p className="text-gray-300">• Performance monitoring ve analytics</p>
+                        </>
+                      )}
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
+
+      {/* Development Process Section */}
+      {project?.slug === 'saglik-takip-platformu' && (
+        <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-4">Geliştirme Süreci</h2>
+              <p className="text-gray-400 text-lg">MindConnect'in teknik geliştirme aşamaları ve mimarisi</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  step: "01",
+                  icon: MessageCircle,
+                  title: "Proje Planlama",
+                  description: "Agile metodoloji ile sprint planlaması, user story'ler ve teknik gereksinimler",
+                  color: "from-blue-500 to-cyan-500",
+                  tech: "Jira, Confluence, Figma"
+                },
+                {
+                  step: "02", 
+                  icon: Users,
+                  title: "Full-Stack Development",
+                  description: "React Native frontend ve Node.js backend ile tam stack geliştirme",
+                  color: "from-green-500 to-emerald-500",
+                  tech: "React Native, Node.js, MongoDB"
+                },
+                {
+                  step: "03",
+                  icon: Heart,
+                  title: "Test & Deployment",
+                  description: "Unit testler, integration testler ve CI/CD pipeline ile otomatik deployment",
+                  color: "from-pink-500 to-rose-500",
+                  tech: "Jest, GitHub Actions, AWS"
+                }
+              ].map((step, index) => (
+                <div key={index} className="group relative">
+                  <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 hover:border-slate-600 transition-all duration-300 hover:scale-105 relative overflow-hidden">
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-slate-700 to-transparent rounded-bl-2xl"></div>
+                    <div className="relative z-10">
+                      <div className="flex items-center justify-between mb-6">
+                        <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${step.color} group-hover:scale-110 transition-transform duration-300`}>
+                          <step.icon className="w-6 h-6 text-white" />
+                        </div>
+                        <span className="text-4xl font-bold text-gray-600">{step.step}</span>
+                      </div>
+                      <h3 className="text-xl font-semibold text-white mb-3">{step.title}</h3>
+                      <p className="text-gray-400 leading-relaxed mb-4">{step.description}</p>
+                      <div className="px-3 py-1 bg-slate-700/50 rounded-full inline-block">
+                        <p className="text-xs text-cyan-400 font-mono">{step.tech}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Features Section */}
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Özellikler</h2>
-            <p className="text-gray-400 text-lg">Modern teknolojilerle geliştirilmiş güçlü özellikler</p>
+            <h2 className="text-4xl font-bold text-white mb-4">
+              {project?.slug === 'saglik-takip-platformu' ? 'MindConnect Özellikleri' : 'Özellikler'}
+            </h2>
+            <p className="text-gray-400 text-lg">
+              {project?.slug === 'saglik-takip-platformu' 
+                ? 'Ruh sağlığı alanında devrim yaratan özellikler' 
+                : 'Modern teknolojilerle geliştirilmiş güçlü özellikler'
+              }
+            </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
+            {(project?.slug === 'saglik-takip-platformu' ? [
+              { icon: Shield, title: "Güvenlik & Şifreleme", description: "End-to-end şifreleme, JWT authentication ve güvenli API endpoints" },
+              { icon: Zap, title: "Real-time Communication", description: "Socket.io ile gerçek zamanlı mesajlaşma ve bildirim sistemi" },
+              { icon: Award, title: "Scalable Architecture", description: "MongoDB ile ölçeklenebilir veritabanı ve mikroservis mimarisi" }
+            ] : [
               { icon: Zap, title: "Hızlı Performans", description: "Optimize edilmiş kod yapısı ile yıldırım hızında çalışma" },
               { icon: Shield, title: "Güvenli", description: "End-to-end şifreleme ile verileriniz güvende" },
               { icon: Users, title: "Sosyal", description: "Arkadaşlarınızla bağlantı kurun ve deneyimlerinizi paylaşın" }
-            ].map((feature, index) => (
+            ]).map((feature, index) => (
               <div key={index} className="group">
                 <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 hover:border-slate-600 transition-all duration-300 hover:scale-105">
                   <div className={`inline-flex p-3 rounded-xl bg-gradient-to-r ${project.color} mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -216,20 +559,95 @@ export default function ProjectDetail() {
         </div>
       </section>
 
+      {/* Success Stories Section - MindConnect */}
+      {project?.slug === 'saglik-takip-platformu' && (
+        <section className="py-20 bg-gradient-to-r from-pink-500/10 to-rose-500/10">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold text-white mb-4">Başarı Hikayeleri</h2>
+              <p className="text-gray-400 text-lg">MindConnect ile hayatları değişen kullanıcılarımız</p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {[
+                {
+                  name: "Ayşe K.",
+                  age: "28",
+                  story: "Anksiyete ile mücadele ederken MindConnect sayesinde doğru psikologu buldum. 3 ayda büyük ilerleme kaydettim.",
+                  rating: 5,
+                  improvement: "Anksiyete seviyesi %70 azaldı"
+                },
+                {
+                  name: "Mehmet S.",
+                  age: "35", 
+                  story: "İş stresi ve aile problemleri için destek arıyordum. 7/24 erişim sayesinde ihtiyacım olduğunda hep yanımda oldu.",
+                  rating: 5,
+                  improvement: "Stres seviyesi %60 azaldı"
+                },
+                {
+                  name: "Zeynep A.",
+                  age: "24",
+                  story: "Üniversite döneminde depresyon yaşıyordum. Güvenli ortamda konuşabilmek beni çok rahatlattı.",
+                  rating: 5,
+                  improvement: "Ruh hali %80 iyileşti"
+                }
+              ].map((user, index) => (
+                <div key={index} className="group">
+                  <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 hover:border-pink-500/50 transition-all duration-300 hover:scale-105">
+                    <div className="flex items-center mb-6">
+                      <div className="w-12 h-12 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                        {user.name.charAt(0)}
+                      </div>
+                      <div>
+                        <h4 className="text-white font-semibold">{user.name}</h4>
+                        <p className="text-gray-400 text-sm">{user.age} yaşında</p>
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-300 mb-4 leading-relaxed">"{user.story}"</p>
+                    
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center">
+                        {[...Array(user.rating)].map((_, i) => (
+                          <Star key={i} className="w-4 h-4 text-yellow-400 fill-current" />
+                        ))}
+                      </div>
+                      <div className="text-right">
+                        <p className="text-green-400 text-sm font-semibold">{user.improvement}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* CTA Section */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className={`inline-block p-4 rounded-2xl bg-gradient-to-r ${project.color} mb-8`}>
             <Icon className="w-12 h-12 text-white" />
           </div>
-          <h2 className="text-4xl font-bold text-white mb-6">Projeyi Keşfetmeye Hazır mısın?</h2>
-          <p className="text-gray-400 text-lg mb-8">Modern teknolojilerle geliştirilmiş bu uygulamayı deneyimleyin</p>
+          <h2 className="text-4xl font-bold text-white mb-6">
+            {project?.slug === 'saglik-takip-platformu' 
+              ? 'Teknik Mükemmellik ve İnovasyon' 
+              : 'Projeyi Keşfetmeye Hazır mısın?'
+            }
+          </h2>
+          <p className="text-gray-400 text-lg mb-8">
+            {project?.slug === 'saglik-takip-platformu'
+              ? 'Modern teknolojilerle geliştirilmiş, ölçeklenebilir ve güvenli bir platform'
+              : 'Modern teknolojilerle geliştirilmiş bu uygulamayı deneyimleyin'
+            }
+          </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className={`px-8 py-4 bg-gradient-to-r ${project.color} text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}>
-              Demo İzle
+              {project?.slug === 'saglik-takip-platformu' ? 'GitHub Repo' : 'Demo İzle'}
             </button>
             <button className="px-8 py-4 bg-slate-800 text-white rounded-xl font-semibold hover:bg-slate-700 transition-all duration-300 border border-slate-700">
-              Kaynak Kod
+              {project?.slug === 'saglik-takip-platformu' ? 'Teknik Dokümantasyon' : 'Kaynak Kod'}
             </button>
           </div>
         </div>

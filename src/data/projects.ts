@@ -30,11 +30,22 @@ export const projects: Project[] = [
   {
     icon: Heart,
     slug: 'saglik-takip-platformu',
-    title: 'Sağlık Takip Platformu',
+    title: 'MindConnect - Psikolog Buluşturma Platformu',
     description:
-      'Kişisel sağlık verilerini takip eden, doktorlarla iletişim kurmayı sağlayan kapsamlı platform.',
-    technologies: ['React Native', 'Node.js', 'MongoDB'],
+      'Psikologlar ile kullanıcıları buluşturan, güvenli mesajlaşma ile online terapi imkanı sunan mobil platform.',
+    technologies: ['React Native', 'Node.js', 'MongoDB', 'Socket.io', 'Stripe'],
     color: 'from-pink-500 to-rose-500',
+    details: {
+      longDescription:
+        'MindConnect, ruh sağlığı alanında devrim yaratan bir platform. Kullanıcıların ihtiyaçlarına uygun psikologları bulmasını, güvenli bir ortamda mesajlaşarak terapi almasını sağlıyor. Hem Google Play Store hem de Apple App Store\'da yayında olan uygulama, binlerce kullanıcıya ulaşmış durumda.',
+      images: [
+        'Ana ekran - Psikolog arama ve filtreleme',
+        'Psikolog profili - Detaylı bilgiler ve değerlendirmeler',
+        'Mesajlaşma ekranı - Güvenli terapi sohbeti',
+        'Randevu takvimi - Kolay planlama sistemi',
+        'Profil yönetimi - Kişisel terapi geçmişi'
+      ]
+    },
   },
   {
     icon: Globe,
