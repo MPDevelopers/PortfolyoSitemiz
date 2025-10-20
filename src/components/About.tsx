@@ -1,15 +1,36 @@
 import { Code, Smartphone, Database, Palette, Zap } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import SpotlightCard from './SpotlightCard';
 
 export default function About() {
   const { ref, isVisible } = useScrollAnimation();
 
   const expertiseAreas = [
-    { icon: Smartphone, name: 'Flutter', color: 'text-white' },
-    { icon: Smartphone, name: 'React Native', color: 'text-white' },
-    { icon: Database, name: 'Firebase', color: 'text-white' },
-    { icon: Code, name: 'Node.js', color: 'text-white' },
-    { icon: Palette, name: 'UI/UX Design', color: 'text-white' },
+    { 
+      icon: Smartphone, 
+      name: 'Flutter', 
+      color: 'rgba(16, 185, 129, 0.3)'
+    },
+    { 
+      icon: Smartphone, 
+      name: 'React Native', 
+      color: 'rgba(59, 130, 246, 0.3)'
+    },
+    { 
+      icon: Database, 
+      name: 'Firebase', 
+      color: 'rgba(251, 146, 60, 0.3)'
+    },
+    { 
+      icon: Code, 
+      name: 'Node.js', 
+      color: 'rgba(34, 197, 94, 0.3)'
+    },
+    { 
+      icon: Palette, 
+      name: 'UI/UX Design', 
+      color: 'rgba(168, 85, 247, 0.3)'
+    },
   ];
 
   return (
@@ -54,16 +75,14 @@ export default function About() {
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
               {expertiseAreas.map((area, index) => (
-                <div
+                <SpotlightCard
                   key={area.name}
-                  className="bg-slate-800/50 p-6 rounded-xl hover:bg-slate-700/50 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer border border-slate-700"
-                  style={{
-                    animationDelay: `${index * 0.1}s`,
-                  }}
+                  spotlightColor={area.color}
+                  className="text-center flex flex-col justify-center items-center"
                 >
-                  <area.icon className={`w-12 h-12 ${area.color} mb-4`} />
+                  <area.icon className="w-12 h-12 text-white mb-4" />
                   <h3 className="font-semibold text-white">{area.name}</h3>
-                </div>
+                </SpotlightCard>
               ))}
             </div>
           </div>

@@ -1,34 +1,126 @@
-import { useEffect, useState } from 'react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-
-interface Skill {
-  name: string;
-  level: number;
-  color: string;
-}
+import SpotlightCard from './SpotlightCard';
+import { 
+  Globe, 
+  Smartphone, 
+  Server, 
+  Palette, 
+  Database,
+  Code,
+  Zap,
+  Shield,
+  Users,
+  BarChart3
+} from 'lucide-react';
 
 export default function Skills() {
   const { ref, isVisible } = useScrollAnimation();
-  const [animatedLevels, setAnimatedLevels] = useState<number[]>([]);
 
-  const skills: Skill[] = [
-    { name: 'Flutter', level: 95, color: 'bg-white' },
-    { name: 'React Native', level: 90, color: 'bg-white' },
-    { name: 'Firebase', level: 88, color: 'bg-white' },
-    { name: 'Python', level: 85, color: 'bg-white' },
-    { name: 'UI/UX Design', level: 92, color: 'bg-white' },
-  ];
-
-  useEffect(() => {
-    if (isVisible) {
-      const timer = setTimeout(() => {
-        setAnimatedLevels(skills.map((skill) => skill.level));
-      }, 200);
-      return () => clearTimeout(timer);
-    } else {
-      setAnimatedLevels(skills.map(() => 0));
+  const skillCategories = [
+    {
+      title: "Web Geliştirme",
+      icon: Globe,
+      color: "rgba(59, 130, 246, 0.3)",
+      skills: [
+        {
+          name: "Statik Web Siteleri",
+          description: "Kurumsal tanıtım siteleri, kişisel portfolyolar veya landing page'ler. Hızlı, hafif ve SEO uyumlu yapılar (HTML, CSS, React, Next.js, Astro)."
+        },
+        {
+          name: "Dinamik Web Siteleri", 
+          description: "Kullanıcı etkileşimi olan siteler (örneğin üyelik, yorum, içerik yönetimi). React, Vue veya ASP.NET Core tabanlı modern front-end mimariler."
+        },
+        {
+          name: "Veri Tabanı Entegrasyonlu Sistemler",
+          description: "Firestore, MongoDB, SQL veya Firebase Realtime Database ile dinamik veri yönetimi. Admin paneli, CRUD işlemleri, filtreleme ve arama sistemleri."
+        },
+        {
+          name: "E-Ticaret & Online Platformlar",
+          description: "Ürün yönetimi, ödeme entegrasyonları, sepet ve kullanıcı paneli. Stripe, PayPal veya Iyzico gibi sistemlerle ödeme altyapısı."
+        },
+        {
+          name: "CMS ve Blog Sistemleri",
+          description: "İçerik yönetimi kolaylaştırılmış paneller (Sanity, Strapi, Contentful, WordPress headless). SEO dostu, markdown veya rich text destekli içerik yapısı."
+        }
+      ]
+    },
+    {
+      title: "Mobil Uygulama Geliştirme",
+      icon: Smartphone,
+      color: "rgba(16, 185, 129, 0.3)",
+      skills: [
+        {
+          name: "Cross-Platform Uygulamalar",
+          description: "Flutter veya React Native ile tek kod tabanında iOS ve Android desteği. Firebase Auth, Firestore, Push Notification ve Cloud Storage entegrasyonları."
+        },
+        {
+          name: "Native Özellik Entegrasyonları",
+          description: "Kamera, mikrofon, ses kaydı, GPS, Bluetooth ve sensör erişimi. Local database (SQLite, Hive) veya offline kullanım desteği."
+        },
+        {
+          name: "Sosyal veya Mesajlaşma Uygulamaları",
+          description: "Gerçek zamanlı sohbet, bildirim sistemi ve kullanıcı profilleri. Cloud Messaging ve Firestore Realtime Sync altyapısı."
+        },
+        {
+          name: "Kurumsal / İş Yönetim Uygulamaları",
+          description: "Personel takibi, proje yönetimi ve raporlama sistemleri. Admin paneli ile mobil istemci entegrasyonu."
+        }
+      ]
+    },
+    {
+      title: "Backend & API Geliştirme",
+      icon: Server,
+      color: "rgba(168, 85, 247, 0.3)",
+      skills: [
+        {
+          name: "RESTful API Geliştirme",
+          description: "Express.js, Node.js, ASP.NET Core veya Firebase Functions tabanlı API yapıları. JWT kimlik doğrulama, kullanıcı yönetimi ve hata kontrolü."
+        },
+        {
+          name: "Gerçek Zamanlı Veri Sistemleri",
+          description: "WebSocket, Firebase Realtime Database veya Socket.io altyapısı. Canlı mesajlaşma ve dashboard güncellemeleri."
+        },
+        {
+          name: "Entegrasyonlar",
+          description: "Üçüncü parti servislerle bağlantılar (Google API, OpenAI API, ödeme sistemleri, harita servisleri)."
+        }
+      ]
+    },
+    {
+      title: "UI/UX Tasarım",
+      icon: Palette,
+      color: "rgba(245, 101, 101, 0.3)",
+      skills: [
+        {
+          name: "Arayüz Tasarımı",
+          description: "Mobil ve web uygulamaları için kullanıcı dostu arayüzler. Figma veya Adobe XD prototipleriyle etkileşimli mockup tasarımları."
+        },
+        {
+          name: "Kullanıcı Deneyimi (UX) Akışları",
+          description: "Wireframe → prototip → test süreci. Kullanıcı davranışına göre optimize edilmiş deneyim akışları."
+        },
+        {
+          name: "Markalama ve Görsel Kimlik",
+          description: "Logo, renk paleti, tipografi ve ikon seti uyumu. Uygulama teması (light/dark mode) tasarımı."
+        }
+      ]
+    },
+    {
+      title: "Veri Tabanı ve Bulut Çözümleri",
+      icon: Database,
+      color: "rgba(34, 197, 94, 0.3)",
+      skills: [
+        {
+          name: "Veri Tabanı Yönetimi",
+          description: "Firebase, Firestore, Realtime Database, Supabase veya PostgreSQL yönetimi. Cloud Storage ve dosya yükleme sistemleri."
+        },
+        {
+          name: "Güvenlik ve Kimlik Doğrulama",
+          description: "Authentication, authorization ve güvenlik kuralları. Sunucusuz backend (Serverless Functions)."
+        }
+      ]
     }
-  }, [isVisible]);
+  ];
 
   return (
     <section id="skills" className="py-20" style={{ backgroundColor: '#0f172a' }}>
@@ -49,45 +141,53 @@ export default function Skills() {
             </p>
           </div>
 
-          <div className="max-w-3xl mx-auto space-y-8">
-            {skills.map((skill, index) => (
-              <div key={skill.name} className="space-y-2">
-                <div className="flex justify-between items-center">
-                  <span className="text-lg font-semibold text-white">
-                    {skill.name}
-                  </span>
-                  <span className="text-lg font-bold text-white">
-                    {animatedLevels[index] || 0}%
-                  </span>
+          <div className="grid lg:grid-cols-2 gap-8">
+            {skillCategories.map((category, categoryIndex) => (
+              <SpotlightCard 
+                key={category.title}
+                className="flex flex-col"
+                spotlightColor={category.color}
+              >
+                <div className="flex items-center mb-6">
+                  <category.icon className="w-8 h-8 text-white mr-3" />
+                  <h3 className="text-2xl font-bold text-white">{category.title}</h3>
                 </div>
-                <div className="w-full bg-slate-700 rounded-full h-4 overflow-hidden">
-                  <div
-                    className={`h-full ${skill.color} rounded-full transition-all duration-1000 ease-out flex items-center justify-end pr-2`}
-                    style={{
-                      width: `${animatedLevels[index] || 0}%`,
-                      transitionDelay: `${index * 0.1}s`,
-                    }}
-                  >
-                    <div className="w-2 h-2 bg-white rounded-full"></div>
-                  </div>
+                
+                <div className="flex-1 space-y-4">
+                  {category.skills.map((skill, skillIndex) => (
+                    <div key={skillIndex} className="border-l-2 border-white/20 pl-4">
+                      <h4 className="text-lg font-semibold text-white mb-2">
+                        {skill.name}
+                      </h4>
+                      <p className="text-gray-300 text-sm leading-relaxed">
+                        {skill.description}
+                      </p>
+                    </div>
+                  ))}
                 </div>
-              </div>
+              </SpotlightCard>
             ))}
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mt-16">
-            <div className="text-center p-6 bg-slate-800/50 rounded-xl hover:bg-slate-700/50 hover:shadow-lg transition-all duration-300 border border-slate-700">
-              <div className="text-4xl font-bold text-white mb-2">5+</div>
-              <div className="text-gray-300">Yıllık Deneyim</div>
-            </div>
-            <div className="text-center p-6 bg-slate-800/50 rounded-xl hover:bg-slate-700/50 hover:shadow-lg transition-all duration-300 border border-slate-700">
-              <div className="text-4xl font-bold text-white mb-2">50+</div>
-              <div className="text-gray-300">Tamamlanan Proje</div>
-            </div>
-            <div className="text-center p-6 bg-slate-800/50 rounded-xl hover:bg-slate-700/50 hover:shadow-lg transition-all duration-300 border border-slate-700">
-              <div className="text-4xl font-bold text-white mb-2">30+</div>
-              <div className="text-gray-300">Mutlu Müşteri</div>
-            </div>
+            <SpotlightCard spotlightColor="rgba(59, 130, 246, 0.2)">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-white mb-1">5+</div>
+                <div className="text-gray-300 text-sm">Yıllık Deneyim</div>
+              </div>
+            </SpotlightCard>
+            <SpotlightCard spotlightColor="rgba(16, 185, 129, 0.2)">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-white mb-1">50+</div>
+                <div className="text-gray-300 text-sm">Tamamlanan Proje</div>
+              </div>
+            </SpotlightCard>
+            <SpotlightCard spotlightColor="rgba(168, 85, 247, 0.2)">
+              <div className="text-center">
+                <div className="text-2xl font-bold text-white mb-1">30+</div>
+                <div className="text-gray-300 text-sm">Mutlu Müşteri</div>
+              </div>
+            </SpotlightCard>
           </div>
         </div>
       </div>
