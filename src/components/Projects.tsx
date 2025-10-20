@@ -1,4 +1,5 @@
 import { ExternalLink, Smartphone, Globe, ShoppingCart, Heart, Users, Calendar } from 'lucide-react';
+import RotatingText from './RotatingText';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export default function Projects() {
@@ -59,7 +60,25 @@ export default function Projects() {
           }`}
         >
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-dark-900 mb-4">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight flex items-center justify-center gap-4 sm:gap-6 text-white">
+              <span className="text-dark-200">Yaratıcı</span>
+              <span className="inline-flex items-center justify-center bg-violet-600 rounded-xl sm:rounded-2xl px-8 sm:px-10 md:px-14 py-2 sm:py-3 md:py-4">
+                <RotatingText
+                  texts={["Mobil Uygulama", "Web Uygulama", "MPDevelopers"]}
+                  mainClassName="text-white overflow-hidden justify-center"
+                  staggerFrom={"last"}
+                  initial={{ y: "100%", opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: "-120%", opacity: 0 }}
+                  staggerDuration={0.03}
+                  splitLevelClassName="overflow-hidden"
+                  transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                  rotationInterval={2000}
+                  lockWidth
+                />
+              </span>
+            </h1>
+            <h2 className="text-4xl md:text-5xl font-bold text-dark-900 mb-4 mt-4">
               Projelerimiz
             </h2>
             <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>

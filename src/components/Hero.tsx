@@ -1,6 +1,6 @@
 import { ChevronDown } from 'lucide-react';
 import LiquidEther from './LiquidEther';
-import RotatingText from './RotatingText';
+// RotatingText kaldırıldı; Projects bölümüne taşındı
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -37,22 +37,10 @@ export default function Hero() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight flex items-center justify-center gap-4 sm:gap-6 text-white">
-            <span className="text-dark-200">Yaratıcı</span>
-            <span className="inline-flex items-center justify-center bg-violet-600 rounded-xl sm:rounded-2xl px-8 sm:px-10 md:px-14 py-2 sm:py-3 md:py-4">
-              <RotatingText
-                texts={["Mobil Uygulama", "Web Uygulama", "MPDevelopers"]}
-                mainClassName="text-white overflow-hidden justify-center"
-                staggerFrom={"last"}
-                initial={{ y: "100%", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                exit={{ y: "-120%", opacity: 0 }}
-                staggerDuration={0.03}
-                splitLevelClassName="overflow-hidden"
-                transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                rotationInterval={2000}
-                lockWidth
-              />
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+            Mobil ve Web Geliştirmede
+            <span className="block text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-primary-600 mt-2">
+              Geleceği Şekillendiriyoruz
             </span>
           </h1>
 
