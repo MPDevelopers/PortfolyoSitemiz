@@ -1,4 +1,4 @@
-import { Smartphone, Globe, ShoppingCart, Heart, Users, Calendar, Eye, Mic, Brain, Activity } from 'lucide-react';
+import { Smartphone, Globe, ShoppingCart, Heart, Users, Calendar, Eye, Activity } from 'lucide-react';
 
 export type Project = {
   icon: any;
@@ -44,116 +44,150 @@ export const projects: Project[] = [
   {
     icon: Heart,
     slug: 'saglik-takip-platformu',
-    title: 'MindConnect - Psikolog Buluşturma Platformu',
+    title: 'Anlatmam Lazım - Ruh Sağlığı ve Kişisel Gelişim Platformu',
     description:
-      'Psikologlar ile kullanıcıları buluşturan, güvenli mesajlaşma ile online terapi imkanı sunan mobil platform.',
-    technologies: ['React Native', 'Node.js', 'MongoDB', 'Socket.io', 'Stripe'],
+      'Psikolojik destek arayan kişiler ile profesyonel psikologlar arasında güvenli, erişilebilir ve etkili bir iletişim platformu.',
+    technologies: ['React Native', 'Node.js', 'MongoDB', 'Socket.io', 'İyzico'],
     color: 'from-pink-500 to-rose-500',
     details: {
       longDescription:
-        'MindConnect, ruh sağlığı alanında devrim yaratan bir platform. Kullanıcıların ihtiyaçlarına uygun psikologları bulmasını, güvenli bir ortamda mesajlaşarak terapi almasını sağlıyor. Hem Google Play Store hem de Apple App Store\'da yayında olan uygulama, binlerce kullanıcıya ulaşmış durumda.',
+        '"Anlatmam Lazım", ruh sağlığı ve kişisel gelişim alanında destekleyici hizmetler sunan kapsamlı bir mobil uygulamadır. Uygulama, psikolojik destek arayan kişiler ile profesyonel psikologlar arasında güvenli, erişilebilir ve etkili bir iletişim platformu oluşturmaktadır. Kessler psikolojik değerlendirme testi ile kullanıcıların ruh sağlığı durumu değerlendirilir ve kişiselleştirilmiş öneriler sunulur. Gerçek zamanlı mesajlaşma, güvenli ödeme sistemi (İyzico), randevu yönetimi ve kapsamlı psikolog değerlendirme sistemi ile kullanıcıların kişisel gelişim süreçlerinde anlamlı bir gelişim sağlamalarına yardımcı olur.',
       images: [
-        'Ana ekran - Psikolog arama ve filtreleme',
-        'Psikolog profili - Detaylı bilgiler ve değerlendirmeler',
-        'Mesajlaşma ekranı - Güvenli terapi sohbeti',
-        'Randevu takvimi - Kolay planlama sistemi',
-        'Profil yönetimi - Kişisel terapi geçmişi'
+        'Rol seçimi - Psikolog arıyorum / Psikolog olmak istiyorum',
+        'Kessler testi - Psikolojik değerlendirme ve onboarding',
+        'Psikolog listesi - Uzmanlık alanları ve değerlendirmeler',
+        'Gerçek zamanlı mesajlaşma - Güvenli terapi sohbeti',
+        'Randevu sistemi - Müsaitlik takibi ve otomatik chat odası',
+        'İyzico ödeme - 3D Secure güvenli ödeme sistemi',
+        'Admin paneli - Kullanıcı ve ödeme yönetimi'
       ],
       screenshots: {
         flows: [
           {
-            name: "Frontend Development",
+            name: "Kullanıcı Deneyimi",
             screens: [
               {
-                title: "UI/UX Tasarım",
-                description: "React Native ile modern ve kullanıcı dostu arayüz tasarımı",
-                image: "/screenshots/mindconnect/ui-design.jpg",
-                icon: "🎨",
+                title: "Rol Seçimi ve Onboarding",
+                description: "Psikolog arıyorum / Psikolog olmak istiyorum seçimi ve Kessler testi",
+                image: "/screenshots/mindconnect/role-selection.jpg",
+                icon: "👥",
                 color: "from-blue-500 to-cyan-500",
                 bgPattern: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
-                tech: "React Native, TypeScript, Styled Components"
+                tech: "React Native, TypeScript, Form Validation"
               },
               {
-                title: "State Management",
-                description: "Redux Toolkit ile global state yönetimi ve veri akışı",
-                image: "/screenshots/mindconnect/state-management.jpg",
-                icon: "🔄",
-                color: "from-green-500 to-emerald-500",
-                bgPattern: "bg-gradient-to-br from-green-500/20 to-emerald-500/20",
-                tech: "Redux Toolkit, Context API, Async Thunk"
-              },
-              {
-                title: "Real-time Chat",
-                description: "Socket.io ile gerçek zamanlı mesajlaşma sistemi",
-                image: "/screenshots/mindconnect/chat.jpg",
-                icon: "💬",
+                title: "Kessler Psikolojik Testi",
+                description: "10 soruluk psikolojik durum değerlendirme ve severity belirleme",
+                image: "/screenshots/mindconnect/kessler-test.jpg",
+                icon: "🧠",
                 color: "from-purple-500 to-pink-500",
                 bgPattern: "bg-gradient-to-br from-purple-500/20 to-pink-500/20",
-                tech: "Socket.io, WebSocket, Event Handling"
+                tech: "Algorithm Implementation, Score Calculation"
+              },
+              {
+                title: "Kişiselleştirilmiş Arayüz",
+                description: "Kullanıcı tipine göre farklı arayüzler ve öneriler",
+                image: "/screenshots/mindconnect/personalized-ui.jpg",
+                icon: "🎨",
+                color: "from-green-500 to-emerald-500",
+                bgPattern: "bg-gradient-to-br from-green-500/20 to-emerald-500/20",
+                tech: "Dynamic UI, Conditional Rendering"
               }
             ]
           },
           {
-            name: "Backend Development",
+            name: "Psikolog Yönetimi",
             screens: [
               {
-                title: "API Development",
-                description: "Node.js ve Express ile RESTful API geliştirme",
-                image: "/screenshots/mindconnect/api.jpg",
-                icon: "⚙️",
+                title: "Psikolog Listesi ve Filtreleme",
+                description: "Doğrulanmış psikologlar, uzmanlık alanları ve değerlendirmeler",
+                image: "/screenshots/mindconnect/psychologist-list.jpg",
+                icon: "👨‍⚕️",
                 color: "from-indigo-500 to-blue-500",
                 bgPattern: "bg-gradient-to-br from-indigo-500/20 to-blue-500/20",
-                tech: "Node.js, Express, JWT, Middleware"
+                tech: "MongoDB, Advanced Filtering, Rating System"
               },
               {
-                title: "Database Design",
-                description: "MongoDB ile ölçeklenebilir veritabanı mimarisi",
-                image: "/screenshots/mindconnect/database.jpg",
-                icon: "🗄️",
+                title: "Psikolog Profili",
+                description: "Detaylı bilgiler, uzmanlık alanları ve terapi paketleri",
+                image: "/screenshots/mindconnect/psychologist-profile.jpg",
+                icon: "📋",
                 color: "from-emerald-500 to-teal-500",
                 bgPattern: "bg-gradient-to-br from-emerald-500/20 to-teal-500/20",
-                tech: "MongoDB, Mongoose, Indexing, Aggregation"
+                tech: "Profile Management, Package Creation"
               },
               {
-                title: "Authentication",
-                description: "Güvenli kullanıcı kimlik doğrulama ve yetkilendirme",
-                image: "/screenshots/mindconnect/auth.jpg",
-                icon: "🔐",
-                color: "from-rose-500 to-pink-500",
-                bgPattern: "bg-gradient-to-br from-rose-500/20 to-pink-500/20",
-                tech: "JWT, bcrypt, OAuth, Role-based Access"
+                title: "Değerlendirme Sistemi",
+                description: "Puanlama, yorum sistemi ve güvenilirlik takibi",
+                image: "/screenshots/mindconnect/rating-system.jpg",
+                icon: "⭐",
+                color: "from-amber-500 to-orange-500",
+                bgPattern: "bg-gradient-to-br from-amber-500/20 to-orange-500/20",
+                tech: "Rating Algorithm, Review Management"
               }
             ]
           },
           {
-            name: "DevOps & Deployment",
+            name: "İletişim ve Ödeme",
             screens: [
               {
-                title: "CI/CD Pipeline",
-                description: "GitHub Actions ile otomatik test ve deployment",
-                image: "/screenshots/mindconnect/cicd.jpg",
-                icon: "🚀",
-                color: "from-amber-500 to-orange-500",
-                bgPattern: "bg-gradient-to-br from-amber-500/20 to-orange-500/20",
-                tech: "GitHub Actions, Docker, AWS, Heroku"
+                title: "Gerçek Zamanlı Mesajlaşma",
+                description: "Socket.io ile güvenli, şifrelenmiş mesajlaşma sistemi",
+                image: "/screenshots/mindconnect/realtime-chat.jpg",
+                icon: "💬",
+                color: "from-rose-500 to-pink-500",
+                bgPattern: "bg-gradient-to-br from-rose-500/20 to-pink-500/20",
+                tech: "Socket.io, Message Encryption, Status Tracking"
               },
               {
-                title: "Performance Optimization",
-                description: "Uygulama performansı ve hız optimizasyonu",
-                image: "/screenshots/mindconnect/performance.jpg",
-                icon: "⚡",
-                color: "from-red-500 to-rose-500",
-                bgPattern: "bg-gradient-to-br from-red-500/20 to-rose-500/20",
-                tech: "Code Splitting, Lazy Loading, Caching"
+                title: "İyzico Ödeme Sistemi",
+                description: "3D Secure güvenli ödeme, ödeme talepleri ve geçmiş takibi",
+                image: "/screenshots/mindconnect/payment-system.jpg",
+                icon: "💳",
+                color: "from-green-500 to-teal-500",
+                bgPattern: "bg-gradient-to-br from-green-500/20 to-teal-500/20",
+                tech: "İyzico Integration, 3D Secure, Payment Tracking"
               },
               {
-                title: "Monitoring & Analytics",
-                description: "Uygulama izleme ve kullanıcı analitikleri",
-                image: "/screenshots/mindconnect/monitoring.jpg",
-                icon: "📊",
+                title: "Randevu Sistemi",
+                description: "Müsaitlik takibi, randevu onayı ve otomatik chat odası",
+                image: "/screenshots/mindconnect/appointment-system.jpg",
+                icon: "📅",
                 color: "from-violet-500 to-purple-500",
                 bgPattern: "bg-gradient-to-br from-violet-500/20 to-purple-500/20",
-                tech: "Firebase Analytics, Sentry, Performance Monitoring"
+                tech: "Calendar Integration, Auto Chat Creation"
+              }
+            ]
+          },
+          {
+            name: "Güvenlik ve Yönetim",
+            screens: [
+              {
+                title: "JWT Authentication",
+                description: "Güvenli kimlik doğrulama ve rol tabanlı erişim kontrolü",
+                image: "/screenshots/mindconnect/authentication.jpg",
+                icon: "🔐",
+                color: "from-red-500 to-rose-500",
+                bgPattern: "bg-gradient-to-br from-red-500/20 to-rose-500/20",
+                tech: "JWT, Role-based Access, Data Encryption"
+              },
+              {
+                title: "Admin Dashboard",
+                description: "Kullanıcı yönetimi, ödeme takibi ve platform istatistikleri",
+                image: "/screenshots/mindconnect/admin-dashboard.jpg",
+                icon: "📊",
+                color: "from-indigo-500 to-purple-500",
+                bgPattern: "bg-gradient-to-br from-indigo-500/20 to-purple-500/20",
+                tech: "Admin Panel, Analytics, User Management"
+              },
+              {
+                title: "GDPR Uyumluluğu",
+                description: "Kişisel veri koruma, şifreleme ve gizlilik standartları",
+                image: "/screenshots/mindconnect/gdpr-compliance.jpg",
+                icon: "🛡️",
+                color: "from-blue-500 to-indigo-500",
+                bgPattern: "bg-gradient-to-br from-blue-500/20 to-indigo-500/20",
+                tech: "Data Protection, Encryption, Privacy Standards"
               }
             ]
           }
