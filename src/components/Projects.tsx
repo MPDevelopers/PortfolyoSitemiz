@@ -21,7 +21,7 @@ export default function Projects() {
           <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight flex items-center justify-center gap-4 sm:gap-6 text-white">
               <span className="text-dark-200">Yaratıcı</span>
-              <span className="inline-flex items-center justify-center bg-violet-600 rounded-xl sm:rounded-2xl px-8 sm:px-10 md:px-14 py-2 sm:py-3 md:py-4">
+              <span className="inline-flex items-center justify-center bg-transparent border border-white rounded-xl sm:rounded-2xl px-8 sm:px-10 md:px-14 py-2 sm:py-3 md:py-4">
                 <RotatingText
                   texts={["Mobil Uygulama", "Web Uygulama", "MPDevelopers"]}
                   mainClassName="text-white overflow-hidden justify-center"
@@ -56,10 +56,10 @@ export default function Projects() {
                   animationDelay: `${index * 0.1}s`,
                 }}
               >
-              <div className={`h-2 bg-gradient-to-r ${project.color}`}></div>
+              <div className="h-2 bg-white"></div>
 
                 <div className="p-6">
-                  <div className={`inline-block p-3 rounded-lg bg-gradient-to-r ${project.color} mb-4`}>
+                  <div className="inline-block p-3 rounded-lg bg-transparent border border-white mb-4">
                     <project.icon className="w-8 h-8 text-white" />
                   </div>
 
@@ -75,7 +75,7 @@ export default function Projects() {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-slate-700 text-gray-300 text-sm rounded-full"
+                        className="px-3 py-1 bg-transparent border border-white text-white text-sm rounded-full"
                       >
                         {tech}
                       </span>
