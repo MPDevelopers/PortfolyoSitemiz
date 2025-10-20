@@ -1,4 +1,5 @@
 import { ChevronDown } from 'lucide-react';
+import LiquidEther from './LiquidEther';
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -11,14 +12,27 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative bg-gradient-to-br from-dark-900 via-dark-800 to-dark-900 overflow-hidden"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950"
     >
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-primary-900/20 via-transparent to-transparent"></div>
-
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary-600/10 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-primary-500/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+      {/* LiquidEther Arkaplan */}
+      <div className="absolute inset-0 z-0">
+        <LiquidEther
+          mouseForce={15}
+          cursorSize={80}
+          resolution={0.1}
+          iterationsPoisson={16}
+          iterationsViscous={16}
+          BFECC={false}
+          colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+          autoDemo={true}
+          autoSpeed={0.4}
+          autoIntensity={2.0}
+          style={{ width: '100%', height: '100%' }}
+        />
       </div>
+
+      {/* Koyu overlay - içeriğin daha iyi okunması için */}
+      <div className="absolute inset-0 bg-dark-900/30 z-0"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">

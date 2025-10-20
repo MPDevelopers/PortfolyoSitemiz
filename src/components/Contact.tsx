@@ -37,6 +37,9 @@ export default function Contact() {
     setStatus({ type: 'loading', message: 'Gönderiliyor...' });
 
     try {
+      if (!supabase) {
+        throw new Error('Supabase yapılandırılmadı');
+      }
       const { error } = await supabase.from('contact_messages').insert([
         {
           name: formData.name,
@@ -209,11 +212,15 @@ export default function Contact() {
 
               <button
                 type="submit"
-                disabled={status.type === 'loading'}
+                disabled={status.type === 'loading' || !supabase}
                 className="w-full px-8 py-4 bg-primary-600 hover:bg-primary-700 disabled:bg-dark-700 disabled:cursor-not-allowed text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:transform-none flex items-center justify-center space-x-2"
               >
                 <span>
-                  {status.type === 'loading' ? 'Gönderiliyor...' : 'Mesaj Gönder'}
+                  {!supabase
+                    ? 'Çevrimdışı: Supabase yapılandırılmadı'
+                    : status.type === 'loading'
+                    ? 'Gönderiliyor...'
+                    : 'Mesaj Gönder'}
                 </span>
                 <Send className="w-5 h-5" />
               </button>
