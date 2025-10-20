@@ -44,7 +44,7 @@ export default function About() {
               </p>
 
               <div className="flex items-center space-x-4 pt-4">
-                <Zap className="w-12 h-12 text-primary-600" />
+                <Zap className="w-12 h-12 text-white" />
                 <div>
                   <p className="text-2xl font-bold text-white">50+</p>
                   <p className="text-gray-400">Tamamlanan Proje</p>

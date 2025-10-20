@@ -12,11 +12,11 @@ export default function Skills() {
   const [animatedLevels, setAnimatedLevels] = useState<number[]>([]);
 
   const skills: Skill[] = [
-    { name: 'Flutter', level: 95, color: 'bg-blue-500' },
-    { name: 'React Native', level: 90, color: 'bg-cyan-500' },
-    { name: 'Firebase', level: 88, color: 'bg-yellow-500' },
-    { name: 'Python', level: 85, color: 'bg-green-500' },
-    { name: 'UI/UX Design', level: 92, color: 'bg-pink-500' },
+    { name: 'Flutter', level: 95, color: 'bg-white' },
+    { name: 'React Native', level: 90, color: 'bg-white' },
+    { name: 'Firebase', level: 88, color: 'bg-white' },
+    { name: 'Python', level: 85, color: 'bg-white' },
+    { name: 'UI/UX Design', level: 92, color: 'bg-white' },
   ];
 
   useEffect(() => {
@@ -43,7 +43,7 @@ export default function Skills() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               Yeteneklerimiz
             </h2>
-            <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
               Uzman olduğumuz teknolojiler ve araçlar
             </p>
@@ -56,7 +56,7 @@ export default function Skills() {
                   <span className="text-lg font-semibold text-white">
                     {skill.name}
                   </span>
-                  <span className="text-lg font-bold text-primary-600">
+                  <span className="text-lg font-bold text-white">
                     {animatedLevels[index] || 0}%
                   </span>
                 </div>
@@ -77,15 +77,15 @@ export default function Skills() {
 
           <div className="grid md:grid-cols-3 gap-8 mt-16">
             <div className="text-center p-6 bg-slate-800/50 rounded-xl hover:bg-slate-700/50 hover:shadow-lg transition-all duration-300 border border-slate-700">
-              <div className="text-4xl font-bold text-primary-600 mb-2">5+</div>
+              <div className="text-4xl font-bold text-white mb-2">5+</div>
               <div className="text-gray-300">Yıllık Deneyim</div>
             </div>
             <div className="text-center p-6 bg-slate-800/50 rounded-xl hover:bg-slate-700/50 hover:shadow-lg transition-all duration-300 border border-slate-700">
-              <div className="text-4xl font-bold text-primary-600 mb-2">50+</div>
+              <div className="text-4xl font-bold text-white mb-2">50+</div>
               <div className="text-gray-300">Tamamlanan Proje</div>
             </div>
             <div className="text-center p-6 bg-slate-800/50 rounded-xl hover:bg-slate-700/50 hover:shadow-lg transition-all duration-300 border border-slate-700">
-              <div className="text-4xl font-bold text-primary-600 mb-2">30+</div>
+              <div className="text-4xl font-bold text-white mb-2">30+</div>
               <div className="text-gray-300">Mutlu Müşteri</div>
             </div>
           </div>

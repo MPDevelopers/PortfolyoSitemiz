@@ -84,7 +84,7 @@ export default function Contact() {
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
               İletişim
             </h2>
-            <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
             <p className="text-lg text-dark-300 max-w-2xl mx-auto">
               Projeleriniz için bizimle iletişime geçin
             </p>
@@ -103,12 +103,12 @@ export default function Contact() {
                 </p>
 
                 <div className="flex items-center space-x-3 text-dark-300">
-                  <Mail className="w-5 h-5 text-primary-500" />
+                  <Mail className="w-5 h-5 text-white" />
                   <a
-                    href="mailto:ulasucan.dev@gmail.com"
-                    className="hover:text-primary-500 transition-colors"
+                    href="mailto:mpdevelopers@gmail.com"
+                    className="hover:text-white transition-colors"
                   >
-                    ulasucan.dev@gmail.com
+                    mpdevelopers@gmail.com
                   </a>
                 </div>
               </div>
@@ -124,10 +124,10 @@ export default function Contact() {
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 bg-dark-800 hover:bg-primary-600 rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"
+                      className="w-12 h-12 bg-dark-800 hover:bg-white rounded-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110"
                       aria-label={social.label}
                     >
-                      <social.icon className="w-5 h-5 text-white" />
+                      <social.icon className="w-5 h-5 text-dark-900" />
                     </a>
                   ))}
                 </div>
@@ -149,7 +149,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all"
                   placeholder="Adınız ve soyadınız"
                 />
               </div>
@@ -168,7 +168,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all"
+                className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all"
                   placeholder="ornek@email.com"
                 />
               </div>
@@ -187,7 +187,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all resize-none"
+                className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all resize-none"
                   placeholder="Mesajınızı buraya yazın..."
                 ></textarea>
               </div>
@@ -213,7 +213,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status.type === 'loading' || !supabase}
-                className="w-full px-8 py-4 bg-primary-600 hover:bg-primary-700 disabled:bg-dark-700 disabled:cursor-not-allowed text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 disabled:transform-none flex items-center justify-center space-x-2"
+                className="w-full px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 disabled:bg-transparent disabled:cursor-not-allowed font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 disabled:transform-none flex items-center justify-center space-x-2"
               >
                 <span>
                   {!supabase

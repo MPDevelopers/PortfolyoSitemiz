@@ -103,7 +103,7 @@ export default function Projects() {
                     <project.icon className="w-8 h-8 text-slate-900" />
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-primary-400 transition-colors">
+                  <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white/90 transition-colors">
                     {project.title}
                   </h3>
 

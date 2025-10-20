@@ -21,8 +21,8 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <Code2 className="w-8 h-8 text-primary-600" />
-              <span className="text-xl font-bold text-white">Ulaş Uçan</span>
+              <Code2 className="w-8 h-8 text-white" />
+              <span className="text-xl font-bold text-white">MPDevelopers</span>
             </div>
             <p className="text-dark-400 leading-relaxed">
               Mobil ve web geliştirmede profesyonel çözümler sunuyoruz.
@@ -36,7 +36,7 @@ export default function Footer() {
                 <li key={link.id}>
                   <button
                     onClick={() => scrollToSection(link.id)}
-                    className="text-dark-400 hover:text-primary-500 transition-colors"
+                    className="text-dark-400 hover:text-white transition-colors"
                   >
                     {link.label}
                   </button>
@@ -48,17 +48,17 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold mb-4">İletişim</h3>
             <a
-              href="mailto:ulasucan.dev@gmail.com"
-              className="text-dark-400 hover:text-primary-500 transition-colors"
+              href="mailto:mpdevelopers@gmail.com"
+              className="text-dark-400 hover:text-white transition-colors"
             >
-              ulasucan.dev@gmail.com
+              mpdevelopers@gmail.com
             </a>
           </div>
         </div>
 
         <div className="border-t border-dark-800 pt-8 text-center">
           <p className="text-dark-500">
-            © 2025 Tüm Hakları Saklıdır. Ulaş Uçan & Ekip
+            © 2025 Tüm Hakları Saklıdır. MPDevelopers
           </p>
         </div>
       </div>
