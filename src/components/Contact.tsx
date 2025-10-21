@@ -1,11 +1,9 @@
 import { useState } from 'react';
 import { Mail, Github, Linkedin, Instagram, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { useNavigate } from 'react-router-dom';
 
 interface FormData {
   name: string;
-  email: string;
   phone: string;
   message: string;
 }
@@ -17,10 +15,8 @@ interface FormStatus {
 
 export default function Contact() {
   const { ref, isVisible } = useScrollAnimation();
-  const navigate = useNavigate();
   const [formData, setFormData] = useState<FormData>({
     name: '',
-    email: '',
     phone: '',
     message: '',
   });
@@ -41,7 +37,7 @@ export default function Contact() {
 
     // Create email template
     const emailSubject = `İletişim Talebi - ${formData.name}`;
-    const emailBody = `${formData.phone} telefon numaram, iletişime geçmek istiyorum\n\nMesaj: ${formData.message}\n\nİletişim Bilgileri:\nAd Soyad: ${formData.name}\nE-posta: ${formData.email}\nTelefon: ${formData.phone}`;
+    const emailBody = `${formData.phone} telefon numaram, iletişime geçmek istiyorum\n\nMesaj: ${formData.message}\n\nİletişim Bilgileri:\nAd Soyad: ${formData.name}\nTelefon: ${formData.phone}`;
     
     // Create mailto link
     const mailtoLink = `mailto:mpdevelopers@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
@@ -50,7 +46,7 @@ export default function Contact() {
     window.location.href = mailtoLink;
     
     setStatus({ type: 'success', message: 'Outlook açıldı! E-postanızı gönderebilirsiniz.' });
-    setFormData({ name: '', email: '', phone: '', message: '' });
+    setFormData({ name: '', phone: '', message: '' });
 
     setTimeout(() => {
       setStatus({ type: 'idle', message: '' });
@@ -146,24 +142,6 @@ export default function Contact() {
                 />
               </div>
 
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-dark-300 mb-2"
-                >
-                  E-posta
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all"
-                  placeholder="ornek@email.com"
-                />
-              </div>
 
               <div>
                 <label
