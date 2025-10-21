@@ -25,9 +25,9 @@ export default function RevealOnView({ as = "div", className, children, delay = 
     const element = ref.current
     if (!element) return
 
-    const startTranslate = intensity === "hero" ? 28 : 18
-    const startBlur = intensity === "hero" ? 16 : 10
-    const startScale = intensity === "hero" ? 0.965 : 0.98
+    const startTranslate = intensity === "hero" ? 0 : 0
+    const startBlur = intensity === "hero" ? 0 : 0
+    const startScale = intensity === "hero" ? 1 : 1
 
     if (staggerChildren) {
       // Parent stays visible; children will handle their own initial state
@@ -35,9 +35,9 @@ export default function RevealOnView({ as = "div", className, children, delay = 
       element.style.transform = "none"
       element.style.filter = "none"
     } else {
-      element.style.opacity = "0"
-      element.style.transform = `translateY(${startTranslate}px) scale(${startScale})`
-      element.style.filter = `blur(${startBlur}px)`
+      element.style.opacity = "1"
+      element.style.transform = "none"
+      element.style.filter = "none"
     }
 
     const cleanup = inView(element, () => {
@@ -48,9 +48,9 @@ export default function RevealOnView({ as = "div", className, children, delay = 
       // Initialize all targets if we're staggering children
       if (staggerChildren) {
         targets.forEach((t) => {
-          t.style.opacity = "0"
-          t.style.transform = `translateY(${startTranslate}px) scale(${startScale})`
-          t.style.filter = `blur(${startBlur}px)`
+          t.style.opacity = "1"
+          t.style.transform = "none"
+          t.style.filter = "none"
         })
       }
 
