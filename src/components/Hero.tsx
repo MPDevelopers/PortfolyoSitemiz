@@ -1,7 +1,5 @@
 import { ChevronDown } from 'lucide-react';
-import { ShootingStars } from './ui/shooting-stars';
-import { StarsBackground } from './ui/stars-background';
-// RotatingText kaldırıldı; Projects bölümüne taşındı
+import Lightning from './Lightning';
 
 export default function Hero() {
   const scrollToSection = (id: string) => {
@@ -14,31 +12,21 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden"
     >
-      {/* Stars Background */}
+      {/* Lightning Background */}
       <div className="absolute inset-0 z-0">
-        <StarsBackground 
-          starDensity={0.0004}
-          allStarsTwinkle={true}
-          twinkleProbability={0.8}
-          minTwinkleSpeed={0.5}
-          maxTwinkleSpeed={1.5}
-        />
-        <ShootingStars
-          minSpeed={15}
-          maxSpeed={30}
-          minDelay={1000}
-          maxDelay={3000}
-          starColor="#60A5FA"
-          trailColor="#3B82F6"
-          starWidth={12}
-          starHeight={2}
+        <Lightning
+          hue={250}
+          xOffset={1.2}
+          speed={0.5}
+          intensity={2}
+          size={0.8}
         />
       </div>
 
       {/* Koyu overlay - içeriğin daha iyi okunması için */}
-      <div className="absolute inset-0 bg-dark-900/30 z-0"></div>
+      <div className="absolute inset-0 bg-black/40 z-0"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in">
