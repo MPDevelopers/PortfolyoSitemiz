@@ -1,9 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Code2 } from 'lucide-react';
+import { useLocation } from 'react-router-dom';
+import { useScrollHide } from '../hooks/useScrollHide';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
+  const isHidden = useScrollHide();
+  
+  // Sadece hizmet detay sayfalarında scroll hide özelliğini aktif et
+  const isServiceDetailPage = location.pathname.includes('/services/');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,8 +43,16 @@ export default function Navigation() {
         isScrolled
           ? 'backdrop-blur-md shadow-lg'
           : ''
+      } ${
+        isServiceDetailPage && isHidden 
+          ? '-translate-y-full' 
+          : 'translate-y-0'
       }`}
-      style={{ backgroundColor: isScrolled ? 'rgba(15, 23, 42, 0.9)' : 'transparent' }}
+      style={{ 
+        backgroundColor: isServiceDetailPage 
+          ? (isScrolled ? 'rgba(15, 23, 42, 0.9)' : 'transparent')
+          : (isScrolled ? 'rgba(15, 23, 42, 0.9)' : 'transparent')
+      }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">

@@ -10,6 +10,8 @@ import { Routes, Route } from 'react-router-dom';
 import ProjectDetail from './components/ProjectDetail';
 import WebDevelopmentDetail from './components/WebDevelopmentDetail';
 import MobileDevelopmentDetail from './components/MobileDevelopmentDetail';
+import WebServiceDetail from './components/WebServiceDetail';
+import MobileServiceDetail from './components/MobileServiceDetail';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
         <Route path="/projects/:slug" element={<ProjectDetail />} />
         <Route path="/services/web-development" element={<WebDevelopmentDetail />} />
         <Route path="/services/mobile-development" element={<MobileDevelopmentDetail />} />
+        <Route path="/services/web-service" element={<WebServiceDetail />} />
+        <Route path="/services/mobile-service" element={<MobileServiceDetail />} />
       </Routes>
       <Footer />
     </div>
