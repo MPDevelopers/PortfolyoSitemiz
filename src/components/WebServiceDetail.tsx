@@ -62,7 +62,7 @@ export default function WebServiceDetail() {
   return (
     <main className="bg-neutral-950 text-white min-h-screen">
       {/* HERO: full-viewport row. Left is sticky; right scrolls internally. */}
-      <section className="px-4 pt-24 pb-16 lg:pb-4">
+      <section className="px-4 pt-20 pb-16 lg:pb-4">
         <div className="grid h-full grid-cols-1 gap-4 lg:grid-cols-[420px_1fr]">
           {/* LEFT: sticky and full height, no cut off */}
           <aside className="lg:sticky lg:top-4 lg:h-fit">
