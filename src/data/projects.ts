@@ -31,14 +31,14 @@ export const projects: Project[] = [
   {
     icon: Heart,
     slug: 'saglik-takip-platformu',
-    title: 'Anlatmam Lazım - Ruh Sağlığı ve Kişisel Gelişim Platformu',
+    title: 'MindConnect - Ruh Sağlığı ve Kişisel Gelişim Platformu',
     description:
       'Psikolojik destek arayan kişiler ile profesyonel psikologlar arasında güvenli, erişilebilir ve etkili bir iletişim platformu.',
     technologies: ['React Native', 'Node.js', 'MongoDB', 'Socket.io', 'İyzico'],
     color: 'from-pink-500 to-rose-500',
     details: {
       longDescription:
-        '"Anlatmam Lazım", ruh sağlığı ve kişisel gelişim alanında destekleyici hizmetler sunan kapsamlı bir mobil uygulamadır. Uygulama, psikolojik destek arayan kişiler ile profesyonel psikologlar arasında güvenli, erişilebilir ve etkili bir iletişim platformu oluşturmaktadır. Kessler psikolojik değerlendirme testi ile kullanıcıların ruh sağlığı durumu değerlendirilir ve kişiselleştirilmiş öneriler sunulur. Gerçek zamanlı mesajlaşma, güvenli ödeme sistemi (İyzico), randevu yönetimi ve kapsamlı psikolog değerlendirme sistemi ile kullanıcıların kişisel gelişim süreçlerinde anlamlı bir gelişim sağlamalarına yardımcı olur.',
+        '"MindConnect", ruh sağlığı ve kişisel gelişim alanında destekleyici hizmetler sunan kapsamlı bir mobil uygulamadır. Uygulama, psikolojik destek arayan kişiler ile profesyonel psikologlar arasında güvenli, erişilebilir ve etkili bir iletişim platformu oluşturmaktadır. Kessler psikolojik değerlendirme testi ile kullanıcıların ruh sağlığı durumu değerlendirilir ve kişiselleştirilmiş öneriler sunulur. Gerçek zamanlı mesajlaşma, güvenli ödeme sistemi (İyzico), randevu yönetimi ve kapsamlı psikolog değerlendirme sistemi ile kullanıcıların kişisel gelişim süreçlerinde anlamlı bir gelişim sağlamalarına yardımcı olur.',
       images: [
         'Rol seçimi - Psikolog arıyorum / Psikolog olmak istiyorum',
         'Kessler testi - Psikolojik değerlendirme ve onboarding',
@@ -331,13 +331,13 @@ export const projects: Project[] = [
     color: 'from-blue-600 to-indigo-600',
     details: {
       longDescription:
-        'HaberApron, havacılık sektörüne odaklanmış modern bir haber platformudur. React 18 + TypeScript + Vite ile geliştirilmiş frontend, Node.js + Express + TypeScript ile güçlendirilmiş backend ve PostgreSQL + Prisma ORM ile yönetilen veritabanı altyapısına sahiptir. Redis cache sistemi, Docker containerization, Nginx web server ve GitHub Actions CI/CD pipeline ile tam profesyonel bir web uygulamasıdır. Mobile-first responsive tasarım, WebP/AVIF görsel optimizasyonu, gelişmiş arama sistemi, yorum sistemi ve newsletter aboneliği gibi modern web özelliklerini içerir.',
+        'HaberApron, havacılık sektörüne odaklanmış modern bir haber platformudur. React 18 + TypeScript + Vite ile geliştirilmiş frontend, Node.js + Express + TypeScript ile güçlendirilmiş backend ve PostgreSQL + Prisma ORM ile yönetilen veritabanı altyapısına sahiptir. Redis cache sistemi, Docker containerization, Nginx web server ve GitHub Actions CI/CD pipeline ile tam profesyonel bir web uygulamasıdır. Mobile-first responsive tasarım, WebP/AVIF görsel optimizasyonu, gelişmiş arama sistemi, yorum sistemi ve newsletter aboneliği gibi modern web özelliklerini içerir. Platform, havacılık haberlerini kategorize ederek kullanıcılara sunar ve admin paneli ile içerik yönetimi sağlar.',
       images: [
-        'Ana sayfa - Modern haber listesi ve kategoriler',
-        'Makale sayfası - Rich text editor ile zengin içerik',
-        'Admin paneli - İçerik yönetim sistemi',
-        'Arama sonuçları - Gelişmiş filtreleme',
-        'Mobil responsive - Mobile-first tasarım'
+        'Ana sayfa - Modern haber listesi, kategoriler ve breaking news banner',
+        'Makale sayfası - Rich text editor, yorum sistemi ve sosyal medya paylaşım',
+        'Admin paneli - Kapsamlı içerik yönetimi ve kullanıcı yönetimi',
+        'Arama sonuçları - Full-text search ve gelişmiş filtreleme sistemi',
+        'Mobil responsive - Mobile-first tasarım ve touch-friendly arayüz'
       ],
       screenshots: {
         flows: [
@@ -346,8 +346,8 @@ export const projects: Project[] = [
             screens: [
               {
                 title: "Ana Sayfa",
-                description: "Modern tasarım ile havacılık haberleri ve kategoriler",
-                image: "/screenshots/haberapron/homepage.jpg",
+                description: "Modern tasarım ile havacılık haberleri, kategoriler ve son dakika haberleri. Breaking news banner ve kategori bazlı filtreleme özellikleri",
+                image: "/screenshots/haberapron/Ekran görüntüsü 2025-10-21 192026.png",
                 icon: "🏠",
                 color: "from-blue-600 to-indigo-600",
                 bgPattern: "bg-gradient-to-br from-blue-600/20 to-indigo-600/20",
@@ -355,8 +355,8 @@ export const projects: Project[] = [
               },
               {
                 title: "Makale Sayfası",
-                description: "Rich text editor ile zengin içerik ve yorum sistemi",
-                image: "/screenshots/haberapron/article-page.jpg",
+                description: "Rich text editor ile zengin içerik, yorum sistemi ve sosyal medya paylaşım özellikleri. Email doğrulamalı yorum sistemi",
+                image: "/screenshots/haberapron/Ekran görüntüsü 2025-10-21 192044.png",
                 icon: "📰",
                 color: "from-purple-600 to-pink-600",
                 bgPattern: "bg-gradient-to-br from-purple-600/20 to-pink-600/20",
@@ -364,8 +364,8 @@ export const projects: Project[] = [
               },
               {
                 title: "Arama Sonuçları",
-                description: "Full-text search ve gelişmiş filtreleme sistemi",
-                image: "/screenshots/haberapron/search-results.jpg",
+                description: "Full-text search ve gelişmiş filtreleme sistemi. Kategori, tarih ve popülerlik bazlı sıralama özellikleri",
+                image: "/screenshots/haberapron/Ekran görüntüsü 2025-10-21 192115.png",
                 icon: "🔍",
                 color: "from-green-600 to-emerald-600",
                 bgPattern: "bg-gradient-to-br from-green-600/20 to-emerald-600/20",
@@ -378,8 +378,8 @@ export const projects: Project[] = [
             screens: [
               {
                 title: "Admin Dashboard",
-                description: "İçerik yönetimi ve kullanıcı yönetimi paneli",
-                image: "/screenshots/haberapron/admin-dashboard.jpg",
+                description: "Kapsamlı içerik yönetimi, kullanıcı yönetimi ve analitik paneli. Makale oluşturma, düzenleme ve yayınlama özellikleri",
+                image: "/screenshots/haberapron/Ekran görüntüsü 2025-10-21 192101.png",
                 icon: "⚙️",
                 color: "from-orange-600 to-red-600",
                 bgPattern: "bg-gradient-to-br from-orange-600/20 to-red-600/20",
@@ -387,8 +387,8 @@ export const projects: Project[] = [
               },
               {
                 title: "Mobil Responsive",
-                description: "Mobile-first yaklaşım ile responsive tasarım",
-                image: "/screenshots/haberapron/mobile-responsive.jpg",
+                description: "Mobile-first yaklaşım ile responsive tasarım. Tüm cihazlarda optimize edilmiş kullanıcı deneyimi ve touch-friendly arayüz",
+                image: "/screenshots/haberapron/Ekran görüntüsü 2025-10-21 192132.png",
                 icon: "📱",
                 color: "from-teal-600 to-cyan-600",
                 bgPattern: "bg-gradient-to-br from-teal-600/20 to-cyan-600/20",

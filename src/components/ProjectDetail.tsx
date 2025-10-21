@@ -207,8 +207,8 @@ export default function ProjectDetail() {
                   </div>
                 )}
 
-                {/* Action Buttons */}
-                {project?.slug !== 'solunum-sagligi-uygulamasi' && (
+                {/* Action Buttons - Only for İşaret Dili AI App */}
+                {project?.slug === 'isaret-dili-ai-uygulamasi' && (
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <button 
                       onClick={() => setIsVideoModalOpen(true)}
@@ -259,7 +259,7 @@ export default function ProjectDetail() {
               <div className="relative">
                 {project?.slug === 'haberapron-web-sitesi' ? (
                   // Desktop Monitor for Web Projects
-                  <div className="relative mx-auto w-[600px] h-[400px]">
+                  <div className="relative mx-auto w-[500px] h-[350px]">
                     {/* Flow Navigation - Only show if multiple flows */}
                     {phoneFlows.length > 1 && (
                       <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 z-10">
@@ -293,7 +293,7 @@ export default function ProjectDetail() {
                     )}
 
                     {/* Desktop Monitor Frame */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl p-3 shadow-2xl">
+                    <div className="absolute inset-0 bg-gradient-to-b from-slate-800 to-slate-900 rounded-2xl p-2 shadow-2xl">
                       <div 
                         className="w-full h-full bg-black rounded-xl overflow-hidden relative cursor-pointer"
                         onTouchStart={onTouchStart}
@@ -308,7 +308,7 @@ export default function ProjectDetail() {
                               <img 
                                 src={phoneScreens[activeScreen].image} 
                                 alt={phoneScreens[activeScreen].title}
-                                className="w-full h-full object-cover rounded-xl bg-slate-900"
+                                className="w-full h-full object-contain rounded-xl bg-slate-900"
                                 onLoad={() => console.log('Image loaded successfully')}
                                 onError={(e) => {
                                   console.log('Image failed to load, showing fallback');
@@ -803,7 +803,7 @@ export default function ProjectDetail() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-4">Başarı Hikayeleri</h2>
-              <p className="text-gray-400 text-lg">Anlatmam Lazım ile hayatları değişen kullanıcılarımız</p>
+              <p className="text-gray-400 text-lg">MindConnect ile hayatları değişen kullanıcılarımız</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -862,8 +862,8 @@ export default function ProjectDetail() {
         </section>
       )}
 
-      {/* CTA Section */}
-      {project?.slug !== 'solunum-sagligi-uygulamasi' && (
+      {/* CTA Section - Only for İşaret Dili AI App */}
+      {project?.slug === 'isaret-dili-ai-uygulamasi' && (
         <section className="py-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className={`inline-block p-4 rounded-2xl bg-gradient-to-r ${project.color} mb-8`}>
@@ -889,28 +889,22 @@ export default function ProjectDetail() {
                 : 'Modern teknolojilerle geliştirilmiş bu uygulamayı deneyimleyin'
               }
             </p>
-          {project?.slug !== 'solunum-sagligi-uygulamasi' && (
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button 
-                onClick={() => setIsVideoModalOpen(true)}
-                className={`px-8 py-4 bg-gradient-to-r ${project.color} text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}
-              >
-                {project?.slug === 'saglik-takip-platformu' ? 'GitHub Repo' : 
-                 project?.slug === 'isaret-dili-ai-uygulamasi' ? 'AI Demo İzle' : 
-                 project?.slug === 'haberapron-web-sitesi' ? 'Canlı Demo' : 'Demo İzle'}
-              </button>
-              <a 
-                href="https://appgallery.huawei.com/app/C114157203?sharePrepath=ag&locale=tr_TR&source=appshare&subsource=C114157203&shareTo=com.android.chrome&shareFrom=appmarket&shareIds=919e6ea53fa24502888bfc28205e37db_com.android.chrome&callType=SHARE"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 bg-slate-800 text-white rounded-xl font-semibold hover:bg-slate-700 transition-all duration-300 border border-slate-700"
-              >
-                {project?.slug === 'saglik-takip-platformu' ? 'Teknik Dokümantasyon' : 
-                 project?.slug === 'isaret-dili-ai-uygulamasi' ? 'AppGallery\'den İndir' : 
-                 project?.slug === 'haberapron-web-sitesi' ? 'GitHub Repo' : 'Kaynak Kod'}
-              </a>
-            </div>
-          )}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button 
+              onClick={() => setIsVideoModalOpen(true)}
+              className={`px-8 py-4 bg-gradient-to-r ${project.color} text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}
+            >
+              AI Demo İzle
+            </button>
+            <a 
+              href="https://appgallery.huawei.com/app/C114157203?sharePrepath=ag&locale=tr_TR&source=appshare&subsource=C114157203&shareTo=com.android.chrome&shareFrom=appmarket&shareIds=919e6ea53fa24502888bfc28205e37db_com.android.chrome&callType=SHARE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-4 bg-slate-800 text-white rounded-xl font-semibold hover:bg-slate-700 transition-all duration-300 border border-slate-700"
+            >
+              AppGallery'den İndir
+            </a>
+          </div>
           </div>
         </section>
       )}
