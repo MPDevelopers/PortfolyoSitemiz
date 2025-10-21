@@ -40,6 +40,9 @@ export default {
         'scale-in': 'scaleIn 0.3s ease-out',
         'float': 'float 3s ease-in-out infinite',
         'meteor-effect': 'meteor 5s linear infinite',
+        'meteor-effect-horizontal': 'meteor-horizontal 5s linear infinite',
+        'meteor-effect-vertical': 'meteor-vertical 5s linear infinite',
+        'meteor-effect-vertical-reverse': 'meteor-vertical-reverse 5s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -63,9 +66,24 @@ export default {
           '50%': { transform: 'translateY(-10px)' },
         },
         meteor: {
-          '0%': { transform: 'rotate(45deg) translateX(-100px)', opacity: '1' },
+          '0%': { transform: 'rotate(215deg) translateX(0)', opacity: '1' },
           '70%': { opacity: '1' },
-          '100%': { transform: 'rotate(45deg) translateX(500px)', opacity: '0' },
+          '100%': { transform: 'rotate(215deg) translateX(-500px)', opacity: '0' },
+        },
+        'meteor-horizontal': {
+          '0%': { transform: 'rotate(215deg) translateX(0)', opacity: '1' },
+          '70%': { opacity: '1' },
+          '100%': { transform: 'rotate(215deg) translateX(500px)', opacity: '0' },
+        },
+        'meteor-vertical': {
+          '0%': { transform: 'rotate(125deg) translateY(0)', opacity: '1' },
+          '70%': { opacity: '1' },
+          '100%': { transform: 'rotate(125deg) translateY(-500px)', opacity: '0' },
+        },
+        'meteor-vertical-reverse': {
+          '0%': { transform: 'rotate(305deg) translateY(0)', opacity: '1' },
+          '70%': { opacity: '1' },
+          '100%': { transform: 'rotate(305deg) translateY(500px)', opacity: '0' },
         },
       },
     },

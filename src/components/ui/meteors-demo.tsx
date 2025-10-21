@@ -1,7 +1,7 @@
 import React from "react";
-import { Meteors } from "@/components/ui/meteors";
+import { Meteors } from "./meteors";
 
-export default function MeteorsDemo() {
+export function MeteorsDemo() {
   return (
     <div className="">
       <div className="relative w-full max-w-xl">

@@ -1,6 +1,5 @@
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SpotlightCard from './SpotlightCard';
-import { Meteors } from './ui/meteors';
 import { 
   Globe, 
   Smartphone, 
@@ -124,8 +123,6 @@ export default function Skills() {
                   </div>
                 </div>
                 
-                {/* Meteor Effect */}
-                <Meteors number={15} />
               </SpotlightCard>
             ))}
           </div>
@@ -136,21 +133,18 @@ export default function Skills() {
                 <div className="text-3xl font-bold text-white mb-2">5+</div>
                 <div className="text-gray-300">Yıllık Deneyim</div>
               </div>
-              <Meteors number={10} />
             </SpotlightCard>
             <SpotlightCard spotlightColor="rgba(16, 185, 129, 0.2)" className="relative overflow-hidden">
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-2">50+</div>
                 <div className="text-gray-300">Tamamlanan Proje</div>
               </div>
-              <Meteors number={10} />
             </SpotlightCard>
             <SpotlightCard spotlightColor="rgba(168, 85, 247, 0.2)" className="relative overflow-hidden">
               <div className="text-center">
                 <div className="text-3xl font-bold text-white mb-2">30+</div>
                 <div className="text-gray-300">Mutlu Müşteri</div>
               </div>
-              <Meteors number={10} />
             </SpotlightCard>
           </div>
         </div>

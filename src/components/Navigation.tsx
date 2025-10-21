@@ -26,6 +26,7 @@ export default function Navigation() {
     { id: 'about', label: 'Hakkımızda' },
     { id: 'projects', label: 'Projeler' },
     { id: 'skills', label: 'Yetenekler' },
+    { id: 'faq', label: 'SSS' },
     { id: 'contact', label: 'İletişim' },
   ];
 
