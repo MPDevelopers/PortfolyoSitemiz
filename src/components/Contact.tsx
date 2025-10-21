@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Mail, Github, Linkedin, Instagram, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { supabase } from '../lib/supabase';
 import { useNavigate } from 'react-router-dom';
 
 interface FormData {
   name: string;
   email: string;
+  phone: string;
   message: string;
 }
 
@@ -21,6 +21,7 @@ export default function Contact() {
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
+    phone: '',
     message: '',
   });
   const [status, setStatus] = useState<FormStatus>({ type: 'idle', message: '' });
@@ -34,37 +35,26 @@ export default function Contact() {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus({ type: 'loading', message: 'Gönderiliyor...' });
+    setStatus({ type: 'loading', message: 'Outlook açılıyor...' });
 
-    try {
-      if (!supabase) {
-        throw new Error('Supabase yapılandırılmadı');
-      }
-      const { error } = await supabase.from('contact_messages').insert([
-        {
-          name: formData.name,
-          email: formData.email,
-          message: formData.message,
-        },
-      ]);
+    // Create email template
+    const emailSubject = `İletişim Talebi - ${formData.name}`;
+    const emailBody = `${formData.phone} telefon numaram, iletişime geçmek istiyorum\n\nMesaj: ${formData.message}\n\nİletişim Bilgileri:\nAd Soyad: ${formData.name}\nE-posta: ${formData.email}\nTelefon: ${formData.phone}`;
+    
+    // Create mailto link
+    const mailtoLink = `mailto:mpdevelopers@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(emailBody)}`;
+    
+    // Open Outlook with pre-filled email
+    window.location.href = mailtoLink;
+    
+    setStatus({ type: 'success', message: 'Outlook açıldı! E-postanızı gönderebilirsiniz.' });
+    setFormData({ name: '', email: '', phone: '', message: '' });
 
-      if (error) throw error;
-
-      setStatus({ type: 'success', message: 'Mesajınız başarıyla gönderildi!' });
-      setFormData({ name: '', email: '', message: '' });
-
-      setTimeout(() => {
-        setStatus({ type: 'idle', message: '' });
-      }, 5000);
-    } catch (error) {
-      setStatus({
-        type: 'error',
-        message: 'Bir hata oluştu. Lütfen tekrar deneyin.',
-      });
-      console.error('Error submitting form:', error);
-    }
+    setTimeout(() => {
+      setStatus({ type: 'idle', message: '' });
+    }, 5000);
   };
 
   const socialLinks = [
@@ -177,6 +167,25 @@ export default function Contact() {
 
               <div>
                 <label
+                  htmlFor="phone"
+                  className="block text-sm font-medium text-dark-300 mb-2"
+                >
+                  Telefon Numarası
+                </label>
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all"
+                  placeholder="+90 5XX XXX XX XX"
+                />
+              </div>
+
+              <div>
+                <label
                   htmlFor="message"
                   className="block text-sm font-medium text-dark-300 mb-2"
                 >
@@ -214,15 +223,13 @@ export default function Contact() {
 
               <button
                 type="submit"
-                disabled={status.type === 'loading' || !supabase}
+                disabled={status.type === 'loading'}
                 className="w-full px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 disabled:bg-transparent disabled:cursor-not-allowed font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 disabled:transform-none flex items-center justify-center space-x-2"
               >
                 <span>
-                  {!supabase
-                    ? 'Çevrimdışı: Supabase yapılandırılmadı'
-                    : status.type === 'loading'
-                    ? 'Gönderiliyor...'
-                    : 'Mesaj Gönder'}
+                  {status.type === 'loading'
+                    ? 'Outlook Açılıyor...'
+                    : 'E-posta Gönder'}
                 </span>
                 <Send className="w-5 h-5" />
               </button>
