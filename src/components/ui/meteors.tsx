@@ -21,12 +21,15 @@ export const Meteors = ({
         const meteorCount = number || 20;
         // Calculate position to evenly distribute meteors across container width
         const position = idx * (800 / meteorCount) - 400; // Spread across 800px range, centered
+        
+        // Use only reverse direction
+        const animationClass = "animate-meteor-effect-reverse";
 
         return (
           <span
             key={"meteor" + idx}
             className={cn(
-              "animate-meteor-effect absolute h-0.5 w-0.5 rotate-[45deg] rounded-[9999px] bg-slate-400 shadow-[0_0_0_1px_#ffffff20]",
+              `${animationClass} absolute h-0.5 w-0.5 rotate-[45deg] rounded-[9999px] bg-slate-400 shadow-[0_0_0_1px_#ffffff20]`,
               "before:absolute before:top-1/2 before:h-[1px] before:w-[50px] before:-translate-y-[50%] before:transform before:bg-gradient-to-r before:from-[#94a3b8] before:to-transparent before:content-['']",
               className,
             )}
