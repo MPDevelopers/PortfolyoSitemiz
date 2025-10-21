@@ -12,6 +12,9 @@ export default function Navigation() {
   
   // Sadece hizmet detay sayfalarında scroll hide özelliğini aktif et
   const isServiceDetailPage = location.pathname.includes('/services/');
+  
+  // Ana sayfa dışındaki tüm sayfalar için kontrol
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,10 +72,10 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-20">
           <button
             onClick={() => {
-              if (isServiceDetailPage) {
-                navigate('/');
-              } else {
+              if (isHomePage) {
                 scrollToSection('hero');
+              } else {
+                navigate('/');
               }
             }}
             className="flex items-center space-x-2 group"
