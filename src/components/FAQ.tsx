@@ -26,20 +26,17 @@ export default function FAQ() {
     },
     {
       question: "Bakım ücretleri var mı?",
-      answer: "Evet, projelerinizin düzenli bakımı için aylık bakım paketlerimiz bulunmaktadır. Bu paketler güvenlik güncellemeleri, performans optimizasyonları, içerik güncellemeleri ve teknik destek içerir. Aylık 500₺'den başlayan bakım paketlerimiz mevcuttur."
+      answer: "Evet, projelerinizin düzenli bakımı için aylık bakım paketlerimiz bulunmaktadır. Bu paketler güvenlik güncellemeleri, performans optimizasyonları, içerik güncellemeleri ve teknik destek içerir."
     },
     {
-      question: "Eğitim veriyor musunuz?",
-      answer: "Kesinlikle! Projenizi teslim ettikten sonra, web sitenizi veya uygulamanızı nasıl yöneteceğiniz konusunda kapsamlı eğitim veriyoruz. Bu eğitim video kayıtları, dokümantasyon ve canlı oturumlar şeklinde sunulur. Ayrıca özel eğitim programları da düzenleyebiliriz."
+      question: "Sistem için dökümantasyon sağlıyor musunuz?",
+      answer: "Kesinlikle! Projenizi teslim ettikten sonra, web sitenizi veya uygulamanızı nasıl yöneteceğiniz konusunda dökümantasyon hazırlıyoruz."
     },
     {
       question: "Daha sonra ek özellik talep edebilir miyim?",
       answer: "Tabii ki! Projeniz tamamlandıktan sonra bile yeni özellikler ekleyebiliriz. Mevcut altyapıyı bozmadan, ölçeklenebilir bir şekilde yeni özellikler geliştiriyoruz. Her ek özellik için ayrı bir teklif hazırlanır ve müşterimizle görüşülür."
     },
-    {
-      question: "İçerik yazıyor musunuz?",
-      answer: "Evet, içerik yazım hizmeti de sunuyoruz. SEO uyumlu blog yazıları, ürün açıklamaları, hakkımızda sayfası ve diğer web içerikleri için profesyonel içerik yazarlarımız bulunmaktadır. Ayrıca görsel içerik oluşturma ve sosyal medya yönetimi hizmetleri de veriyoruz."
-    }
+    
   ];
 
   return (
