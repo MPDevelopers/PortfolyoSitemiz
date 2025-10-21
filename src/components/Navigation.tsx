@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Code2 } from 'lucide-react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useScrollHide } from '../hooks/useScrollHide';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const isHidden = useScrollHide();
   
   // Sadece hizmet detay sayfalarında scroll hide özelliğini aktif et
@@ -29,12 +30,22 @@ export default function Navigation() {
     }
   };
 
+  const handleNavClick = (link: any) => {
+    if (link.href) {
+      navigate(link.href);
+      setIsMobileMenuOpen(false);
+    } else {
+      scrollToSection(link.id);
+    }
+  };
+
   const navLinks = [
     { id: 'about', label: 'Hakkımızda' },
     { id: 'projects', label: 'Projeler' },
     { id: 'skills', label: 'Yetenekler' },
     { id: 'faq', label: 'SSS' },
     { id: 'contact', label: 'İletişim' },
+    { id: 'pricing', label: 'Ücretlendirme', href: '/pricing' },
   ];
 
   return (
@@ -68,7 +79,7 @@ export default function Navigation() {
             {navLinks.map((link) => (
               <button
                 key={link.id}
-                onClick={() => scrollToSection(link.id)}
+                onClick={() => handleNavClick(link)}
                 className="text-gray-300 hover:text-white font-medium transition-colors relative group"
               >
                 {link.label}
@@ -96,7 +107,7 @@ export default function Navigation() {
             {navLinks.map((link) => (
               <button
                 key={link.id}
-                onClick={() => scrollToSection(link.id)}
+                onClick={() => handleNavClick(link)}
                 className="block w-full text-left text-gray-300 hover:text-white font-medium py-2 transition-colors"
               >
                 {link.label}
