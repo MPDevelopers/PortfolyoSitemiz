@@ -930,7 +930,7 @@ export default function ProjectDetail() {
               muted
               loop
             >
-              <source src="./screenshots/signai/demo-video.mp4" type="video/mp4" />
+              <source src="/screenshots/signai/demo-video.mp4" type="video/mp4" />
               Tarayıcınız video oynatmayı desteklemiyor.
             </video>
           </div>
