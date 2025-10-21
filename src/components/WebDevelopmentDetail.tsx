@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 import { ArrowRight } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import DotGridShader from "@/components/DotGridShader"
+import DotGridShader from "./DotGridShader"
 
 import AnimatedHeading from "@/components/AnimatedHeading"
 import RevealOnView from "@/components/RevealOnView"
