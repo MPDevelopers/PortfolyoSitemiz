@@ -44,15 +44,15 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up" style={{ animationDelay: '0.4s' }}>
             <button
               onClick={() => scrollToSection('projects')}
-              className="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+              className="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 hover:text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
             >
-              Projelerimizi Gör
+              Projelerimize Göz Atın
             </button>
             <button
               onClick={() => scrollToSection('contact')}
-              className="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 hover:text-white font-semibold rounded-lg transition-all duration-300 transform hover:scale-105"
+              className="px-8 py-4 bg-transparent border-2 border-white text-white hover:bg-white/10 hover:text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105"
             >
-              Bize Ulaş
+              Bize Ulaşın
             </button>
           </div>
         </div>
