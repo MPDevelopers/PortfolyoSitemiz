@@ -34,7 +34,7 @@ export default function About() {
   ];
 
   return (
-    <section id="about" className="py-20" style={{ backgroundColor: '#0f172a' }}>
+    <section id="about" className="py-32" style={{ backgroundColor: '#0f172a' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={ref}

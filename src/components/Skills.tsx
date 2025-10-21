@@ -55,7 +55,7 @@ export default function Skills() {
   ];
 
   return (
-    <section id="skills" className="py-20" style={{ backgroundColor: '#0f172a' }}>
+    <section id="skills" className="py-32" style={{ backgroundColor: '#0f172a' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           ref={ref}

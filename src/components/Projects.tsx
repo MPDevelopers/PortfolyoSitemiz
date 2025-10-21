@@ -1,5 +1,6 @@
 import { ExternalLink } from 'lucide-react';
 import RotatingText from './RotatingText';
+import LiquidEther from './LiquidEther';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
@@ -10,8 +11,28 @@ export default function Projects() {
   // Veri artık src/data/projects.ts'ten geliyor
 
   return (
-    <section id="projects" className="py-20" style={{ backgroundColor: '#0f172a' }}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="projects" className="py-32 relative overflow-hidden" style={{ backgroundColor: '#0f172a' }}>
+      {/* LiquidEther Arkaplan */}
+      <div className="absolute inset-0 z-0">
+        <LiquidEther
+          mouseForce={15}
+          cursorSize={50}
+          resolution={0.2}
+          iterationsPoisson={16}
+          iterationsViscous={16}
+          BFECC={false}
+          colors={['#5227FF', '#FF9FFC', '#B19EEF']}
+          autoDemo={true}
+          autoSpeed={0.4}
+          autoIntensity={2.0}
+          style={{ width: '100%', height: '100%' }}
+        />
+      </div>
+
+      {/* Koyu overlay - içeriğin daha iyi okunması için */}
+      <div className="absolute inset-0 bg-dark-900/30 z-0"></div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div
           ref={ref}
           className={`transition-all duration-700 ${
