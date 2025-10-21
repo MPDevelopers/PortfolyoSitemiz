@@ -127,16 +127,16 @@ export default function MobileServiceDetail() {
             </RevealOnView>
           </aside>
 
-          <div className="space-y-4">
+          <div className="space-y-3">
             <RevealOnView className="rounded-3xl border border-white/10 bg-gradient-to-br from-neutral-900/80 to-neutral-900/60 p-8 shadow-[0_10px_60px_-10px_rgba(0,0,0,0.6)]">
               <h2 className="text-3xl font-black tracking-tight sm:text-4xl">Süreç Yönetimi</h2>
             </RevealOnView>
 
             {processSteps.map((step, idx) => (
-              <article key={step.number} className="group relative lg:min-h-[280px]">
+              <article key={step.number} className="group relative h-[320px]">
                 <RevealOnView
                   delay={idx * 0.06}
-                  className="rounded-3xl border border-white/10 p-1 shadow-[0_10px_60px_-10px_rgba(0,0,0,0.6)] lg:h-full"
+                  className="rounded-3xl border border-white/10 p-1 shadow-[0_10px_60px_-10px_rgba(0,0,0,0.6)] h-full"
                   style={{
                     backgroundImage: `linear-gradient(135deg, ${step.gradientFrom}, ${step.gradientTo})`,
                   }}
