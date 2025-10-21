@@ -58,7 +58,7 @@ export default function Projects() {
                 />
               </span>
             </h1>
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 mt-4">
+            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4 mt-4">
               Projelerimiz
             </h2>
             <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
@@ -72,36 +72,22 @@ export default function Projects() {
               <Link
                 key={index}
                 to={`/projects/${project.slug}`}
-                className="bg-slate-800/50 rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group border border-slate-700"
+                className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl shadow-black/40 overflow-hidden transform transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group relative"
                 style={{
                   animationDelay: `${index * 0.1}s`,
                 }}
               >
-              <div className="h-2 bg-white"></div>
-
-                <div className="p-6">
-                  <div className="inline-block p-3 rounded-lg bg-transparent border border-white mb-4">
-                    <project.icon className="w-8 h-8 text-white" />
-                  </div>
-
+                {/* Subtle inner glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-purple-500/5 rounded-3xl" />
+                
+                <div className="p-6 relative z-10">
                   <h3 className="text-xl font-bold text-white mb-3 group-hover:text-white/90 transition-colors">
                     {project.title}
                   </h3>
 
-                  <p className="text-gray-300 mb-4 leading-relaxed">
+                  <p className="text-gray-300 mb-6 leading-relaxed text-sm">
                     {project.description}
                   </p>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <span
-                        key={tech}
-                        className="px-3 py-1 bg-transparent border border-white text-white text-sm rounded-full"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
 
                   <span className="flex items-center space-x-2 text-white hover:text-white/80 font-semibold group-hover:translate-x-2 transition-transform">
                     <span>Detayları Gör</span>
