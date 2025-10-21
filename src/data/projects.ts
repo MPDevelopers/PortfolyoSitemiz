@@ -56,7 +56,7 @@ export const projects: Project[] = [
               {
                 title: "Rol Seçimi ve Onboarding",
                 description: "Psikolog arıyorum / Psikolog olmak istiyorum seçimi ve Kessler testi",
-                image: "/screenshots/mindconnect/role-selection.jpg",
+                image: "../screenshots/mindconnect/role-selection.jpg",
                 icon: "👥",
                 color: "from-blue-500 to-cyan-500",
                 bgPattern: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
               {
                 title: "Kessler Psikolojik Testi",
                 description: "10 soruluk psikolojik durum değerlendirme ve severity belirleme",
-                image: "/screenshots/mindconnect/kessler-test.jpg",
+                image: "./screenshots/mindconnect/kessler-test.jpg",
                 icon: "🧠",
                 color: "from-purple-500 to-pink-500",
                 bgPattern: "bg-gradient-to-br from-purple-500/20 to-pink-500/20",
@@ -74,7 +74,7 @@ export const projects: Project[] = [
               {
                 title: "Kişiselleştirilmiş Arayüz",
                 description: "Kullanıcı tipine göre farklı arayüzler ve öneriler",
-                image: "/screenshots/mindconnect/personalized-ui.jpg",
+                image: "./screenshots/mindconnect/personalized-ui.jpg",
                 icon: "🎨",
                 color: "from-green-500 to-emerald-500",
                 bgPattern: "bg-gradient-to-br from-green-500/20 to-emerald-500/20",
@@ -88,7 +88,7 @@ export const projects: Project[] = [
               {
                 title: "Psikolog Listesi ve Filtreleme",
                 description: "Doğrulanmış psikologlar, uzmanlık alanları ve değerlendirmeler",
-                image: "/screenshots/mindconnect/psychologist-list.jpg",
+                image: "./screenshots/mindconnect/psychologist-list.jpg",
                 icon: "👨‍⚕️",
                 color: "from-indigo-500 to-blue-500",
                 bgPattern: "bg-gradient-to-br from-indigo-500/20 to-blue-500/20",
@@ -97,7 +97,7 @@ export const projects: Project[] = [
               {
                 title: "Psikolog Profili",
                 description: "Detaylı bilgiler, uzmanlık alanları ve terapi paketleri",
-                image: "/screenshots/mindconnect/psychologist-profile.jpg",
+                image: "./screenshots/mindconnect/psychologist-profile.jpg",
                 icon: "📋",
                 color: "from-emerald-500 to-teal-500",
                 bgPattern: "bg-gradient-to-br from-emerald-500/20 to-teal-500/20",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
               {
                 title: "Değerlendirme Sistemi",
                 description: "Puanlama, yorum sistemi ve güvenilirlik takibi",
-                image: "/screenshots/mindconnect/rating-system.jpg",
+                image: "./screenshots/mindconnect/rating-system.jpg",
                 icon: "⭐",
                 color: "from-amber-500 to-orange-500",
                 bgPattern: "bg-gradient-to-br from-amber-500/20 to-orange-500/20",
@@ -120,7 +120,7 @@ export const projects: Project[] = [
               {
                 title: "Gerçek Zamanlı Mesajlaşma",
                 description: "Socket.io ile güvenli, şifrelenmiş mesajlaşma sistemi",
-                image: "/screenshots/mindconnect/realtime-chat.jpg",
+                image: "./screenshots/mindconnect/realtime-chat.jpg",
                 icon: "💬",
                 color: "from-rose-500 to-pink-500",
                 bgPattern: "bg-gradient-to-br from-rose-500/20 to-pink-500/20",
@@ -129,7 +129,7 @@ export const projects: Project[] = [
               {
                 title: "İyzico Ödeme Sistemi",
                 description: "3D Secure güvenli ödeme, ödeme talepleri ve geçmiş takibi",
-                image: "/screenshots/mindconnect/payment-system.jpg",
+                image: "./screenshots/mindconnect/payment-system.jpg",
                 icon: "💳",
                 color: "from-green-500 to-teal-500",
                 bgPattern: "bg-gradient-to-br from-green-500/20 to-teal-500/20",
@@ -138,7 +138,7 @@ export const projects: Project[] = [
               {
                 title: "Randevu Sistemi",
                 description: "Müsaitlik takibi, randevu onayı ve otomatik chat odası",
-                image: "/screenshots/mindconnect/appointment-system.jpg",
+                image: "./screenshots/mindconnect/appointment-system.jpg",
                 icon: "📅",
                 color: "from-violet-500 to-purple-500",
                 bgPattern: "bg-gradient-to-br from-violet-500/20 to-purple-500/20",
@@ -152,7 +152,7 @@ export const projects: Project[] = [
               {
                 title: "JWT Authentication",
                 description: "Güvenli kimlik doğrulama ve rol tabanlı erişim kontrolü",
-                image: "/screenshots/mindconnect/authentication.jpg",
+                image: "./screenshots/mindconnect/authentication.jpg",
                 icon: "🔐",
                 color: "from-red-500 to-rose-500",
                 bgPattern: "bg-gradient-to-br from-red-500/20 to-rose-500/20",
@@ -161,7 +161,7 @@ export const projects: Project[] = [
               {
                 title: "Admin Dashboard",
                 description: "Kullanıcı yönetimi, ödeme takibi ve platform istatistikleri",
-                image: "/screenshots/mindconnect/admin-dashboard.jpg",
+                image: "./screenshots/mindconnect/admin-dashboard.jpg",
                 icon: "📊",
                 color: "from-indigo-500 to-purple-500",
                 bgPattern: "bg-gradient-to-br from-indigo-500/20 to-purple-500/20",
@@ -170,7 +170,7 @@ export const projects: Project[] = [
               {
                 title: "GDPR Uyumluluğu",
                 description: "Kişisel veri koruma, şifreleme ve gizlilik standartları",
-                image: "/screenshots/mindconnect/gdpr-compliance.jpg",
+                image: "./screenshots/mindconnect/gdpr-compliance.jpg",
                 icon: "🛡️",
                 color: "from-blue-500 to-indigo-500",
                 bgPattern: "bg-gradient-to-br from-blue-500/20 to-indigo-500/20",
@@ -208,7 +208,7 @@ export const projects: Project[] = [
                   {
                     title: "Splash Screen",
                     description: "Uygulama başlangıç ekranı ve yükleme",
-                    image: "/screenshots/spiroble/splashscreen.jpg",
+                    image: "./screenshots/spiroble/splashscreen.jpg",
                     icon: "🚀",
                     color: "from-emerald-500 to-teal-500",
                     bgPattern: "bg-gradient-to-br from-emerald-500/20 to-teal-500/20",
@@ -217,7 +217,7 @@ export const projects: Project[] = [
                   {
                     title: "Ana Sayfa",
                     description: "Günlük solunum ölçümleri ve genel sağlık durumu",
-                    image: "/screenshots/spiroble/anasayfa.jpg",
+                    image: "./screenshots/spiroble/anasayfa.jpg",
                     icon: "📊",
                     color: "from-blue-500 to-cyan-500",
                     bgPattern: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
@@ -226,7 +226,7 @@ export const projects: Project[] = [
                   {
                     title: "Bluetooth Bağlantısı",
                     description: "Spirometre cihazına Bluetooth ile bağlanma",
-                    image: "/screenshots/spiroble/bluetooth.jpg",
+                    image: "./screenshots/spiroble/bluetooth.jpg",
                     icon: "🔗",
                     color: "from-purple-500 to-pink-500",
                     bgPattern: "bg-gradient-to-br from-purple-500/20 to-pink-500/20",
@@ -235,7 +235,7 @@ export const projects: Project[] = [
                   {
                     title: "Üfleme Testi",
                     description: "Gerçek zamanlı solunum ölçümü ve veri toplama",
-                    image: "/screenshots/spiroble/üfleme.jpg",
+                    image: "./screenshots/spiroble/üfleme.jpg",
                     icon: "💨",
                     color: "from-orange-500 to-red-500",
                     bgPattern: "bg-gradient-to-br from-orange-500/20 to-red-500/20",
@@ -244,7 +244,7 @@ export const projects: Project[] = [
                   {
                     title: "Test Sonuçları",
                     description: "Detaylı solunum analizi ve sağlık raporları",
-                    image: "/screenshots/spiroble/test sonuçları.jpg",
+                    image: "./screenshots/spiroble/test sonuçları.jpg",
                     icon: "📋",
                     color: "from-indigo-500 to-purple-500",
                     bgPattern: "bg-gradient-to-br from-indigo-500/20 to-purple-500/20",
@@ -282,7 +282,7 @@ export const projects: Project[] = [
               {
                 title: "Giriş Ekranı",
                 description: "Kullanıcı girişi ve kimlik doğrulama",
-                image: "/screenshots/signai/login.jpg",
+                image: "./screenshots/signai/login.jpg",
                 icon: "🔐",
                 color: "from-blue-500 to-cyan-500",
                 bgPattern: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
@@ -291,7 +291,7 @@ export const projects: Project[] = [
               {
                 title: "Ana Sayfa",
                 description: "İşaret dili tanıma ve çeviri arayüzü",
-                image: "/screenshots/signai/homepage.jpg",
+                image: "./screenshots/signai/homepage.jpg",
                 icon: "🏠",
                 color: "from-purple-500 to-pink-500",
                 bgPattern: "bg-gradient-to-br from-purple-500/20 to-pink-500/20",
@@ -300,7 +300,7 @@ export const projects: Project[] = [
               {
                 title: "Kullanım Kılavuzu",
                 description: "İşaret dili öğrenme ve rehberlik",
-                image: "/screenshots/signai/guide.jpg",
+                image: "./screenshots/signai/guide.jpg",
                 icon: "📖",
                 color: "from-green-500 to-emerald-500",
                 bgPattern: "bg-gradient-to-br from-green-500/20 to-emerald-500/20",
@@ -309,7 +309,7 @@ export const projects: Project[] = [
               {
                 title: "Ayarlar",
                 description: "Uygulama konfigürasyonu ve kişiselleştirme",
-                image: "/screenshots/signai/settings.jpg",
+                image: "./screenshots/signai/settings.jpg",
                 icon: "⚙️",
                 color: "from-orange-500 to-red-500",
                 bgPattern: "bg-gradient-to-br from-orange-500/20 to-red-500/20",
@@ -347,7 +347,7 @@ export const projects: Project[] = [
               {
                 title: "Ana Sayfa",
                 description: "Modern tasarım ile havacılık haberleri, kategoriler ve son dakika haberleri. Breaking news banner ve kategori bazlı filtreleme özellikleri",
-                image: "/screenshots/haberapron/Ekran görüntüsü 2025-10-21 192026.png",
+                image: "./screenshots/haberapron/Ekran görüntüsü 2025-10-21 192026.png",
                 icon: "🏠",
                 color: "from-blue-600 to-indigo-600",
                 bgPattern: "bg-gradient-to-br from-blue-600/20 to-indigo-600/20",
@@ -356,7 +356,7 @@ export const projects: Project[] = [
               {
                 title: "Makale Sayfası",
                 description: "Rich text editor ile zengin içerik, yorum sistemi ve sosyal medya paylaşım özellikleri. Email doğrulamalı yorum sistemi",
-                image: "/screenshots/haberapron/Ekran görüntüsü 2025-10-21 192044.png",
+                image: "./screenshots/haberapron/Ekran görüntüsü 2025-10-21 192044.png",
                 icon: "📰",
                 color: "from-purple-600 to-pink-600",
                 bgPattern: "bg-gradient-to-br from-purple-600/20 to-pink-600/20",
@@ -365,7 +365,7 @@ export const projects: Project[] = [
               {
                 title: "Arama Sonuçları",
                 description: "Full-text search ve gelişmiş filtreleme sistemi. Kategori, tarih ve popülerlik bazlı sıralama özellikleri",
-                image: "/screenshots/haberapron/Ekran görüntüsü 2025-10-21 192115.png",
+                image: "./screenshots/haberapron/Ekran görüntüsü 2025-10-21 192115.png",
                 icon: "🔍",
                 color: "from-green-600 to-emerald-600",
                 bgPattern: "bg-gradient-to-br from-green-600/20 to-emerald-600/20",
@@ -379,7 +379,7 @@ export const projects: Project[] = [
               {
                 title: "Admin Dashboard",
                 description: "Kapsamlı içerik yönetimi, kullanıcı yönetimi ve analitik paneli. Makale oluşturma, düzenleme ve yayınlama özellikleri",
-                image: "/screenshots/haberapron/Ekran görüntüsü 2025-10-21 192101.png",
+                image: "./screenshots/haberapron/Ekran görüntüsü 2025-10-21 192101.png",
                 icon: "⚙️",
                 color: "from-orange-600 to-red-600",
                 bgPattern: "bg-gradient-to-br from-orange-600/20 to-red-600/20",
@@ -388,7 +388,7 @@ export const projects: Project[] = [
               {
                 title: "Mobil Responsive",
                 description: "Mobile-first yaklaşım ile responsive tasarım. Tüm cihazlarda optimize edilmiş kullanıcı deneyimi ve touch-friendly arayüz",
-                image: "/screenshots/haberapron/Ekran görüntüsü 2025-10-21 192132.png",
+                image: "./screenshots/haberapron/Ekran görüntüsü 2025-10-21 192132.png",
                 icon: "📱",
                 color: "from-teal-600 to-cyan-600",
                 bgPattern: "bg-gradient-to-br from-teal-600/20 to-cyan-600/20",
