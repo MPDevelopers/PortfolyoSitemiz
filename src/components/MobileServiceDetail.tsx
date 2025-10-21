@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { ArrowRight } from "lucide-react"
+import { useEffect } from "react"
 
 import { Button } from "@/components/ui/button"
 import DotGridShader from "@/components/DotGridShader"
@@ -9,6 +10,10 @@ import RevealOnView from "@/components/RevealOnView"
 import { Badge } from "@/components/ui/badge"
 
 export default function MobileServiceDetail() {
+  // Sayfa yüklendiğinde en üste scroll yap
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const processSteps = [
     {
       number: "1",
