@@ -1,5 +1,6 @@
 import { ChevronDown } from 'lucide-react';
-import LiquidEther from './LiquidEther';
+import { ShootingStars } from './ui/shooting-stars';
+import { StarsBackground } from './ui/stars-background';
 // RotatingText kaldırıldı; Projects bölümüne taşındı
 
 export default function Hero() {
@@ -15,20 +16,24 @@ export default function Hero() {
       id="hero"
       className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-indigo-950"
     >
-      {/* LiquidEther Arkaplan */}
+      {/* Stars Background */}
       <div className="absolute inset-0 z-0">
-        <LiquidEther
-          mouseForce={15}
-          cursorSize={50}
-          resolution={0.2}
-          iterationsPoisson={16}
-          iterationsViscous={16}
-          BFECC={false}
-          colors={['#5227FF', '#FF9FFC', '#B19EEF']}
-          autoDemo={true}
-          autoSpeed={0.4}
-          autoIntensity={2.0}
-          style={{ width: '100%', height: '100%' }}
+        <StarsBackground 
+          starDensity={0.0004}
+          allStarsTwinkle={true}
+          twinkleProbability={0.8}
+          minTwinkleSpeed={0.5}
+          maxTwinkleSpeed={1.5}
+        />
+        <ShootingStars
+          minSpeed={15}
+          maxSpeed={30}
+          minDelay={1000}
+          maxDelay={3000}
+          starColor="#60A5FA"
+          trailColor="#3B82F6"
+          starWidth={12}
+          starHeight={2}
         />
       </div>
 
