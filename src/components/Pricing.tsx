@@ -13,132 +13,75 @@ export default function Pricing() {
       name: "Starter",
       color: "bg-orange-500",
       textColor: "text-orange-500",
-      hours: "4 saat",
       users: "Basit Uygulamalar",
-      userSubtext: "1-5 kullanıcı",
+      userSubtext: "Statik web sitesi",
       features: [
-        { name: "Proje Yönetimi", included: [true, true, true, true, true] },
-        { name: "E-posta + Telefon Desteği", included: [true, true, true, true, true] },
-        { name: "Eğitim ve Koçluk", included: [true, true, true, true, true] },
-        { name: "Yapılandırma", included: [true, true, true, true, true] },
-        { name: "Veri İçe Aktarma Desteği", included: [false, true, true, true, true] },
-        { name: "Yerinde Danışmanlık Hizmeti *", included: [false, false, true, true, true] },
+        { name: "Proje Yönetimi", included: [true, true, true] },
+        { name: "Auth sistemi", included: [false, true, true] },
+        { name: "Yapılandırma", included: [true, true, true] },
+        { name: "Veri İçe Aktarma Desteği", included: [false, true, true] },
       ],
       customizations: [
-        { name: "Özelleştirmeler (formlar, raporlar, iş akışı)", included: [false, true, true, true, true] },
-        { name: "Geliştirmeler", included: [false, false, true, true, true] },
-        { name: "Performans Sorunları", included: [false, false, true, true, true] },
+        { name: "Özelleştirmeler (formlar, raporlar, iş akışı)", included: [false, true, true] },
+        { name: "Geliştirmeler", included: [false, false, true] },
+        { name: "Performans Sorunları", included: [false, false, true] },
       ],
-      regularPrice: "329,41 €",
-      discountedPrice: "280,00 €",
-    },
-    {
-      name: "Temel",
-      color: "bg-indigo-600",
-      textColor: "text-indigo-600",
-      hours: "25 saat",
-      users: "Basit Uygulamalar",
-      userSubtext: "",
-      features: [
-        { name: "Proje Yönetimi", included: [true, true, true, true, true] },
-        { name: "E-posta + Telefon Desteği", included: [true, true, true, true, true] },
-        { name: "Eğitim ve Koçluk", included: [true, true, true, true, true] },
-        { name: "Yapılandırma", included: [true, true, true, true, true] },
-        { name: "Veri İçe Aktarma Desteği", included: [false, true, true, true, true] },
-        { name: "Yerinde Danışmanlık Hizmeti *", included: [false, false, true, true, true] },
-      ],
-      customizations: [
-        { name: "Özelleştirmeler (formlar, raporlar, iş akışı)", included: [false, true, true, true, true] },
-        { name: "Geliştirmeler", included: [false, false, true, true, true] },
-        { name: "Performans Sorunları", included: [false, false, true, true, true] },
-      ],
-      regularPrice: "1.700,00 €",
-      discountedPrice: "1.445,00 €",
+      regularPrice: "5.000 TL",
+      discountedPrice: "4.250 TL",
     },
     {
       name: "Standart",
       color: "bg-rose-500",
       textColor: "text-rose-500",
-      hours: "50 saat",
       users: "Gelişmiş Uygulamalar",
-      userSubtext: "Veri İçe Aktarımı",
+      userSubtext: "20.000 - 100.000 TL",
       features: [
-        { name: "Proje Yönetimi", included: [true, true, true, true, true] },
-        { name: "E-posta + Telefon Desteği", included: [true, true, true, true, true] },
-        { name: "Eğitim ve Koçluk", included: [true, true, true, true, true] },
-        { name: "Yapılandırma", included: [true, true, true, true, true] },
-        { name: "Veri İçe Aktarma Desteği", included: [false, true, true, true, true] },
-        { name: "Yerinde Danışmanlık Hizmeti *", included: [false, false, true, true, true] },
+        { name: "Proje Yönetimi", included: [true, true, true] },
+        { name: "Auth sistemi", included: [false, true, true] },
+        { name: "Yapılandırma", included: [true, true, true] },
+        { name: "Veri İçe Aktarma Desteği", included: [false, true, true] },
       ],
       customizations: [
-        { name: "Özelleştirmeler (formlar, raporlar, iş akışı)", included: [false, true, true, true, true] },
-        { name: "Geliştirmeler", included: [false, false, true, true, true] },
-        { name: "Performans Sorunları", included: [false, false, true, true, true] },
+        { name: "Özelleştirmeler (formlar, raporlar, iş akışı)", included: [false, true, true] },
+        { name: "Geliştirmeler", included: [false, false, true] },
+        { name: "Performans Sorunları", included: [false, false, true] },
       ],
-      regularPrice: "3.000,00 €",
-      discountedPrice: "2.550,00 €",
-    },
-    {
-      name: "Özel Plan",
-      color: "bg-teal-500",
-      textColor: "text-teal-500",
-      hours: "100 saat",
-      users: "Gelişmiş Uygulamalar",
-      userSubtext: "Veri İçe Aktarımı Özelleştirmeler",
-      features: [
-        { name: "Proje Yönetimi", included: [true, true, true, true, true] },
-        { name: "E-posta + Telefon Desteği", included: [true, true, true, true, true] },
-        { name: "Eğitim ve Koçluk", included: [true, true, true, true, true] },
-        { name: "Yapılandırma", included: [true, true, true, true, true] },
-        { name: "Veri İçe Aktarma Desteği", included: [false, true, true, true, true] },
-        { name: "Yerinde Danışmanlık Hizmeti *", included: [false, false, true, true, true] },
-      ],
-      customizations: [
-        { name: "Özelleştirmeler (formlar, raporlar, iş akışı)", included: [false, true, true, true, true] },
-        { name: "Geliştirmeler", included: [false, false, true, true, true] },
-        { name: "Performans Sorunları", included: [false, false, true, true, true] },
-      ],
-      regularPrice: "5.400,00 €",
-      discountedPrice: "4.590,00 €",
+      regularPrice: "20.000 - 100.000 TL",
+      discountedPrice: "17.000-85.000 TL",
     },
     {
       name: "Pro",
       color: "bg-slate-600",
       textColor: "text-slate-600",
-      hours: "200 saat",
       users: "Gelişmiş Uygulamalar",
-      userSubtext: "Veri İçe Aktarımı Özelleştirmeler",
+      userSubtext: "100.000+ TL",
       features: [
-        { name: "Proje Yönetimi", included: [true, true, true, true, true] },
-        { name: "E-posta + Telefon Desteği", included: [true, true, true, true, true] },
-        { name: "Eğitim ve Koçluk", included: [true, true, true, true, true] },
-        { name: "Yapılandırma", included: [true, true, true, true, true] },
-        { name: "Veri İçe Aktarma Desteği", included: [false, true, true, true, true] },
-        { name: "Yerinde Danışmanlık Hizmeti *", included: [false, false, true, true, true] },
+        { name: "Proje Yönetimi", included: [true, true, true] },
+        { name: "Auth sistemi", included: [false, true, true] },
+        { name: "Yapılandırma", included: [true, true, true] },
+        { name: "Veri İçe Aktarma Desteği", included: [false, true, true] },
       ],
       customizations: [
-        { name: "Özelleştirmeler (formlar, raporlar, iş akışı)", included: [false, true, true, true, true] },
-        { name: "Geliştirmeler", included: [false, false, true, true, true] },
-        { name: "Performans Sorunları", included: [false, false, true, true, true] },
+        { name: "Özelleştirmeler (formlar, raporlar, iş akışı)", included: [false, true, true] },
+        { name: "Geliştirmeler", included: [false, false, true] },
+        { name: "Performans Sorunları", included: [false, false, true] },
       ],
-      regularPrice: "10.800,00 €",
-      discountedPrice: "9.180,00 €",
+      regularPrice: "100.000+ TL",
+      discountedPrice: "85.000+ TL",
     },
   ]
 
   const allFeatures = [
-    { name: "Proje Yönetimi", included: [true, true, true, true, true] },
-    { name: "E-posta + Telefon Desteği", included: [true, true, true, true, true] },
-    { name: "Eğitim ve Koçluk", included: [true, true, true, true, true] },
-    { name: "Yapılandırma", included: [true, true, true, true, true] },
-    { name: "Veri İçe Aktarma Desteği", included: [false, true, true, true, true] },
-    { name: "Yerinde Danışmanlık Hizmeti *", included: [false, false, true, true, true] },
+    { name: "Proje Yönetimi", included: [true, true, true] },
+    { name: "Auth sistemi", included: [false, true, true] },
+    { name: "Yapılandırma", included: [true, true, true] },
+    { name: "Veri İçe Aktarma Desteği", included: [false, true, true] },
   ]
 
   const customizationFeatures = [
-    { name: "Özelleştirmeler (formlar, raporlar, iş akışı)", included: [false, true, true, true, true] },
-    { name: "Geliştirmeler", included: [false, false, true, true, true] },
-    { name: "Performans Sorunları", included: [false, false, true, true, true] },
+    { name: "Özelleştirmeler (formlar, raporlar, iş akışı)", included: [false, true, true] },
+    { name: "Geliştirmeler", included: [false, false, true] },
+    { name: "Performans Sorunları", included: [false, false, true] },
   ]
 
   return (
@@ -192,7 +135,7 @@ export default function Pricing() {
             {/* Subtle inner glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-purple-500/5 rounded-3xl" />
             {/* Table Header */}
-            <div className="grid grid-cols-6 border-b border-white/10 bg-white/5 backdrop-blur-xl">
+            <div className="grid grid-cols-4 border-b border-white/10 bg-white/5 backdrop-blur-xl">
               <div className="col-span-1 p-6">
                 <p className="text-sm font-semibold text-white/90">Önerilir:</p>
               </div>
@@ -210,21 +153,10 @@ export default function Pricing() {
               ))}
             </div>
 
-            {/* Hours Row */}
-            <div className="grid grid-cols-6 border-b border-white/10 bg-white/5 backdrop-blur-xl">
-              <div className="col-span-1 p-4">
-                <p className="font-semibold text-white/90">Size Özel Uzman</p>
-              </div>
-              {pricingTiers.map((tier, index) => (
-                <div key={index} className="col-span-1 p-4 text-center">
-                  <p className="text-2xl font-bold text-white">{tier.hours}</p>
-                </div>
-              ))}
-            </div>
 
             {/* Features */}
             {allFeatures.map((feature, featureIndex) => (
-              <div key={featureIndex} className="grid grid-cols-6 border-b border-white/10 hover:bg-white/5 backdrop-blur-sm transition-all duration-300">
+              <div key={featureIndex} className="grid grid-cols-4 border-b border-white/10 hover:bg-white/5 backdrop-blur-sm transition-all duration-300">
                 <div className="col-span-1 p-4">
                   <p className="text-white/90">{feature.name}</p>
                 </div>
@@ -237,16 +169,22 @@ export default function Pricing() {
             ))}
 
             {/* Customizations Section Header */}
-            <div className="grid grid-cols-6 border-b border-white/10 bg-white/10 backdrop-blur-xl">
+            <div className="grid grid-cols-4 border-b border-white/10 bg-white/10 backdrop-blur-xl">
               <div className="col-span-1 p-4">
-                <p className="font-bold text-white">Uygulama Özelleştirmesi **</p>
+                <p className="font-bold text-white flex items-center gap-2">
+                  Uygulama Özelleştirmesi
+                  <Info className="w-4 h-4" />
+                </p>
+                <p className="text-xs text-gray-400 mt-1">
+                  Uygulamanın kararlaştırılmış özelliklerinin dışında eklenecek kısımlar ücrete tabiidir
+                </p>
               </div>
-              <div className="col-span-5"></div>
+              <div className="col-span-3"></div>
             </div>
 
             {/* Customization Features */}
             {customizationFeatures.map((feature, featureIndex) => (
-              <div key={featureIndex} className="grid grid-cols-6 border-b border-white/10 hover:bg-white/5 backdrop-blur-sm transition-all duration-300">
+              <div key={featureIndex} className="grid grid-cols-4 border-b border-white/10 hover:bg-white/5 backdrop-blur-sm transition-all duration-300">
                 <div className="col-span-1 p-4">
                   <p className="text-white/90">{feature.name}</p>
                 </div>
@@ -259,7 +197,7 @@ export default function Pricing() {
             ))}
 
             {/* Pricing Rows */}
-            <div className="grid grid-cols-6 border-b border-white/10 bg-white/5 backdrop-blur-xl">
+            <div className="grid grid-cols-4 border-b border-white/10 bg-white/5 backdrop-blur-xl">
               <div className="col-span-1 p-4">
                 <p className="font-bold text-white">Tekrar Alışveriş Yapan Müşteriler</p>
               </div>
@@ -270,9 +208,9 @@ export default function Pricing() {
               ))}
             </div>
 
-            <div className="grid grid-cols-6">
+            <div className="grid grid-cols-4">
               <div className="col-span-1 p-4 bg-white/5 backdrop-blur-xl">
-                <p className="font-bold text-white">Yeni Müşteriler (15% indirim) ***</p>
+                <p className="font-bold text-white">Yeni Müşteriler (15% indirim)</p>
               </div>
               {pricingTiers.map((tier, index) => (
                 <div key={index} className={`col-span-1 p-6 ${tier.color} text-white text-center relative`}>
