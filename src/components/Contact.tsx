@@ -230,48 +230,6 @@ export default function Contact() {
           </div>
         </div>
 
-        {/* SSS Section */}
-        <div className="mt-20 max-w-4xl mx-auto">
-          <h3 className="text-3xl font-bold text-white mb-8 text-center">
-            Sıkça Sorulan Sorular
-          </h3>
-          
-          <div className="bg-dark-800 rounded-2xl p-8">
-            <div className="space-y-6">
-              <div>
-                <h4 className="text-xl font-semibold text-white mb-3">
-                  Projelerinizin fiyatları nasıl belirleniyor?
-                </h4>
-                <p className="text-dark-300 leading-relaxed">
-                  Projelerimizin <button 
-                    onClick={() => navigate('/pricing')}
-                    className="text-blue-400 hover:text-blue-300 underline cursor-pointer transition-colors"
-                  >
-                    fiyatları
-                  </button>, karmaşıklık, süre ve gereksinimlere göre değişiklik gösterir. Temel web siteleri için 5.000₺'den başlayan paketlerimiz bulunmaktadır. E-ticaret siteleri ve özel uygulamalar için daha detaylı bir fiyatlandırma yapılır. Size özel teklif hazırlamak için bizimle iletişime geçebilirsiniz.
-                </p>
-              </div>
-              
-              <div>
-                <h4 className="text-xl font-semibold text-white mb-3">
-                  Proje süreci nasıl işliyor?
-                </h4>
-                <p className="text-dark-300 leading-relaxed">
-                  İlk olarak projenizin gereksinimlerini detaylı olarak analiz ediyoruz. Ardından tasarım aşamasına geçiyoruz ve sizin onayınızı aldıktan sonra geliştirme sürecine başlıyoruz. Her aşamada sizi bilgilendiriyor ve geri bildirimlerinizi alıyoruz.
-                </p>
-              </div>
-              
-              <div>
-                <h4 className="text-xl font-semibold text-white mb-3">
-                  Proje teslim süresi ne kadar?
-                </h4>
-                <p className="text-dark-300 leading-relaxed">
-                  Proje karmaşıklığına bağlı olarak değişmekle birlikte, basit web siteleri 2-4 hafta, karmaşık uygulamalar 2-6 ay arasında teslim edilmektedir. Detaylı zaman çizelgesi proje analizi sonrasında size sunulur.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
