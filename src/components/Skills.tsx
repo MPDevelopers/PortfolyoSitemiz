@@ -127,26 +127,6 @@ export default function Skills() {
             ))}
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <SpotlightCard spotlightColor="rgba(59, 130, 246, 0.2)">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">5+</div>
-                <div className="text-gray-300">Yıllık Deneyim</div>
-              </div>
-            </SpotlightCard>
-            <SpotlightCard spotlightColor="rgba(16, 185, 129, 0.2)">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">50+</div>
-                <div className="text-gray-300">Tamamlanan Proje</div>
-              </div>
-            </SpotlightCard>
-            <SpotlightCard spotlightColor="rgba(168, 85, 247, 0.2)">
-              <div className="text-center">
-                <div className="text-3xl font-bold text-white mb-2">30+</div>
-                <div className="text-gray-300">Mutlu Müşteri</div>
-              </div>
-            </SpotlightCard>
-          </div>
         </div>
       </div>
     </section>

@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import { Meteors } from './ui/meteors';
 import LiquidEther from './LiquidEther';
 
 export default function FAQ() {
@@ -87,19 +86,18 @@ export default function FAQ() {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            <div className="space-y-4">
+            <div className="space-y-6">
               {faqItems.map((item, index) => (
                 <div
                   key={index}
-                  className="relative bg-slate-800/50 border border-slate-700 rounded-2xl overflow-hidden hover:border-slate-600 transition-all duration-300"
+                  className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl shadow-black/40 overflow-hidden relative hover:bg-white/10 transition-all duration-300"
                 >
-                  {/* Meteor effect for each FAQ card */}
-                  <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <Meteors number={8} />
-                  </div>
+                  {/* Subtle inner glow */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-purple-500/5 rounded-3xl" />
+                  
                   <button
                     onClick={() => toggleItem(index)}
-                    className="relative z-10 w-full px-8 py-6 text-left flex items-center justify-between hover:bg-slate-800/30 transition-colors duration-200"
+                    className="relative z-10 w-full px-8 py-6 text-left flex items-center justify-between hover:bg-white/5 transition-colors duration-200"
                   >
                     <h3 className="text-xl font-semibold text-white pr-4">
                       {item.question}
@@ -119,7 +117,7 @@ export default function FAQ() {
                     }`}
                   >
                     <div className="px-8 pb-6">
-                      <div className="w-full h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent mb-4"></div>
+                      <div className="w-full h-px bg-gradient-to-r from-transparent via-white/20 to-transparent mb-4"></div>
                       <p className="text-gray-300 leading-relaxed">
                         {item.answer}
                       </p>
@@ -132,25 +130,30 @@ export default function FAQ() {
 
           {/* CTA Section */}
           <div className="text-center mt-16">
-            <div className="bg-slate-800/30 border border-slate-700 rounded-2xl p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Sorunuz mu var?
-              </h3>
-              <p className="text-gray-400 mb-6">
-                SSS bölümümüzde aradığınız cevabı bulamadıysanız, bizimle iletişime geçmekten çekinmeyin!
-              </p>
-              <button
-                onClick={() => {
-                  const contactSection = document.getElementById('contact');
-                  if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
-              >
-                <HelpCircle className="w-5 h-5 mr-2" />
-                İletişime Geç
-              </button>
+            <div className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl shadow-2xl shadow-black/40 p-8 max-w-2xl mx-auto relative overflow-hidden">
+              {/* Subtle inner glow */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-purple-500/5 rounded-3xl" />
+              
+              <div className="relative z-10">
+                <h3 className="text-2xl font-bold text-white mb-4">
+                  Sorunuz mu var?
+                </h3>
+                <p className="text-gray-300 mb-6">
+                  SSS bölümümüzde aradığınız cevabı bulamadıysanız, bizimle iletişime geçmekten çekinmeyin!
+                </p>
+                <button
+                  onClick={() => {
+                    const contactSection = document.getElementById('contact');
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white rounded-2xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
+                >
+                  <HelpCircle className="w-5 h-5 mr-2" />
+                  İletişime Geç
+                </button>
+              </div>
             </div>
           </div>
         </div>
