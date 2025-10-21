@@ -101,6 +101,10 @@ export default function MobileServiceDetail() {
                     <div className="h-1.5 w-1.5 rounded-full bg-white/60" />
                     <span className="text-sm text-white/80">Sensör entegrasyonu</span>
                   </div>
+                  <div className="flex items-center gap-2">
+                    <div className="h-1.5 w-1.5 rounded-full bg-white/60" />
+                    <span className="text-sm text-white/80">Ödeme entegrasyonları</span>
+                  </div>
                 </div>
 
                
@@ -114,6 +118,8 @@ export default function MobileServiceDetail() {
                     <li>SQLite</li>
                     <li>Bluetooth</li>
                     <li>GPS</li>
+                    <li>Stripe</li>
+                    <li>PayPal</li>
                   </ul>
                 </div>
               </div>

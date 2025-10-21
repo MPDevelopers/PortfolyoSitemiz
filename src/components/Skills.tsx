@@ -47,9 +47,10 @@ export default function Skills() {
         "Offline çalışma desteği",
         "Push notification",
         "Kamera ve sensör entegrasyonu",
-        "Gerçek zamanlı veri senkronizasyonu"
+        "Gerçek zamanlı veri senkronizasyonu",
+        "Ödeme entegrasyonları"
       ],
-      technologies: ["Flutter", "React Native", "Firebase", "SQLite", "Bluetooth", "GPS"],
+      technologies: ["Flutter", "React Native", "Firebase", "SQLite", "Bluetooth", "GPS", "Stripe", "PayPal"],
       route: "/services/mobile-service"
     }
   ];
