@@ -1,7 +1,7 @@
 "use client"
 
 import { useScrollAnimation } from "../hooks/useScrollAnimation"
-import { ArrowLeft, Check, Info } from "lucide-react"
+import { ArrowLeft, Check, Info, MessageCircle } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
 export default function Pricing() {
@@ -221,6 +221,43 @@ export default function Pricing() {
           </div>
 
         </div>
+      </div>
+
+      {/* Glass Effect Contact Button - Fixed Position */}
+      <div className="fixed bottom-8 right-8 z-50">
+        <button
+          onClick={() => {
+            navigate('/');
+            // Sayfa yüklendikten sonra iletişim bölümüne scroll yap
+            setTimeout(() => {
+              const contactSection = document.getElementById('contact');
+              if (contactSection) {
+                const offset = 100; // 100px yukarıdan başla - navigation bar için
+                const elementPosition = contactSection.getBoundingClientRect().top + window.pageYOffset;
+                const offsetPosition = elementPosition - offset;
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+              }
+            }, 200);
+          }}
+          className="group relative px-6 py-4 bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl shadow-2xl hover:bg-white/20 transition-all duration-300 transform hover:scale-105 hover:shadow-3xl"
+        >
+          {/* Glass effect overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-white/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          
+          {/* Content */}
+          <div className="relative flex items-center space-x-3 text-white">
+            <MessageCircle className="w-5 h-5 group-hover:scale-110 transition-transform duration-300" />
+            <span className="font-medium text-sm whitespace-nowrap">
+              Daha Detaylı Fiyatlandırma İçin Bize Ulaşın
+            </span>
+          </div>
+          
+          {/* Subtle glow effect */}
+          <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-500/20 to-blue-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 blur-sm" />
+        </button>
       </div>
     </div>
   )
