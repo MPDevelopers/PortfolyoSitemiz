@@ -98,14 +98,6 @@ export default function MobileDevelopmentDetail() {
                   </div>
                 </div>
 
-                <div className="mt-8 flex flex-wrap items-center gap-3">
-                  <Button asChild size="lg" className="rounded-full">
-                    <Link to="/contact">
-                      Hemen İletişime Geç
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </div>
 
                 <div className="mt-10">
                   <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">KULLANDIĞIMIZ TEKNOLOJİLER</p>

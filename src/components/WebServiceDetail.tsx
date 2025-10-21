@@ -108,12 +108,7 @@ export default function WebServiceDetail() {
                 </div>
 
                 <div className="mt-8 flex flex-wrap items-center gap-3">
-                  <Button asChild size="lg" className="rounded-full">
-                    <Link to="/contact">
-                      Hemen İletişime Geç
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
+                
                 </div>
 
                 <div className="mt-10">
