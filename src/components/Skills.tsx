@@ -27,11 +27,11 @@ export default function Skills() {
       description: "Modern, hızlı ve kullanıcı dostu web uygulamaları geliştiriyoruz",
       features: [
         "Responsive ve mobil uyumlu tasarım",
-        "SEO optimizasyonu",
-        "Hızlı yükleme süreleri",
+        "Veri Tabanı entegreli sistemler",
         "Güvenli veri yönetimi",
-        "Modern teknolojiler (React, Next.js, TypeScript)",
-        "E-ticaret entegrasyonları"
+        "Modern Teknolojiler",
+        "Hızlı Geliştirme Süreleri",
+        "Ödeme Entegrasyonları"
       ],
       technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Firebase", "Supabase"],
       route: "/services/web-service"
