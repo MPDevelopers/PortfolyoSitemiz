@@ -1,4 +1,4 @@
-import { Code, Smartphone, Database, Palette, Zap } from 'lucide-react';
+import { Code, Smartphone, Database, Zap } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import SpotlightCard from './SpotlightCard';
 
@@ -27,9 +27,9 @@ export default function About() {
       color: 'rgba(34, 197, 94, 0.3)'
     },
     { 
-      icon: Palette, 
-      name: 'UI/UX Design', 
-      color: 'rgba(168, 85, 247, 0.3)'
+      icon: Code, 
+      name: 'Python', 
+      color: 'rgba(255, 193, 7, 0.3)'
     },
   ];
 
@@ -73,16 +73,15 @@ export default function About() {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6">
+            <div className="grid grid-cols-3 sm:grid-cols-5 gap-4">
               {expertiseAreas.map((area, index) => (
-                <SpotlightCard
+                <div
                   key={area.name}
-                  spotlightColor={area.color}
-                  className="text-center flex flex-col justify-center items-center"
+                  className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl shadow-black/40 p-4 text-center flex flex-col justify-center items-center hover:bg-white/10 transition-all duration-300"
                 >
-                  <area.icon className="w-12 h-12 text-white mb-4" />
-                  <h3 className="font-semibold text-white">{area.name}</h3>
-                </SpotlightCard>
+                  <area.icon className="w-8 h-8 text-white mb-2" />
+                  <h3 className="font-semibold text-white text-sm">{area.name}</h3>
+                </div>
               ))}
             </div>
           </div>
