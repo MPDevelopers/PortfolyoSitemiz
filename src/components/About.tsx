@@ -126,13 +126,7 @@ export default function About() {
                 oluşturmak.
               </p>
 
-              <div className="flex items-center space-x-4 pt-4">
-                <Zap className="w-12 h-12 text-white" />
-                <div>
-                  <p className="text-2xl font-bold text-white">50+</p>
-                  <p className="text-gray-400">Tamamlanan Proje</p>
-                </div>
-              </div>
+             
             </div>
 
             <div className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-4 gap-4">
