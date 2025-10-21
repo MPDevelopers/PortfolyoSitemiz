@@ -39,6 +39,7 @@ export default {
         'slide-down': 'slideDown 0.3s ease-out',
         'scale-in': 'scaleIn 0.3s ease-out',
         'float': 'float 3s ease-in-out infinite',
+        'meteor-effect': 'meteor 5s linear infinite',
       },
       keyframes: {
         fadeIn: {
@@ -60,6 +61,11 @@ export default {
         float: {
           '0%, 100%': { transform: 'translateY(0px)' },
           '50%': { transform: 'translateY(-10px)' },
+        },
+        meteor: {
+          '0%': { transform: 'rotate(45deg) translateX(-100px)', opacity: '1' },
+          '70%': { opacity: '1' },
+          '100%': { transform: 'rotate(45deg) translateX(500px)', opacity: '0' },
         },
       },
     },
