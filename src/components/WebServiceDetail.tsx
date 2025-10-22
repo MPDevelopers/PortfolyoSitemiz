@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { ArrowRight } from "lucide-react"
 import { useEffect } from "react"
+import { useTranslation } from "react-i18next"
 
 import { Button } from "@/components/ui/button"
 import DotGridShader from "./DotGridShader"
@@ -10,53 +11,19 @@ import RevealOnView from "@/components/RevealOnView"
 import { Badge } from "@/components/ui/badge"
 
 export default function WebServiceDetail() {
+  const { t } = useTranslation()
   // Sayfa yüklendiğinde en üste scroll yap
   useEffect(() => {
     window.scrollTo(0, 0)
   }, [])
 
+  const processStepsData = t("services.webDevelopment.processSteps", { returnObjects: true }) as Array<{ title: string; description: string; note?: string }>
   const processSteps = [
-    {
-      number: "1",
-      title: "Başlangıç Toplantısı",
-      description:
-        "Projeye başlamadan önce müşterinin ihtiyaçlarını, beklentilerini ve hedeflerini anlamak için detaylı bir toplantı gerçekleştiriyoruz. Bu aşama, projenin doğru bir şekilde planlanabilmesi için temel oluşturur.",
-      gradientFrom: "#0f172a",
-      gradientTo: "#6d28d9",
-    },
-    {
-      number: "2",
-      title: "Gereksinim Analizi",
-      description:
-        "Toplantıda elde edilen bilgiler doğrultusunda, projenin iş ve teknik gereksinimleri çıkarılır. Hangi özelliklerin öncelikli olduğu, kullanıcı akışları ve teknik gereklilikler detaylı olarak belirlenir.",
-      gradientFrom: "#111827",
-      gradientTo: "#2563eb",
-    },
-    {
-      number: "3",
-      title: "Haftalık Toplantılar ve Süreç Takibi",
-      description:
-        "Müşteri ile anlaşma sağlandıktan sonra proje süreci, haftalık toplantılar ile yakından takip edilir. Bu aşamada, projenin ilerleyişi düzenli olarak gözden geçirilir ve anlaşılan kriterler doğrultusunda gerekli revizeler yapılır.",
-      note: "Not: Süreç içinde yeni özellikler eklenmesi durumunda, ek çalışmalar için yeniden fiyatlandırma yapılır.",
-      gradientFrom: "#0b132b",
-      gradientTo: "#5bc0be",
-    },
-    {
-      number: "4",
-      title: "Revizeler ve Uygulama Teslimi",
-      description:
-        "Revizeler tamamlandıktan sonra, uygulama anlaşılan kriterler doğrultusunda tamamlanır ve müşteriye teslim edilir. Bu aşama, projenin hedeflenen kalite ve fonksiyonellikte son halini almasını sağlar.",
-      gradientFrom: "#0f172a",
-      gradientTo: "#10b981",
-    },
-    {
-      number: "5",
-      title: "Bakım ve Destek",
-      description:
-        "Uygulamanın tesliminden sonra sunulan bakım ve destek hizmetleri, sistemin sorunsuz çalışmasını ve gerektiğinde güncellemeler yapılmasını kapsar. Bu hizmetler ayrıca ücretlendirilir.",
-      gradientFrom: "#1f2937",
-      gradientTo: "#8b5cf6",
-    },
+    { number: "1", gradientFrom: "#0f172a", gradientTo: "#6d28d9", title: processStepsData?.[0]?.title, description: processStepsData?.[0]?.description },
+    { number: "2", gradientFrom: "#111827", gradientTo: "#2563eb", title: processStepsData?.[1]?.title, description: processStepsData?.[1]?.description },
+    { number: "3", gradientFrom: "#0b132b", gradientTo: "#5bc0be", title: processStepsData?.[2]?.title, description: processStepsData?.[2]?.description, note: processStepsData?.[2]?.note },
+    { number: "4", gradientFrom: "#0f172a", gradientTo: "#10b981", title: processStepsData?.[3]?.title, description: processStepsData?.[3]?.description },
+    { number: "5", gradientFrom: "#1f2937", gradientTo: "#8b5cf6", title: processStepsData?.[4]?.title, description: processStepsData?.[4]?.description },
   ]
 
   return (
@@ -79,32 +46,20 @@ export default function WebServiceDetail() {
               <div>
                 <AnimatedHeading
                   className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl"
-                  lines={["Web Uygulama"]}
+                  lines={[t("services.webDevelopment.title")]}
                 />
 
-                <p className="mt-6 text-xl font-semibold text-white/90">Modern ve hızlı web uygulamaları</p>
+                <p className="mt-6 text-xl font-semibold text-white/90">{t("services.webDevelopment.subtitle")}</p>
 
-                <p className="mt-4 max-w-[42ch] text-base leading-relaxed text-white/70">
-                  React, Next.js ve TypeScript ile modern web uygulamaları. Responsive tasarım, SEO optimizasyonu ve yüksek performans.
-                </p>
+                <p className="mt-4 max-w-[42ch] text-base leading-relaxed text-white/70">{t("services.webDevelopment.description")}</p>
 
                 <div className="mt-6 space-y-2">
-                  <div className="flex items-center gap-2">
-                    <div className="h-1.5 w-1.5 rounded-full bg-white/60" />
-                    <span className="text-sm text-white/80">Responsive tasarım</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="h-1.5 w-1.5 rounded-full bg-white/60" />
-                    <span className="text-sm text-white/80">SEO optimizasyonu</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="h-1.5 w-1.5 rounded-full bg-white/60" />
-                    <span className="text-sm text-white/80">Hızlı performans</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <div className="h-1.5 w-1.5 rounded-full bg-white/60" />
-                    <span className="text-sm text-white/80">Güvenli altyapı</span>
-                  </div>
+                  {[t("services.webDevelopment.features.responsive"), t("services.webDevelopment.features.database"), t("services.webDevelopment.features.security"), t("services.webDevelopment.features.paymentIntegration")].map((feature) => (
+                    <div key={feature} className="flex items-center gap-2">
+                      <div className="h-1.5 w-1.5 rounded-full bg-white/60" />
+                      <span className="text-sm text-white/80">{feature}</span>
+                    </div>
+                  ))}
                 </div>
 
                 <div className="mt-8 flex flex-wrap items-center gap-3">
@@ -112,14 +67,11 @@ export default function WebServiceDetail() {
                 </div>
 
                 <div className="mt-10">
-                  <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">KULLANDIĞIMIZ TEKNOLOJİLER</p>
+                  <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">{t("services.technologiesHeading")}</p>
                   <ul className="grid grid-cols-2 gap-x-6 gap-y-3 text-xl font-black text-white/25 sm:grid-cols-3">
-                    <li>React</li>
-                    <li>Next.js</li>
-                    <li>TypeScript</li>
-                    <li>Tailwind CSS</li>
-                    <li>Firebase</li>
-                    <li>Supabase</li>
+                    {(t("services.webDevelopment.technologies", { returnObjects: true }) as string[]).map((tech) => (
+                      <li key={tech}>{tech}</li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -129,7 +81,7 @@ export default function WebServiceDetail() {
 
           <div className="space-y-3">
             <RevealOnView className="rounded-3xl border border-white/10 bg-gradient-to-br from-neutral-900/80 to-neutral-900/60 p-8 shadow-[0_10px_60px_-10px_rgba(0,0,0,0.6)]">
-              <h2 className="text-3xl font-black tracking-tight sm:text-4xl">Süreç Yönetimi</h2>
+              <h2 className="text-3xl font-black tracking-tight sm:text-4xl">{t("services.processManagementTitle")}</h2>
             </RevealOnView>
 
             {processSteps.map((step, idx) => (

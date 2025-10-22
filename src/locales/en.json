@@ -1,0 +1,527 @@
+{
+  "navigation": {
+    "about": "About Us",
+    "projects": "Projects",
+    "skills": "Skills",
+    "faq": "FAQ",
+    "contact": "Contact",
+    "pricing": "Pricing"
+  },
+  "hero": {
+    "title": "Shaping the Future in",
+    "subtitle": "Mobile and Web Development",
+    "description": "Creative, performance-focused, and user-friendly digital solutions.",
+    "viewProjects": "View Our Projects",
+    "contactUs": "Contact Us",
+    "scrollDown": "Scroll down"
+  },
+  "about": {
+    "title": "About Us",
+    "description1": "We are developers who are experts in mobile and web technologies and value user experience. In every project, we provide performance-focused and scalable solutions using the latest technologies.",
+    "description2": "We think creatively, pay attention to details, and continuously improve ourselves to turn our clients' vision into reality. Our goal is to create products that make a difference in the digital world."
+  },
+  "skills": {
+    "title": "Our Services",
+    "description": "We are here to offer you the most suitable solutions",
+    "webDevelopment": {
+      "title": "Web Application Development",
+      "description": "We develop modern, fast and user-friendly web applications",
+      "features": {
+        "responsive": "Responsive and mobile-compatible design",
+        "database": "Database-integrated systems",
+        "security": "Secure data management",
+        "modernTech": "Modern Technologies",
+        "fastDevelopment": "Fast Development Times",
+        "paymentIntegration": "Payment Integrations"
+      }
+    },
+    "mobileDevelopment": {
+      "title": "Mobile Application Development",
+      "description": "Cross-platform mobile applications for iOS and Android",
+      "features": {
+        "crossPlatform": "Cross-platform development",
+        "nativePerformance": "Native performance",
+        "offlineSupport": "Offline operation support",
+        "pushNotification": "Push notification",
+        "cameraIntegration": "Camera and sensor integration",
+        "realtimeSync": "Real-time data synchronization",
+        "paymentIntegration": "Payment integrations"
+      }
+    },
+    "features": "Features:",
+    "technologies": "Technologies:",
+    "viewDetails": "View Details"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Have questions? We have answers! Explore our FAQ section to learn more about our web design process, services, and how we can bring your vision to life.",
+    "questions": {
+      "pricing": "What are the prices?",
+      "pricingAnswer": "Our project prices vary depending on complexity, duration and requirements. We have packages starting from 5,000₺ for basic websites. More detailed pricing is made for e-commerce sites and custom applications. You can contact us to prepare a special offer for you.",
+      "extraHours": "What happens if I need more hours?",
+      "extraHoursAnswer": "If additional requirements arise during the project process, we take a flexible approach. A separate pricing is made for additional development hours and work continues after agreement with our client. Customer satisfaction is our priority.",
+      "maintenance": "Are there maintenance fees?",
+      "maintenanceAnswer": "Yes, we have monthly maintenance packages for the regular maintenance of your projects. These packages include security updates, performance optimizations, content updates and technical support.",
+      "documentation": "Do you provide documentation for the system?",
+      "documentationAnswer": "Absolutely! After delivering your project, we prepare documentation on how to manage your website or application.",
+      "additionalFeatures": "Can I request additional features later?",
+      "additionalFeaturesAnswer": "Of course! We can add new features even after your project is completed. We develop new features in a scalable way without breaking the existing infrastructure. A separate offer is prepared for each additional feature and discussed with our client."
+    },
+    "cta": {
+      "title": "Have a question?",
+      "description": "If you couldn't find the answer you were looking for in our FAQ section, don't hesitate to contact us!",
+      "contactButton": "Contact Us"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Contact us for your projects",
+    "letsTalk": "Let's Talk",
+    "letsTalkDescription": "Looking for professional support for your project? We are here to offer you special solutions. Leave your message, we will get back to you as soon as possible.",
+    "socialMedia": "Social Media",
+    "form": {
+      "name": "Full Name",
+      "namePlaceholder": "Your name and surname",
+      "phone": "Phone Number",
+      "phonePlaceholder": "+90 5XX XXX XX XX",
+      "message": "Message",
+      "messagePlaceholder": "Write your message here...",
+      "submit": "Send Email",
+      "openingOutlook": "Opening Outlook...",
+      "outlookOpened": "Outlook opened! You can send your email.",
+      "openingOutlookStatus": "Opening Outlook..."
+    }
+  },
+  "footer": {
+    "description": "We offer professional solutions in mobile and web development.",
+    "quickLinks": "Quick Links",
+    "contact": "Contact",
+    "copyright": "© 2025 All Rights Reserved. MPDevelopers"
+  },
+  "pricing": {
+    "title": "Pricing",
+    "description": "Discover our packages suitable for your project needs.",
+    "backButton": "Go Back",
+    "recommended": "Recommended:",
+    "tiers": {
+      "starter": "Starter",
+      "standard": "Standard",
+      "pro": "Pro",
+      "simpleApps": "Simple Applications",
+      "advancedApps": "Advanced Applications",
+      "staticWebsite": "Static website"
+    },
+    "features": {
+      "projectManagement": "Project Management",
+      "authSystem": "Auth system",
+      "configuration": "Configuration",
+      "dataImportSupport": "Data Import Support"
+    },
+    "customizations": {
+      "title": "Application Customization",
+      "description": "Parts to be added outside the agreed features of the application are subject to charge",
+      "customizations": "Customizations (forms, reports, workflow)",
+      "improvements": "Improvements",
+      "performanceIssues": "Performance Issues"
+    },
+    "pricing": {
+      "returningCustomers": "Returning Customers",
+      "newCustomers": "New Customers (15% discount)"
+    },
+    "cta": {
+      "title": "Contact Us for More Detailed Pricing"
+    }
+  },
+  "projectDetail": {
+    "notFound": "Project not found.",
+    "backToHome": "Back to home",
+    "backButton": "Go Back",
+    "technologies": "Technologies",
+    "description": "Description",
+    "screenshots": "Screenshots",
+    "viewProject": "View Project",
+    "contactUs": "Contact Us",
+    "usedTechnologies": "Technologies Used:",
+    "developedWithLatestTech": "Developed with the latest technologies",
+    "mindConnectFeatures": "MindConnect Features",
+    "spirobleFeatures": "Spiroble Features",
+    "haberapronFeatures": "HaberApron Features",
+    "technicalExcellence": "Technical Excellence and Innovation",
+    "accessibleCommunication": "Accessible Communication with AI",
+    "modernWebTech": "News Platform with Modern Web Technologies",
+    "readyToExplore": "Ready to Explore the Project?",
+    "defaultFlow": "Default Flow",
+    "homeScreen": "Home Screen",
+    "homeScreenDesc": "Modern and user-friendly homepage design",
+    "featuresHeading": "Features",
+    "features": {
+      "agileMethodology": "Sprint planning with Agile methodology, user stories and technical requirements",
+      "fullStackDev": "Full stack development with React Native frontend and Node.js backend",
+      "testingDeployment": "Unit tests, integration tests and automatic deployment with CI/CD pipeline",
+      "securityEncryption": "End-to-end encryption, JWT authentication and secure API endpoints",
+      "realtimeComm": "Real-time messaging and notification system with Socket.io",
+      "scalableArch": "Scalable database with MongoDB and microservice architecture",
+      "aiRecognition": "Sign language recognition with 95% accuracy using TensorFlow.js",
+      "realtimeProcessing": "Real-time video processing and instant translation with OpenCV",
+      "accessibilityFirst": "Accessibility-focused design and speech synthesis features",
+      "realtimeMeasurement": "Real-time respiratory data collection from spirometer device via Bluetooth LE",
+      "secureDataStorage": "Secure storage of patient data with Firebase Realtime Database",
+      "smartAnalysis": "AI-powered respiratory analysis and personalized health recommendations",
+      "highPerformance": "95% Lighthouse score with Vite build tool, code splitting and Redis cache",
+      "secureInfrastructure": "JWT authentication, Helmet.js, rate limiting and Docker containerization",
+      "modernUI": "Mobile-first responsive design, dark mode and accessibility compliant",
+      "fastPerformance": "Lightning-fast operation with optimized code structure",
+      "secure": "Your data is secure with end-to-end encryption",
+      "social": "Connect with your friends and share your experiences"
+    },
+    "sections": {
+      "devProcessTitle": "Development Process",
+      "devProcessDesc": "Technical development stages and architecture of MindConnect",
+      "featuresIntro": {
+        "mindConnect": "Revolutionary features in the field of mental health",
+        "spiroble": "Revolutionary features in respiratory health tracking",
+        "haberapron": "Features of the news platform developed with modern web technologies",
+        "default": "Powerful features built with modern technologies"
+      }
+    },
+    "featureTitles": {
+      "securityEncryption": "Security & Encryption",
+      "realtimeCommunication": "Real-time Communication",
+      "scalableArchitecture": "Scalable Architecture",
+      "realtimeMeasurement": "Real-time Measurement",
+      "secureDataStorage": "Secure Data Storage",
+      "smartAnalysis": "Smart Analysis",
+      "highPerformance": "High Performance",
+      "secureInfrastructure": "Secure Infrastructure",
+      "modernUI": "Modern UI/UX",
+      "fastPerformance": "Fast Performance",
+      "secure": "Secure",
+      "social": "Social"
+    },
+    "testimonials": {
+      "ayse": {
+        "name": "Ayşe K.",
+        "role": "Student",
+        "story": "While struggling with anxiety, I found the right psychologist thanks to MindConnect. I made great progress in 3 months.",
+        "improvement": "Anxiety level decreased by 70%"
+      },
+      "mehmet": {
+        "name": "Mehmet Y.",
+        "role": "Businessman",
+        "story": "I was looking for support for work stress and family problems. Thanks to 24/7 access, it was always there when I needed it.",
+        "improvement": "Stress level decreased by 60%"
+      },
+      "zeynep": {
+        "name": "Zeynep A.",
+        "role": "Student",
+        "story": "I was experiencing depression during university. Being able to talk in a safe environment was very comforting.",
+        "improvement": "Mood improved by 80%"
+      }
+    },
+    "ui": {
+      "web": "Website",
+      "mobile": "Mobile App",
+      "appScreens": "App Screens",
+      "websiteScreens": "Website Screens",
+      "swipe": "Swipe",
+      "technicalDetails": "Technical Details:",
+      "planning": "Project Planning",
+      "fullStack": "Full-Stack Development",
+      "testDeploy": "Test & Deployment",
+      "successStories": "Success Stories",
+      "usersChangedLives": "Our users whose lives changed with MindConnect",
+      "watchDemo": "Watch Demo",
+      "download": "Download",
+      "aiWatchDemo": "Watch AI Demo",
+      "downloadFromAppGallery": "Download from AppGallery",
+      "yearsOld": "years old",
+      "browserNotSupport": "Your browser does not support video playback.",
+      "conversignDemo": "Conversign Demo Video",
+      "spirobleDemo": "Spiroble Demo Video",
+      "projectDemo": "Project Demo Video",
+      "conversignDemoDesc": "Demo video showing Conversign's sign language recognition features",
+      "spirobleDemoDesc": "Demo video showing Spiroble's respiratory health tracking features",
+      "projectDemoDesc": "Demo video showing the core features of the project",
+      "stats": {
+        "aiAccuracy": "AI Accuracy",
+        "lighthouse": "Lighthouse",
+        "appStore": "App Store",
+        "users": "Users",
+        "lcp": "LCP",
+        "signLanguage": "Sign Language",
+        "bandwidth": "Bandwidth",
+        "expertPsychologist": "Expert Psychologist"
+      },
+      "screensDesc": {
+        "mindConnect": "Different stages of the development process and technical details",
+        "conversign": "Different stages of the sign language recognition process with AI technology",
+        "haberapron": "Screens of the news platform developed with modern web technologies",
+        "spiroble": "Spirometer device integration and respiratory health tracking processes"
+      }
+    }
+  },
+  "projects": {
+    "title": "Our Projects",
+    "rotatingTexts": {
+      "mobileApp": "Mobile App",
+      "webApp": "Web Application", 
+      "mpDevelopers": "MPDevelopers"
+    },
+    "subtitle": "What We",
+    "description": "Discover our projects developed with modern technologies. Each project offers solutions that prioritize user experience and use the latest technologies.",
+    "viewDetails": "View Details",
+    "mindConnect": {
+      "title": "MindConnect - Mental Health and Personal Development Platform",
+      "description": "A secure, accessible and effective communication platform between people seeking psychological support and professional psychologists.",
+      "longDescription": "\"MindConnect\" is a comprehensive mobile application that provides supportive services in the field of mental health and personal development. The application creates a secure, accessible and effective communication platform between people seeking psychological support and professional psychologists. Users' mental health status is evaluated with the Kessler psychological assessment test and personalized recommendations are provided. It helps users achieve meaningful development in their personal development processes with real-time messaging, secure payment system (İyzico), appointment management and comprehensive psychologist evaluation system.",
+      "images": [
+        "Role selection - Looking for psychologist / Want to be a psychologist",
+        "Kessler test - Psychological assessment and onboarding",
+        "Psychologist list - Areas of expertise and evaluations",
+        "Real-time messaging - Secure therapy chat",
+        "Appointment system - Availability tracking and automatic chat room",
+        "İyzico payment - 3D Secure secure payment system",
+        "Admin panel - User and payment management"
+      ]
+    },
+    "spiroble": {
+      "title": "Spiroble - Respiratory Health Tracking Application",
+      "description": "Mobile application that measures and analyzes respiratory health with spirometer device.",
+      "longDescription": "Spiroble is a mobile application designed to measure and analyze respiratory health. Working integrated with the spirometer device, it provides users with detailed data about lung capacity, breathing patterns and other important metrics. The application helps monitor and improve respiratory performance. It offers user-friendly interface, seamless integration with devices and personalized health management insights.",
+      "images": [
+        "Home screen - Respiratory measurements and statistics",
+        "Measurement screen - Spirometer device connection",
+        "Graph analysis - Breathing patterns",
+        "Health report - Detailed respiratory analysis",
+        "Settings - Personalization and device management"
+      ]
+    },
+    "conversign": {
+      "title": "Conversign - Sign Language AI Translator",
+      "description": "Mobile application that converts sign language to speech in real-time with artificial intelligence.",
+      "longDescription": "Conversign is a revolutionary application that facilitates communication for hearing-impaired individuals. It recognizes sign language in real-time with advanced artificial intelligence algorithms and converts it to speech. It offers an accessible communication platform by combining computer vision, machine learning and natural language processing technologies.",
+      "images": [
+        "Camera view - Sign language recognition",
+        "AI processing - Real-time analysis",
+        "Audio output - Text and speech conversion",
+        "Training mode - Sign language learning",
+        "Settings - Personalization options"
+      ]
+    },
+    "haberapron": {
+      "title": "HaberApron - Aviation News Platform",
+      "description": "Modern, fast and reliable aviation-focused news platform. Professional web application developed with React + TypeScript + Node.js + PostgreSQL technology stack.",
+      "longDescription": "HaberApron is a modern news platform focused on the aviation industry. It has a frontend developed with React 18 + TypeScript + Vite, a backend powered by Node.js + Express + TypeScript, and a database infrastructure managed with PostgreSQL + Prisma ORM. It is a fully professional web application with Redis cache system, Docker containerization, Nginx web server and GitHub Actions CI/CD pipeline. It includes modern web features such as mobile-first responsive design, WebP/AVIF image optimization, advanced search system, comment system and newsletter subscription. The platform presents aviation news to users by categorizing them and provides content management with admin panel.",
+      "images": [
+        "Homepage - Modern news list, categories and breaking news banner",
+        "Article page - Rich text editor, comment system and social media sharing",
+        "Admin panel - Comprehensive content management and user management",
+        "Search results - Full-text search and advanced filtering system",
+        "Mobile responsive - Mobile-first design and touch-friendly interface"
+      ]
+    }
+  },
+  "projectScreens": {
+    "haberapron": {
+      "flows": [
+        {
+          "name": "User Experience",
+          "screens": [
+            {
+              "title": "Homepage",
+              "description": "Aviation news with modern design, categories and breaking news. Breaking news banner and category-based filtering features"
+            },
+            {
+              "title": "Article Page",
+              "description": "Rich content with rich text editor, comment system and social media sharing features. Comment system with email verification"
+            },
+            {
+              "title": "Search Results",
+              "description": "Full-text search and advanced filtering system. Sorting by category, date and popularity"
+            }
+          ]
+        },
+        {
+          "name": "Admin Panel",
+          "screens": [
+            {
+              "title": "Admin Dashboard",
+              "description": "Comprehensive content management, user management and analytics panel. Article creation, editing and publishing features"
+            },
+            {
+              "title": "Mobile Responsive",
+              "description": "Responsive design with a mobile-first approach. Optimized user experience across all devices and touch-friendly interface"
+            }
+          ]
+        }
+      ]
+    },
+    "spiroble": {
+      "flows": [
+        {
+          "name": "Spiroble App Screens",
+          "screens": [
+            { "title": "Splash Screen", "description": "App start screen and loading" },
+            { "title": "Home", "description": "Daily respiratory measurements and general health status" },
+            { "title": "Bluetooth Connection", "description": "Connecting to the spirometer device via Bluetooth" },
+            { "title": "Blowing Test", "description": "Real-time respiratory measurement and data collection" },
+            { "title": "Test Results", "description": "Detailed respiratory analysis and health reports" }
+          ]
+        }
+      ]
+    },
+    "conversign": {
+      "flows": [
+        {
+          "name": "Conversign App Screens",
+          "screens": [
+            { "title": "Login Screen", "description": "User login and authentication" },
+            { "title": "Home", "description": "Sign language recognition and translation interface" },
+            { "title": "User Guide", "description": "Sign language learning and guidance" },
+            { "title": "Settings", "description": "App configuration and personalization" }
+          ]
+        }
+      ]
+    },
+    "mindConnect": {
+      "flows": [
+        {
+          "name": "User Experience",
+          "screens": [
+            { "title": "Role Selection and Onboarding", "description": "Choosing 'Looking for a Psychologist' / 'I want to be a Psychologist' and Kessler test" },
+            { "title": "Kessler Psychological Test", "description": "10-question psychological status assessment and severity determination" },
+            { "title": "Personalized Interface", "description": "Different interfaces and suggestions based on user type" }
+          ]
+        },
+        {
+          "name": "Psychologist Management",
+          "screens": [
+            { "title": "Psychologist List and Filtering", "description": "Verified psychologists, areas of expertise and reviews" },
+            { "title": "Psychologist Profile", "description": "Detailed information, areas of expertise and therapy packages" },
+            { "title": "Rating System", "description": "Rating, comment system and reliability tracking" }
+          ]
+        },
+        {
+          "name": "Communication and Payment",
+          "screens": [
+            { "title": "Real-time Messaging", "description": "Secure, encrypted messaging system with Socket.io" },
+            { "title": "İyzico Payment System", "description": "3D Secure safe payment, payment requests and history tracking" },
+            { "title": "Appointment System", "description": "Availability tracking, appointment approval and automatic chat room" }
+          ]
+        },
+        {
+          "name": "Security and Management",
+          "screens": [
+            { "title": "JWT Authentication", "description": "Secure authentication and role-based access control" },
+            { "title": "Admin Dashboard", "description": "User management, payment tracking and platform statistics" },
+            { "title": "GDPR Compliance", "description": "Personal data protection, encryption and privacy standards" }
+          ]
+        }
+      ]
+    }
+  },
+  "services": {
+    "processManagementTitle": "Process Management",
+    "technologiesHeading": "Technologies We Use",
+    "webDevelopment": {
+      "title": "Web Application Development",
+      "subtitle": "Modern, fast and user-friendly web applications",
+      "description": "Our web application development process offers a comprehensive approach from understanding customer needs to delivery and maintenance phase.",
+      "processSteps": [
+        {
+          "title": "Initial Meeting",
+          "description": "Before starting the project, we conduct a detailed meeting to understand the customer's needs, expectations and goals. This stage forms the foundation for proper project planning."
+        },
+        {
+          "title": "Requirements Analysis",
+          "description": "Based on the information obtained in the meeting, the business and technical requirements of the project are extracted. Which features are prioritized, user flows and technical requirements are determined in detail."
+        },
+        {
+          "title": "Weekly Meetings and Process Tracking",
+          "description": "After agreement with the customer, the project process is closely followed with weekly meetings. At this stage, the project progress is regularly reviewed and necessary revisions are made according to the agreed criteria.",
+          "note": "Note: If new features are added during the process, re-pricing is done for additional work."
+        },
+        {
+          "title": "Revisions and Application Delivery",
+          "description": "After the revisions are completed, the application is completed according to the agreed criteria and delivered to the customer. This stage ensures that the project takes its final form with the targeted quality and functionality."
+        },
+        {
+          "title": "Maintenance and Support",
+          "description": "Maintenance and support services offered after the delivery of the application cover the smooth operation of the system and updates when necessary. These services are also charged separately."
+        }
+      ],
+      "features": {
+        "responsive": "Responsive and mobile-compatible design",
+        "database": "Database-integrated systems",
+        "security": "Secure data management",
+        "modernTech": "Modern Technologies",
+        "fastDevelopment": "Fast Development Times",
+        "paymentIntegration": "Payment Integrations"
+      },
+      "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Firebase", "Supabase"]
+    },
+    "mobileDevelopment": {
+      "title": "Mobile Application Development",
+      "subtitle": "Cross-platform mobile applications for iOS and Android",
+      "description": "Our mobile application development process offers a comprehensive approach from platform selection to delivery and maintenance phase.",
+      "processSteps": [
+        {
+          "title": "Platform Selection and Planning",
+          "description": "The most suitable platform (Flutter, React Native) is selected according to the project requirements and a detailed development plan is created."
+        },
+        {
+          "title": "UI/UX Design",
+          "description": "Modern and user-friendly interface design is implemented with user experience in the foreground."
+        },
+        {
+          "title": "Development and Testing",
+          "description": "The application is developed with the selected technology and comprehensive testing processes are applied."
+        },
+        {
+          "title": "App Store Publishing",
+          "description": "The application is published on App Store and Google Play Store and necessary certificates are obtained."
+        },
+        {
+          "title": "Maintenance and Updates",
+          "description": "Continuous updating of the application and performance optimization is ensured."
+        }
+      ],
+      "features": {
+        "crossPlatform": "Cross-platform development",
+        "nativePerformance": "Native performance",
+        "offlineSupport": "Offline operation support",
+        "pushNotification": "Push notification",
+        "cameraIntegration": "Camera and sensor integration",
+        "realtimeSync": "Real-time data synchronization",
+        "paymentIntegration": "Payment integrations"
+      },
+      "technologies": ["Flutter", "React Native", "Firebase", "SQLite", "Bluetooth", "GPS", "İyzico"]
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "success": "Successful",
+    "close": "Close",
+    "open": "Open",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "download": "Download",
+    "upload": "Upload",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "refresh": "Refresh",
+    "next": "Next",
+    "previous": "Previous",
+    "finish": "Finish",
+    "start": "Start",
+    "stop": "Stop",
+    "pause": "Pause",
+    "resume": "Resume"
+  }
+}

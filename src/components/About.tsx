@@ -1,6 +1,6 @@
-import { Code, Zap, FileCode } from 'lucide-react';
+import { FileCode } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import SpotlightCard from './SpotlightCard';
+import { useTranslation } from 'react-i18next';
 
 // Custom Icon Components
 const FlutterIcon = ({ className }: { className?: string }) => (
@@ -51,6 +51,7 @@ const NodejsIcon = ({ className }: { className?: string }) => (
 
 export default function About() {
   const { ref, isVisible } = useScrollAnimation();
+  const { t } = useTranslation();
 
   const expertiseAreas = [
     { 
@@ -106,7 +107,7 @@ export default function About() {
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Hakkımızda
+              {t('about.title')}
             </h2>
             <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
           </div>
@@ -114,23 +115,17 @@ export default function About() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-lg text-gray-300 leading-relaxed">
-                Mobil ve web teknolojilerinde uzman, kullanıcı deneyimine önem
-                veren geliştiricileriz. Her projede, en son teknolojileri
-                kullanarak performans odaklı ve ölçeklenebilir çözümler
-                sunuyoruz.
+                {t('about.description1')}
               </p>
               <p className="text-lg text-gray-300 leading-relaxed">
-                Müşterilerimizin vizyonunu gerçeğe dönüştürmek için yaratıcı
-                düşünüyor, detaylara özen gösteriyor ve sürekli kendimizi
-                geliştiriyoruz. Amacımız, dijital dünyada fark yaratan ürünler
-                oluşturmak.
+                {t('about.description2')}
               </p>
 
              
             </div>
 
             <div className="grid grid-cols-4 sm:grid-cols-4 lg:grid-cols-4 gap-4">
-              {expertiseAreas.map((area, index) => (
+              {expertiseAreas.map((area) => (
                 <div
                   key={area.name}
                   className="bg-white/5 backdrop-blur-2xl border border-white/10 rounded-2xl shadow-2xl shadow-black/40 p-4 text-center flex flex-col justify-center items-center hover:bg-white/10 transition-all duration-300"

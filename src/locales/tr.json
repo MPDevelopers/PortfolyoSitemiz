@@ -1,0 +1,439 @@
+{
+  "navigation": {
+    "about": "Hakkımızda",
+    "projects": "Projeler",
+    "skills": "Yetenekler",
+    "faq": "SSS",
+    "contact": "İletişim",
+    "pricing": "Ücretlendirme"
+  },
+  "hero": {
+    "title": "Mobil ve Web Geliştirmede",
+    "subtitle": "Geleceği Şekillendiriyoruz",
+    "description": "Yaratıcı, performans odaklı ve kullanıcı dostu dijital çözümler.",
+    "viewProjects": "Projelerimize Göz Atın",
+    "contactUs": "Bize Ulaşın",
+    "scrollDown": "Aşağı kaydır"
+  },
+  "about": {
+    "title": "Hakkımızda",
+    "description1": "Mobil ve web teknolojilerinde uzman, kullanıcı deneyimine önem veren geliştiricileriz. Her projede, en son teknolojileri kullanarak performans odaklı ve ölçeklenebilir çözümler sunuyoruz.",
+    "description2": "Müşterilerimizin vizyonunu gerçeğe dönüştürmek için yaratıcı düşünüyor, detaylara özen gösteriyor ve sürekli kendimizi geliştiriyoruz. Amacımız, dijital dünyada fark yaratan ürünler oluşturmak."
+  },
+  "projects": {
+    "title": "Yaratıcı",
+    "subtitle": "Projelerimiz",
+    "description": "Müşterilerimiz için geliştirdiğimiz başarılı projelerden bazıları",
+    "viewDetails": "Detayları Gör",
+    "rotatingTexts": {
+      "mobileApp": "Mobil Uygulama",
+      "webApp": "Web Uygulama",
+      "mpDevelopers": "MPDevelopers"
+    }
+  },
+  "skills": {
+    "title": "Hizmetlerimiz",
+    "description": "Size en uygun çözümleri sunmak için buradayız",
+    "webDevelopment": {
+      "title": "Web Uygulama Geliştirme",
+      "description": "Modern, hızlı ve kullanıcı dostu web uygulamaları geliştiriyoruz",
+      "features": {
+        "responsive": "Responsive ve mobil uyumlu tasarım",
+        "database": "Veri Tabanı entegreli sistemler",
+        "security": "Güvenli veri yönetimi",
+        "modernTech": "Modern Teknolojiler",
+        "fastDevelopment": "Hızlı Geliştirme Süreleri",
+        "paymentIntegration": "Ödeme Entegrasyonları"
+      }
+    },
+    "mobileDevelopment": {
+      "title": "Mobil Uygulama Geliştirme",
+      "description": "iOS ve Android için cross-platform mobil uygulamalar",
+      "features": {
+        "crossPlatform": "Cross-platform geliştirme",
+        "nativePerformance": "Native performans",
+        "offlineSupport": "Offline çalışma desteği",
+        "pushNotification": "Push notification",
+        "cameraIntegration": "Kamera ve sensör entegrasyonu",
+        "realtimeSync": "Gerçek zamanlı veri senkronizasyonu",
+        "paymentIntegration": "Ödeme entegrasyonları"
+      }
+    },
+    "features": "Özellikler:",
+    "technologies": "Teknolojiler:",
+    "viewDetails": "Detayları Gör"
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "description": "Sorularınız mı var? Cevaplarımız var! Web tasarım sürecimiz, hizmetlerimiz ve vizyonunuzu nasıl hayata geçirebileceğimiz hakkında daha fazla bilgi edinmek için SSS bölümümüzü keşfedin.",
+    "questions": {
+      "pricing": "Fiyatlar nelerdir?",
+      "pricingAnswer": "Projelerimizin fiyatları, karmaşıklık, süre ve gereksinimlere göre değişiklik gösterir. Temel web siteleri için 5.000₺'den başlayan paketlerimiz bulunmaktadır. E-ticaret siteleri ve özel uygulamalar için daha detaylı bir fiyatlandırma yapılır. Size özel teklif hazırlamak için bizimle iletişime geçebilirsiniz.",
+      "extraHours": "Daha fazla saat ihtiyacım olursa ne olur?",
+      "extraHoursAnswer": "Proje sürecinde ek gereksinimler ortaya çıkarsa, esnek bir yaklaşım sergileriz. Ek geliştirme saatleri için ayrı bir fiyatlandırma yapılır ve müşterimizle mutabakat sağlandıktan sonra çalışmalara devam edilir. Müşteri memnuniyeti bizim için önceliktir.",
+      "maintenance": "Bakım ücretleri var mı?",
+      "maintenanceAnswer": "Evet, projelerinizin düzenli bakımı için aylık bakım paketlerimiz bulunmaktadır. Bu paketler güvenlik güncellemeleri, performans optimizasyonları, içerik güncellemeleri ve teknik destek içerir.",
+      "documentation": "Sistem için dökümantasyon sağlıyor musunuz?",
+      "documentationAnswer": "Kesinlikle! Projenizi teslim ettikten sonra, web sitenizi veya uygulamanızı nasıl yöneteceğiniz konusunda dökümantasyon hazırlıyoruz.",
+      "additionalFeatures": "Daha sonra ek özellik talep edebilir miyim?",
+      "additionalFeaturesAnswer": "Tabii ki! Projeniz tamamlandıktan sonra bile yeni özellikler ekleyebiliriz. Mevcut altyapıyı bozmadan, ölçeklenebilir bir şekilde yeni özellikler geliştiriyoruz. Her ek özellik için ayrı bir teklif hazırlanır ve müşterimizle görüşülür."
+    },
+    "cta": {
+      "title": "Sorunuz mu var?",
+      "description": "SSS bölümümüzde aradığınız cevabı bulamadıysanız, bizimle iletişime geçmekten çekinmeyin!",
+      "contactButton": "İletişime Geç"
+    }
+  },
+  "contact": {
+    "title": "İletişim",
+    "description": "Projeleriniz için bizimle iletişime geçin",
+    "letsTalk": "Hadi Konuşalım",
+    "letsTalkDescription": "Projeniz için profesyonel destek mi arıyorsunuz? Size özel çözümler sunmak için buradayız. Mesajınızı bırakın, en kısa sürede geri dönüş yapalım.",
+    "socialMedia": "Sosyal Medya",
+    "form": {
+      "name": "Ad Soyad",
+      "namePlaceholder": "Adınız ve soyadınız",
+      "phone": "Telefon Numarası",
+      "phonePlaceholder": "+90 5XX XXX XX XX",
+      "message": "Mesaj",
+      "messagePlaceholder": "Mesajınızı buraya yazın...",
+      "submit": "E-posta Gönder",
+      "openingOutlook": "Outlook Açılıyor...",
+      "outlookOpened": "Outlook açıldı! E-postanızı gönderebilirsiniz.",
+      "openingOutlookStatus": "Outlook açılıyor..."
+    }
+  },
+  "footer": {
+    "description": "Mobil ve web geliştirmede profesyonel çözümler sunuyoruz.",
+    "quickLinks": "Hızlı Bağlantılar",
+    "contact": "İletişim",
+    "copyright": "© 2025 Tüm Hakları Saklıdır. MPDevelopers"
+  },
+  "pricing": {
+    "title": "Ücretlendirme",
+    "description": "Projenizin ihtiyaçlarına uygun paketlerimizi keşfedin.",
+    "backButton": "Geri Dön",
+    "recommended": "Önerilir:",
+    "tiers": {
+      "starter": "Starter",
+      "standard": "Standart",
+      "pro": "Pro",
+      "simpleApps": "Basit Uygulamalar",
+      "advancedApps": "Gelişmiş Uygulamalar",
+      "staticWebsite": "Statik web sitesi"
+    },
+    "features": {
+      "projectManagement": "Proje Yönetimi",
+      "authSystem": "Auth sistemi",
+      "configuration": "Yapılandırma",
+      "dataImportSupport": "Veri İçe Aktarma Desteği"
+    },
+    "customizations": {
+      "title": "Uygulama Özelleştirmesi",
+      "description": "Uygulamanın kararlaştırılmış özelliklerinin dışında eklenecek kısımlar ücrete tabiidir",
+      "customizations": "Özelleştirmeler (formlar, raporlar, iş akışı)",
+      "improvements": "Geliştirmeler",
+      "performanceIssues": "Performans Sorunları"
+    },
+    "pricing": {
+      "returningCustomers": "Tekrar Alışveriş Yapan Müşteriler",
+      "newCustomers": "Yeni Müşteriler (15% indirim)"
+    },
+    "cta": {
+      "title": "Daha Detaylı Fiyatlandırma İçin Bize Ulaşın"
+    }
+  },
+  "projectDetail": {
+    "notFound": "Proje bulunamadı.",
+    "backToHome": "Ana sayfaya dön",
+    "backButton": "Geri Dön",
+    "technologies": "Teknolojiler",
+    "description": "Açıklama",
+    "featuresHeading": "Özellikler",
+    "screenshots": "Ekran Görüntüleri",
+    "viewProject": "Projeyi Görüntüle",
+    "contactUs": "Bize Ulaşın",
+    "usedTechnologies": "Kullanılan Teknolojiler:",
+    "developedWithLatestTech": "En güncel teknolojilerle geliştirildi",
+    "mindConnectFeatures": "MindConnect Özellikleri",
+    "spirobleFeatures": "Spiroble Özellikleri",
+    "haberapronFeatures": "HaberApron Özellikleri",
+    "technicalExcellence": "Teknik Mükemmellik ve İnovasyon",
+    "accessibleCommunication": "Yapay Zeka ile Erişilebilir İletişim",
+    "modernWebTech": "Modern Web Teknolojileri ile Haber Platformu",
+    "readyToExplore": "Projeyi Keşfetmeye Hazır mısın?",
+    "defaultFlow": "Varsayılan Akış",
+    "homeScreen": "Ana Ekran",
+    "homeScreenDesc": "Modern ve kullanıcı dostu ana sayfa tasarımı",
+    "features": {
+      "agileMethodology": "Agile metodoloji ile sprint planlaması, user story'ler ve teknik gereksinimler",
+      "fullStackDev": "React Native frontend ve Node.js backend ile tam stack geliştirme",
+      "testingDeployment": "Unit testler, integration testler ve CI/CD pipeline ile otomatik deployment",
+      "securityEncryption": "End-to-end şifreleme, JWT authentication ve güvenli API endpoints",
+      "realtimeComm": "Socket.io ile gerçek zamanlı mesajlaşma ve bildirim sistemi",
+      "scalableArch": "MongoDB ile ölçeklenebilir veritabanı ve mikroservis mimarisi",
+      "aiRecognition": "TensorFlow.js ile %95 doğruluk oranında işaret dili tanıma",
+      "realtimeProcessing": "OpenCV ile gerçek zamanlı video işleme ve anlık çeviri",
+      "accessibilityFirst": "Erişilebilirlik odaklı tasarım ve ses sentezi özellikleri",
+      "realtimeMeasurement": "Bluetooth LE ile spirometre cihazından anlık solunum verisi toplama",
+      "secureDataStorage": "Firebase Realtime Database ile hasta verilerinin güvenli saklanması",
+      "smartAnalysis": "AI destekli solunum analizi ve kişiselleştirilmiş sağlık önerileri",
+      "highPerformance": "Vite build tool, code splitting ve Redis cache ile %95 Lighthouse skoru",
+      "secureInfrastructure": "JWT authentication, Helmet.js, rate limiting ve Docker containerization",
+      "modernUI": "Mobile-first responsive tasarım, dark mode ve accessibility uyumlu",
+      "fastPerformance": "Optimize edilmiş kod yapısı ile yıldırım hızında çalışma",
+      "secure": "End-to-end şifreleme ile verileriniz güvende",
+      "social": "Arkadaşlarınızla bağlantı kurun ve deneyimlerinizi paylaşın"
+    },
+    "testimonials": {
+      "ayse": {
+        "name": "Ayşe K.",
+        "role": "Öğrenci",
+        "story": "Anksiyete ile mücadele ederken MindConnect sayesinde doğru psikologu buldum. 3 ayda büyük ilerleme kaydettim.",
+        "improvement": "Anksiyete seviyesi %70 azaldı"
+      },
+      "mehmet": {
+        "name": "Mehmet Y.",
+        "role": "İş İnsanı",
+        "story": "İş stresi ve aile problemleri için destek arıyordum. 7/24 erişim sayesinde ihtiyacım olduğunda hep yanımda oldu.",
+        "improvement": "Stres seviyesi %60 azaldı"
+      },
+      "zeynep": {
+        "name": "Zeynep A.",
+        "role": "Öğrenci",
+        "story": "Üniversite döneminde depresyon yaşıyordum. Güvenli ortamda konuşabilmek beni çok rahatlattı.",
+        "improvement": "Ruh hali %80 iyileşti"
+      }
+    },
+    "sections": {
+      "devProcessTitle": "Geliştirme Süreci",
+      "devProcessDesc": "MindConnect'in teknik geliştirme aşamaları ve mimarisi",
+      "featuresIntro": {
+        "mindConnect": "Ruh sağlığı alanında devrim yaratan özellikler",
+        "spiroble": "Solunum sağlığı takibinde devrim yaratan özellikler",
+        "haberapron": "Modern web teknolojileri ile geliştirilmiş haber platformu özellikleri",
+        "default": "Modern teknolojilerle geliştirilmiş güçlü özellikler"
+      }
+    },
+    "featureTitles": {
+      "securityEncryption": "Güvenlik & Şifreleme",
+      "realtimeCommunication": "Real-time Communication",
+      "scalableArchitecture": "Scalable Architecture",
+      "realtimeMeasurement": "Gerçek Zamanlı Ölçüm",
+      "secureDataStorage": "Güvenli Veri Saklama",
+      "smartAnalysis": "Akıllı Analiz",
+      "highPerformance": "Yüksek Performans",
+      "secureInfrastructure": "Güvenli Altyapı",
+      "modernUI": "Modern UI/UX",
+      "fastPerformance": "Hızlı Performans",
+      "secure": "Güvenli",
+      "social": "Sosyal"
+    },
+    "ui": {
+      "web": "Web Sitesi",
+      "mobile": "Mobil Uygulama",
+      "appScreens": "Uygulama Ekranları",
+      "websiteScreens": "Web Sitesi Ekranları",
+      "swipe": "Kaydır",
+      "technicalDetails": "Teknik Detaylar:",
+      "planning": "Proje Planlama",
+      "fullStack": "Full-Stack Geliştirme",
+      "testDeploy": "Test & Deployment",
+      "successStories": "Başarı Hikayeleri",
+      "usersChangedLives": "MindConnect ile hayatları değişen kullanıcılarımız",
+      "watchDemo": "Demo İzle",
+      "download": "İndir",
+      "aiWatchDemo": "AI Demo İzle",
+      "downloadFromAppGallery": "AppGallery'den İndir",
+      "yearsOld": "yaşında",
+      "browserNotSupport": "Tarayıcınız video oynatmayı desteklemiyor.",
+      "conversignDemo": "Conversign Demo Videosu",
+      "spirobleDemo": "Spiroble Demo Videosu",
+      "projectDemo": "Proje Demo Videosu",
+      "conversignDemoDesc": "Conversign uygulamasının işaret dili tanıma özelliklerini gösteren demo videosu",
+      "spirobleDemoDesc": "RespiraCheck uygulamasının solunum sağlığı takip özelliklerini gösteren demo videosu",
+      "projectDemoDesc": "Projenin temel özelliklerini gösteren demo videosu",
+      "stats": {
+        "aiAccuracy": "AI Doğruluk",
+        "lighthouse": "Lighthouse",
+        "appStore": "App Store",
+        "users": "Kullanıcı",
+        "lcp": "LCP",
+        "signLanguage": "İşaret Dili",
+        "bandwidth": "Bandwidth",
+        "expertPsychologist": "Uzman Psikolog"
+      },
+      "screensDesc": {
+        "mindConnect": "Geliştirme sürecindeki farklı aşamalar ve teknik detaylar",
+        "conversign": "AI teknolojisi ile işaret dili tanıma sürecinin farklı aşamaları",
+        "haberapron": "Modern web teknolojileri ile geliştirilmiş haber platformu ekranları",
+        "spiroble": "Spirometre cihazı entegrasyonu ve solunum sağlığı takip süreçleri"
+      }
+    }
+  },
+  "projects": {
+    "title": "Projelerimiz",
+    "rotatingTexts": {
+      "mobileApp": "Mobil Uygulama",
+      "webApp": "Web Uygulaması", 
+      "mpDevelopers": "MPDevelopers"
+    },
+    "subtitle": "Geliştirdiğimiz",
+    "description": "Modern teknolojilerle geliştirdiğimiz projelerimizi keşfedin. Her proje, kullanıcı deneyimini ön planda tutan ve en güncel teknolojileri kullanan çözümler sunar.",
+    "viewDetails": "Detayları Gör",
+    "mindConnect": {
+      "title": "MindConnect - Ruh Sağlığı ve Kişisel Gelişim Platformu",
+      "description": "Psikolojik destek arayan kişiler ile profesyonel psikologlar arasında güvenli, erişilebilir ve etkili bir iletişim platformu.",
+      "longDescription": "\"MindConnect\", ruh sağlığı ve kişisel gelişim alanında destekleyici hizmetler sunan kapsamlı bir mobil uygulamadır. Uygulama, psikolojik destek arayan kişiler ile profesyonel psikologlar arasında güvenli, erişilebilir ve etkili bir iletişim platformu oluşturmaktadır. Kessler psikolojik değerlendirme testi ile kullanıcıların ruh sağlığı durumu değerlendirilir ve kişiselleştirilmiş öneriler sunulur. Gerçek zamanlı mesajlaşma, güvenli ödeme sistemi (İyzico), randevu yönetimi ve kapsamlı psikolog değerlendirme sistemi ile kullanıcıların kişisel gelişim süreçlerinde anlamlı bir gelişim sağlamalarına yardımcı olur.",
+      "images": [
+        "Rol seçimi - Psikolog arıyorum / Psikolog olmak istiyorum",
+        "Kessler testi - Psikolojik değerlendirme ve onboarding",
+        "Psikolog listesi - Uzmanlık alanları ve değerlendirmeler",
+        "Gerçek zamanlı mesajlaşma - Güvenli terapi sohbeti",
+        "Randevu sistemi - Müsaitlik takibi ve otomatik chat odası",
+        "İyzico ödeme - 3D Secure güvenli ödeme sistemi",
+        "Admin paneli - Kullanıcı ve ödeme yönetimi"
+      ]
+    },
+    "spiroble": {
+      "title": "Spiroble - Solunum Sağlığı Takip Uygulaması",
+      "description": "Spirometre cihazı ile solunum sağlığını ölçen ve analiz eden mobil uygulama.",
+      "longDescription": "Spiroble, solunum sağlığını ölçmek ve analiz etmek için tasarlanmış bir mobil uygulamadır. Spirometre cihazı ile entegre çalışarak kullanıcılara akciğer kapasitesi, nefes alma kalıpları ve diğer önemli metrikler hakkında detaylı veriler sağlar. Uygulama, solunum performansını izlemeye ve iyileştirmeye yardımcı olur. Kullanıcı dostu arayüzü, cihazlarla sorunsuz entegrasyonu ve kişiselleştirilmiş sağlık yönetimi öngörüleri sunar.",
+      "images": [
+        "Ana ekran - Solunum ölçümleri ve istatistikler",
+        "Ölçüm ekranı - Spirometre cihazı bağlantısı",
+        "Grafik analiz - Nefes alma kalıpları",
+        "Sağlık raporu - Detaylı solunum analizi",
+        "Ayarlar - Kişiselleştirme ve cihaz yönetimi"
+      ]
+    },
+    "conversign": {
+      "title": "Conversign - İşaret Dili AI Çevirici",
+      "description": "Yapay zeka ile işaret dilini gerçek zamanlı olarak sese dönüştüren mobil uygulama.",
+      "longDescription": "Conversign, işitme engelli bireylerin iletişimini kolaylaştıran devrim niteliğinde bir uygulama. Gelişmiş yapay zeka algoritmaları ile işaret dilini gerçek zamanlı olarak tanıyor ve sese dönüştürüyor. Computer vision, machine learning ve natural language processing teknolojilerini bir araya getirerek erişilebilir bir iletişim platformu sunuyor.",
+      "images": [
+        "Kamera görüntüsü - İşaret dili tanıma",
+        "AI işleme - Gerçek zamanlı analiz",
+        "Ses çıkışı - Metin ve ses dönüşümü",
+        "Eğitim modu - İşaret dili öğrenme",
+        "Ayarlar - Kişiselleştirme seçenekleri"
+      ]
+    },
+    "haberapron": {
+      "title": "HaberApron - Havacılık Haber Platformu",
+      "description": "Modern, hızlı ve güvenilir havacılık odaklı haber platformu. React + TypeScript + Node.js + PostgreSQL teknoloji stack'i ile geliştirilmiş profesyonel web uygulaması.",
+      "longDescription": "HaberApron, havacılık sektörüne odaklanmış modern bir haber platformudur. React 18 + TypeScript + Vite ile geliştirilmiş frontend, Node.js + Express + TypeScript ile güçlendirilmiş backend ve PostgreSQL + Prisma ORM ile yönetilen veritabanı altyapısına sahiptir. Redis cache sistemi, Docker containerization, Nginx web server ve GitHub Actions CI/CD pipeline ile tam profesyonel bir web uygulamasıdır. Mobile-first responsive tasarım, WebP/AVIF görsel optimizasyonu, gelişmiş arama sistemi, yorum sistemi ve newsletter aboneliği gibi modern web özelliklerini içerir. Platform, havacılık haberlerini kategorize ederek kullanıcılara sunar ve admin paneli ile içerik yönetimi sağlar.",
+      "images": [
+        "Ana sayfa - Modern haber listesi, kategoriler ve breaking news banner",
+        "Makale sayfası - Rich text editor, yorum sistemi ve sosyal medya paylaşım",
+        "Admin paneli - Kapsamlı içerik yönetimi ve kullanıcı yönetimi",
+        "Arama sonuçları - Full-text search ve gelişmiş filtreleme sistemi",
+        "Mobil responsive - Mobile-first tasarım ve touch-friendly arayüz"
+      ]
+    }
+  },
+  "services": {
+    "processManagementTitle": "Süreç Yönetimi",
+    "technologiesHeading": "Kullandığımız Teknolojiler",
+    "webDevelopment": {
+      "title": "Web Uygulama Geliştirme",
+      "subtitle": "Modern, hızlı ve kullanıcı dostu web uygulamaları",
+      "description": "Web uygulama geliştirme sürecimiz, müşteri ihtiyaçlarını anlamaktan başlayarak teslim ve bakım aşamasına kadar kapsamlı bir yaklaşım sunar.",
+      "processSteps": [
+        {
+          "title": "Başlangıç Toplantısı",
+          "description": "Projeye başlamadan önce müşterinin ihtiyaçlarını, beklentilerini ve hedeflerini anlamak için detaylı bir toplantı gerçekleştiriyoruz. Bu aşama, projenin doğru bir şekilde planlanabilmesi için temel oluşturur."
+        },
+        {
+          "title": "Gereksinim Analizi",
+          "description": "Toplantıda elde edilen bilgiler doğrultusunda, projenin iş ve teknik gereksinimleri çıkarılır. Hangi özelliklerin öncelikli olduğu, kullanıcı akışları ve teknik gereklilikler detaylı olarak belirlenir."
+        },
+        {
+          "title": "Haftalık Toplantılar ve Süreç Takibi",
+          "description": "Müşteri ile anlaşma sağlandıktan sonra proje süreci, haftalık toplantılar ile yakından takip edilir. Bu aşamada, projenin ilerleyişi düzenli olarak gözden geçirilir ve anlaşılan kriterler doğrultusunda gerekli revizeler yapılır.",
+          "note": "Not: Süreç içinde yeni özellikler eklenmesi durumunda, ek çalışmalar için yeniden fiyatlandırma yapılır."
+        },
+        {
+          "title": "Revizeler ve Uygulama Teslimi",
+          "description": "Revizeler tamamlandıktan sonra, uygulama anlaşılan kriterler doğrultusunda tamamlanır ve müşteriye teslim edilir. Bu aşama, projenin hedeflenen kalite ve fonksiyonellikte son halini almasını sağlar."
+        },
+        {
+          "title": "Bakım ve Destek",
+          "description": "Uygulamanın tesliminden sonra sunulan bakım ve destek hizmetleri, sistemin sorunsuz çalışmasını ve gerektiğinde güncellemeler yapılmasını kapsar. Bu hizmetler ayrıca ücretlendirilir."
+        }
+      ],
+      "features": {
+        "responsive": "Responsive ve mobil uyumlu tasarım",
+        "database": "Veri Tabanı entegreli sistemler",
+        "security": "Güvenli veri yönetimi",
+        "modernTech": "Modern Teknolojiler",
+        "fastDevelopment": "Hızlı Geliştirme Süreleri",
+        "paymentIntegration": "Ödeme Entegrasyonları"
+      },
+      "technologies": ["React", "Next.js", "TypeScript", "Tailwind CSS", "Firebase", "Supabase"]
+    },
+    "mobileDevelopment": {
+      "title": "Mobil Uygulama Geliştirme",
+      "subtitle": "iOS ve Android için cross-platform mobil uygulamalar",
+      "description": "Mobil uygulama geliştirme sürecimiz, platform seçiminden başlayarak teslim ve bakım aşamasına kadar kapsamlı bir yaklaşım sunar.",
+      "processSteps": [
+        {
+          "title": "Platform Seçimi ve Planlama",
+          "description": "Projenin gereksinimlerine göre en uygun platform (Flutter, React Native) seçilir ve detaylı geliştirme planı oluşturulur."
+        },
+        {
+          "title": "UI/UX Tasarım",
+          "description": "Kullanıcı deneyimini ön planda tutan modern ve kullanıcı dostu arayüz tasarımı gerçekleştirilir."
+        },
+        {
+          "title": "Geliştirme ve Test",
+          "description": "Seçilen teknoloji ile uygulama geliştirilir ve kapsamlı test süreçleri uygulanır."
+        },
+        {
+          "title": "App Store Yayınlama",
+          "description": "Uygulama App Store ve Google Play Store'da yayınlanır ve gerekli sertifikalar alınır."
+        },
+        {
+          "title": "Bakım ve Güncellemeler",
+          "description": "Uygulamanın sürekli güncellenmesi ve performans optimizasyonu sağlanır."
+        }
+      ],
+      "features": {
+        "crossPlatform": "Cross-platform geliştirme",
+        "nativePerformance": "Native performans",
+        "offlineSupport": "Offline çalışma desteği",
+        "pushNotification": "Push notification",
+        "cameraIntegration": "Kamera ve sensör entegrasyonu",
+        "realtimeSync": "Gerçek zamanlı veri senkronizasyonu",
+        "paymentIntegration": "Ödeme entegrasyonları"
+      },
+      "technologies": ["Flutter", "React Native", "Firebase", "SQLite", "Bluetooth", "GPS", "İyzico"]
+    }
+  },
+  "common": {
+    "loading": "Yükleniyor...",
+    "error": "Hata oluştu",
+    "success": "Başarılı",
+    "close": "Kapat",
+    "open": "Aç",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "confirm": "Onayla",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "view": "Görüntüle",
+    "download": "İndir",
+    "upload": "Yükle",
+    "search": "Ara",
+    "filter": "Filtrele",
+    "sort": "Sırala",
+    "refresh": "Yenile",
+    "next": "İleri",
+    "previous": "Geri",
+    "finish": "Bitir",
+    "start": "Başla",
+    "stop": "Durdur",
+    "pause": "Duraklat",
+    "resume": "Devam Et"
+  }
+}

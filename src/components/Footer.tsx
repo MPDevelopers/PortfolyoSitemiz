@@ -1,6 +1,9 @@
 import { Code2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function Footer() {
+  const { t } = useTranslation();
+  
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
@@ -9,11 +12,11 @@ export default function Footer() {
   };
 
   const footerLinks = [
-    { id: 'about', label: 'Hakkımızda' },
-    { id: 'projects', label: 'Projeler' },
-    { id: 'skills', label: 'Yetenekler' },
-    { id: 'faq', label: 'SSS' },
-    { id: 'contact', label: 'İletişim' },
+    { id: 'about', label: t('navigation.about') },
+    { id: 'projects', label: t('navigation.projects') },
+    { id: 'skills', label: t('navigation.skills') },
+    { id: 'faq', label: t('navigation.faq') },
+    { id: 'contact', label: t('navigation.contact') },
   ];
 
   return (
@@ -26,12 +29,12 @@ export default function Footer() {
               <span className="text-xl font-bold text-white">MPDevelopers</span>
             </div>
             <p className="text-dark-400 leading-relaxed">
-              Mobil ve web geliştirmede profesyonel çözümler sunuyoruz.
+              {t('footer.description')}
             </p>
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Hızlı Bağlantılar</h3>
+            <h3 className="text-white font-semibold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               {footerLinks.map((link) => (
                 <li key={link.id}>
@@ -47,7 +50,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">İletişim</h3>
+            <h3 className="text-white font-semibold mb-4">{t('footer.contact')}</h3>
             <a
               href="mailto:mpdevelopers@gmail.com"
               className="text-dark-400 hover:text-white transition-colors"
@@ -59,7 +62,7 @@ export default function Footer() {
 
         <div className="border-t border-dark-800 pt-8 text-center">
           <p className="text-dark-500">
-            © 2025 Tüm Hakları Saklıdır. MPDevelopers
+            {t('footer.copyright')}
           </p>
         </div>
       </div>

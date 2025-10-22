@@ -14,43 +14,45 @@ import {
   CheckCircle
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 export default function Skills() {
   const { ref, isVisible } = useScrollAnimation();
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const services = [
     {
-      title: "Web Uygulama Geliştirme",
+      title: t('skills.webDevelopment.title'),
       icon: Globe,
       color: "rgba(59, 130, 246, 0.3)",
-      description: "Modern, hızlı ve kullanıcı dostu web uygulamaları geliştiriyoruz",
+      description: t('skills.webDevelopment.description'),
       features: [
-        "Responsive ve mobil uyumlu tasarım",
-        "Veri Tabanı entegreli sistemler",
-        "Güvenli veri yönetimi",
-        "Modern Teknolojiler",
-        "Hızlı Geliştirme Süreleri",
-        "Ödeme Entegrasyonları"
+        t('skills.webDevelopment.features.responsive'),
+        t('skills.webDevelopment.features.database'),
+        t('skills.webDevelopment.features.security'),
+        t('skills.webDevelopment.features.modernTech'),
+        t('skills.webDevelopment.features.fastDevelopment'),
+        t('skills.webDevelopment.features.paymentIntegration')
       ],
-      technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Firebase", "Supabase"],
+      technologies: (t('services.webDevelopment.technologies', { returnObjects: true }) as string[]),
       route: "/services/web-service"
     },
     {
-      title: "Mobil Uygulama Geliştirme", 
+      title: t('skills.mobileDevelopment.title'), 
       icon: Smartphone,
       color: "rgba(16, 185, 129, 0.3)",
-      description: "iOS ve Android için cross-platform mobil uygulamalar",
+      description: t('skills.mobileDevelopment.description'),
       features: [
-        "Cross-platform geliştirme",
-        "Native performans",
-        "Offline çalışma desteği",
-        "Push notification",
-        "Kamera ve sensör entegrasyonu",
-        "Gerçek zamanlı veri senkronizasyonu",
-        "Ödeme entegrasyonları"
+        t('skills.mobileDevelopment.features.crossPlatform'),
+        t('skills.mobileDevelopment.features.nativePerformance'),
+        t('skills.mobileDevelopment.features.offlineSupport'),
+        t('skills.mobileDevelopment.features.pushNotification'),
+        t('skills.mobileDevelopment.features.cameraIntegration'),
+        t('skills.mobileDevelopment.features.realtimeSync'),
+        t('skills.mobileDevelopment.features.paymentIntegration')
       ],
-      technologies: ["Flutter", "React Native", "Firebase", "SQLite", "Bluetooth", "GPS", "Stripe", "PayPal"],
+      technologies: (t('services.mobileDevelopment.technologies', { returnObjects: true }) as string[]),
       route: "/services/mobile-service"
     }
   ];
@@ -66,11 +68,11 @@ export default function Skills() {
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Hizmetlerimiz
+              {t('skills.title')}
             </h2>
             <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Size en uygun çözümleri sunmak için buradayız
+              {t('skills.description')}
             </p>
           </div>
 
@@ -94,7 +96,7 @@ export default function Skills() {
                 </p>
 
                 <div className="mb-6">
-                  <h4 className="text-lg font-semibold text-white mb-4">Özellikler:</h4>
+                  <h4 className="text-lg font-semibold text-white mb-4">{t('skills.features')}</h4>
                   <div className="space-y-3">
                     {service.features.map((feature, featureIndex) => (
                       <div key={featureIndex} className="flex items-center">
@@ -106,7 +108,7 @@ export default function Skills() {
                 </div>
 
                 <div className="mt-auto">
-                  <h4 className="text-lg font-semibold text-white mb-4">Teknolojiler:</h4>
+                  <h4 className="text-lg font-semibold text-white mb-4">{t('skills.technologies')}</h4>
                   <div className="flex flex-wrap gap-2 mb-6">
                     {service.technologies.map((tech, techIndex) => (
                       <span 
@@ -119,7 +121,7 @@ export default function Skills() {
                   </div>
                   
                   <div className="flex items-center justify-center text-blue-400 hover:text-blue-300 transition-colors">
-                    <span className="text-sm font-semibold mr-2">Detayları Gör</span>
+                    <span className="text-sm font-semibold mr-2">{t('skills.viewDetails')}</span>
                     <ArrowRight className="w-4 h-4" />
                   </div>
                 </div>

@@ -2,25 +2,97 @@ import { useParams, Link } from 'react-router-dom';
 import { projects } from '../data/projects';
 import { useState, useEffect } from 'react';
 import { ArrowLeft, Play, Download, Star, Users, Zap, Shield, Smartphone, MessageCircle, Heart, Award, Eye, Brain, Volume2, X, Activity, Monitor } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export default function ProjectDetail() {
   const { slug } = useParams();
-  const project = projects.find((p) => p.slug === slug);
+  const { t } = useTranslation();
   const [activeScreen, setActiveScreen] = useState(0);
   const [activeFlow, setActiveFlow] = useState(0);
   const [isVisible, setIsVisible] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
+  
+  // Proje verilerini çevirilerden al
+  const getTranslatedProject = (slug: string) => {
+    const originalProject = projects.find((p) => p.slug === slug);
+    if (!originalProject) return null;
+
+    let projectKey = '';
+    switch (slug) {
+      case 'saglik-takip-platformu':
+        projectKey = 'mindConnect';
+        break;
+      case 'solunum-sagligi-uygulamasi':
+        projectKey = 'spiroble';
+        break;
+      case 'isaret-dili-ai-uygulamasi':
+        projectKey = 'conversign';
+        break;
+      case 'haberapron-web-sitesi':
+        projectKey = 'haberapron';
+        break;
+      default:
+        return originalProject;
+    }
+
+    return {
+      ...originalProject,
+      title: t(`projects.${projectKey}.title`),
+      description: t(`projects.${projectKey}.description`),
+      details: {
+        ...originalProject.details,
+        longDescription: t(`projects.${projectKey}.longDescription`),
+        images: t(`projects.${projectKey}.images`)
+      }
+    };
+  };
+
+  const project = getTranslatedProject(slug || '');
+
+  // Map slug to project key for translations
+  const getProjectKey = (s: string): string | null => {
+    switch (s) {
+      case 'saglik-takip-platformu':
+        return 'mindConnect'
+      case 'solunum-sagligi-uygulamasi':
+        return 'spiroble'
+      case 'isaret-dili-ai-uygulamasi':
+        return 'conversign'
+      case 'haberapron-web-sitesi':
+        return 'haberapron'
+      default:
+        return null
+    }
+  }
+  const projectKey = getProjectKey(slug || '')
 
   // Get phone flows from project data or use fallback
-  const phoneFlows = project?.details?.screenshots?.flows || [
+  const baseFlows = project?.details?.screenshots?.flows || [
     {
-      name: "Default Flow",
+      name: t('projectDetail.defaultFlow'),
       screens: [
-        { title: "Ana Ekran", description: "Modern ve kullanıcı dostu ana sayfa tasarımı", image: "", icon: "📱", color: "from-blue-500 to-cyan-500", bgPattern: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20", tech: "React Native" }
+        { title: t('projectDetail.homeScreen'), description: t('projectDetail.homeScreenDesc'), image: "", icon: "📱", color: "from-blue-500 to-cyan-500", bgPattern: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20", tech: "React Native" }
       ]
     }
-  ];
+  ]
+
+  // Apply translations to flow names and screen titles/descriptions if keys exist
+  const phoneFlows = baseFlows.map((flow, flowIdx) => {
+    const translatedName = projectKey
+      ? t(`projectScreens.${projectKey}.flows.${flowIdx}.name`, { defaultValue: flow.name })
+      : flow.name
+    const screens = flow.screens.map((screen, screenIdx) => {
+      const translatedTitle = projectKey
+        ? t(`projectScreens.${projectKey}.flows.${flowIdx}.screens.${screenIdx}.title`, { defaultValue: screen.title })
+        : screen.title
+      const translatedDesc = projectKey
+        ? t(`projectScreens.${projectKey}.flows.${flowIdx}.screens.${screenIdx}.description`, { defaultValue: screen.description })
+        : screen.description
+      return { ...screen, title: translatedTitle, description: translatedDesc }
+    })
+    return { ...flow, name: translatedName, screens }
+  })
 
   const currentFlow = phoneFlows[activeFlow] || phoneFlows[0];
   const phoneScreens = currentFlow?.screens || [];
@@ -88,8 +160,8 @@ export default function ProjectDetail() {
     return (
       <section className="min-h-[60vh] flex items-center justify-center" style={{ backgroundColor: '#0f172a' }}>
         <div className="text-center text-white">
-          <p className="mb-4">Proje bulunamadı.</p>
-          <Link to="/" className="text-primary-400 hover:text-primary-300 underline">Ana sayfaya dön</Link>
+          <p className="mb-4">{t('projectDetail.notFound')}</p>
+          <Link to="/" className="text-primary-400 hover:text-primary-300 underline">{t('projectDetail.backToHome')}</Link>
         </div>
       </section>
     );
@@ -112,7 +184,7 @@ export default function ProjectDetail() {
             {/* Back Button */}
             <Link to="/" className="inline-flex items-center text-gray-400 hover:text-white transition-colors duration-300 mb-8 group">
               <ArrowLeft className="w-5 h-5 mr-2 group-hover:-translate-x-1 transition-transform duration-300" />
-              Ana sayfaya dön
+              {t('projectDetail.backToHome')}
             </Link>
 
             {/* Centered Content */}
@@ -123,12 +195,12 @@ export default function ProjectDetail() {
                     {project?.slug === 'haberapron-web-sitesi' ? (
                       <>
                         <Monitor className="w-4 h-4 mr-2" />
-                        Web Sitesi
+                        {t('projectDetail.ui.web')}
                       </>
                     ) : (
                       <>
                         <Smartphone className="w-4 h-4 mr-2" />
-                        Mobil Uygulama
+                        {t('projectDetail.ui.mobile')}
                       </>
                     )}
               </div>
@@ -154,17 +226,17 @@ export default function ProjectDetail() {
                         {project?.slug === 'isaret-dili-ai-uygulamasi' ? (
                           <>
                             <Brain className="w-4 h-4 text-purple-400 mr-1" />
-                            AI Doğruluk
+                            {t('projectDetail.ui.stats.aiAccuracy')}
                           </>
                         ) : project?.slug === 'haberapron-web-sitesi' ? (
                           <>
                             <Zap className="w-4 h-4 text-yellow-400 mr-1" />
-                            Lighthouse
+                            {t('projectDetail.ui.stats.lighthouse')}
                           </>
                         ) : (
                           <>
                             <Star className="w-4 h-4 text-yellow-400 mr-1" />
-                            App Store
+                            {t('projectDetail.ui.stats.appStore')}
                           </>
                         )}
                       </div>
@@ -176,8 +248,8 @@ export default function ProjectDetail() {
                       </div>
                       <div className="text-sm text-gray-400 flex items-center justify-center">
                         <Users className="w-4 h-4 text-blue-400 mr-1" />
-                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? 'Kullanıcı' : 
-                         project?.slug === 'haberapron-web-sitesi' ? 'LCP' : 'Aktif Kullanıcı'}
+                        {project?.slug === 'isaret-dili-ai-uygulamasi' ? t('projectDetail.ui.stats.users') : 
+                         project?.slug === 'haberapron-web-sitesi' ? t('projectDetail.ui.stats.lcp') : t('projectDetail.ui.stats.users')}
                       </div>
                     </div>
                     <div className="text-center">
@@ -189,17 +261,17 @@ export default function ProjectDetail() {
                         {project?.slug === 'isaret-dili-ai-uygulamasi' ? (
                           <>
                             <Eye className="w-4 h-4 text-indigo-400 mr-1" />
-                            İşaret Dili
+                            {t('projectDetail.ui.stats.signLanguage')}
                           </>
                         ) : project?.slug === 'haberapron-web-sitesi' ? (
                           <>
                             <Shield className="w-4 h-4 text-green-400 mr-1" />
-                            Bandwidth
+                            {t('projectDetail.ui.stats.bandwidth')}
                           </>
                         ) : (
                           <>
                             <Heart className="w-4 h-4 text-pink-400 mr-1" />
-                            Uzman Psikolog
+                            {t('projectDetail.ui.stats.expertPsychologist')}
                           </>
                         )}
                       </div>
@@ -215,7 +287,7 @@ export default function ProjectDetail() {
                       className={`flex items-center justify-center px-8 py-4 bg-gradient-to-r ${project.color} text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}
                     >
                       <Play className="w-5 h-5 mr-2" />
-                      Demo İzle
+                      {t('projectDetail.ui.watchDemo')}
                     </button>
                     <a 
                       href="https://appgallery.huawei.com/app/C114157203?sharePrepath=ag&locale=tr_TR&source=appshare&subsource=C114157203&shareTo=com.android.chrome&shareFrom=appmarket&shareIds=919e6ea53fa24502888bfc28205e37db_com.android.chrome&callType=SHARE"
@@ -224,7 +296,7 @@ export default function ProjectDetail() {
                       className="flex items-center justify-center px-8 py-4 bg-slate-800 text-white rounded-xl font-semibold hover:bg-slate-700 transition-all duration-300 border border-slate-700"
                     >
                       <Download className="w-5 h-5 mr-2" />
-                      İndir
+                      {t('projectDetail.ui.download')}
                     </a>
                   </div>
                 )}
@@ -240,17 +312,17 @@ export default function ProjectDetail() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold text-white mb-4">
-                {project?.slug === 'haberapron-web-sitesi' ? 'Web Sitesi Ekranları' : 'Uygulama Ekranları'}
+                {project?.slug === 'haberapron-web-sitesi' ? t('projectDetail.ui.websiteScreens') : t('projectDetail.ui.appScreens')}
               </h2>
               <p className="text-gray-400 text-lg">
-                {project?.slug === 'saglik-takip-platformu' 
-                  ? 'Geliştirme sürecindeki farklı aşamalar ve teknik detaylar'
-                  : project?.slug === 'isaret-dili-ai-uygulamasi'
-                  ? 'AI teknolojisi ile işaret dili tanıma sürecinin farklı aşamaları'
-                  : project?.slug === 'haberapron-web-sitesi'
-                  ? 'Modern web teknolojileri ile geliştirilmiş haber platformu ekranları'
-                  : 'Spirometre cihazı entegrasyonu ve solunum sağlığı takip süreçleri'
-                }
+              {project?.slug === 'saglik-takip-platformu' 
+                ? t('projectDetail.ui.screensDesc.mindConnect')
+                : project?.slug === 'isaret-dili-ai-uygulamasi'
+                ? t('projectDetail.ui.screensDesc.conversign')
+                : project?.slug === 'haberapron-web-sitesi'
+                ? t('projectDetail.ui.screensDesc.haberapron')
+                : t('projectDetail.ui.screensDesc.spiroble')
+              }
               </p>
             </div>
 
@@ -387,7 +459,7 @@ export default function ProjectDetail() {
                               <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
                                 <div className="flex items-center space-x-2 text-white/60 text-xs">
                                   <ArrowLeft className="w-3 h-3" />
-                                  <span>Kaydır</span>
+                                  <span>{t('projectDetail.ui.swipe')}</span>
                                   <ArrowLeft className="w-3 h-3 rotate-180" />
                                 </div>
                               </div>
@@ -536,7 +608,7 @@ export default function ProjectDetail() {
                           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
                             <div className="flex items-center space-x-2 text-white/60 text-xs">
                               <ArrowLeft className="w-3 h-3" />
-                              <span>Kaydır</span>
+                              <span>{t('projectDetail.ui.swipe')}</span>
                               <ArrowLeft className="w-3 h-3 rotate-180" />
                             </div>
                           </div>
@@ -582,7 +654,7 @@ export default function ProjectDetail() {
 
                   {phoneScreens[activeScreen]?.tech && (
                     <div className="space-y-4">
-                      <h4 className="text-xl font-semibold text-white">Kullanılan Teknolojiler:</h4>
+                      <h4 className="text-xl font-semibold text-white">{t('projectDetail.usedTechnologies')}</h4>
                       <div className="flex flex-wrap gap-3">
                         {phoneScreens[activeScreen].tech.split(', ').map((tech, index) => (
                           <span key={index} className="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg text-cyan-400 font-mono text-sm">
@@ -594,32 +666,32 @@ export default function ProjectDetail() {
                   )}
 
                   <div className="space-y-4">
-                    <h4 className="text-xl font-semibold text-white">Teknik Detaylar:</h4>
+                    <h4 className="text-xl font-semibold text-white">{t('projectDetail.ui.technicalDetails')}</h4>
                     <div className="space-y-3">
                       {project?.slug === 'isaret-dili-ai-uygulamasi' ? (
                         <>
                           {activeFlow === 0 && (
                             <>
-                              <p className="text-gray-300">• OpenCV ile gerçek zamanlı video işleme ve el tespiti</p>
-                              <p className="text-gray-300">• TensorFlow.js ile browser tabanlı AI model çalıştırma</p>
-                              <p className="text-gray-300">• MediaPipe ile pose estimation ve landmark detection</p>
-                              <p className="text-gray-300">• Custom CNN modelleri ile işaret dili sınıflandırması</p>
+                              <p className="text-gray-300">• OpenCV with real-time video processing and hand detection</p>
+                              <p className="text-gray-300">• Browser-based AI inference with TensorFlow.js</p>
+                              <p className="text-gray-300">• Pose estimation and landmark detection with MediaPipe</p>
+                              <p className="text-gray-300">• Sign language classification with custom CNN models</p>
                             </>
                           )}
                           {activeFlow === 1 && (
                             <>
-                              <p className="text-gray-300">• React Native Camera ile kamera entegrasyonu</p>
-                              <p className="text-gray-300">• Web Speech API ile text-to-speech dönüşümü</p>
-                              <p className="text-gray-300">• Accessibility API ile erişilebilirlik özellikleri</p>
-                              <p className="text-gray-300">• Real-time video streaming ve işleme</p>
+                              <p className="text-gray-300">• Camera integration with React Native Camera</p>
+                              <p className="text-gray-300">• Text-to-speech with Web Speech API</p>
+                              <p className="text-gray-300">• Accessibility features with Accessibility API</p>
+                              <p className="text-gray-300">• Real-time video streaming and processing</p>
                             </>
                           )}
                           {activeFlow === 2 && (
                             <>
-                              <p className="text-gray-300">• 50+ işaret dili veri seti oluşturma ve etiketleme</p>
-                              <p className="text-gray-300">• PyTorch ile custom model eğitimi ve optimizasyon</p>
-                              <p className="text-gray-300">• TensorFlow Lite ile mobil model sıkıştırma</p>
-                              <p className="text-gray-300">• Edge computing ile offline çalışma desteği</p>
+                              <p className="text-gray-300">• Building and labeling a dataset of 50+ sign gestures</p>
+                              <p className="text-gray-300">• Custom model training and optimization with PyTorch</p>
+                              <p className="text-gray-300">• Mobile model quantization with TensorFlow Lite</p>
+                              <p className="text-gray-300">• Offline support via edge computing</p>
                             </>
                           )}
                         </>
@@ -627,26 +699,26 @@ export default function ProjectDetail() {
                         <>
                           {activeFlow === 0 && (
                             <>
-                              <p className="text-gray-300">• Flutter ile cross-platform mobil uygulama geliştirme</p>
-                              <p className="text-gray-300">• Firebase Realtime Database ile veri yönetimi</p>
-                              <p className="text-gray-300">• Bluetooth LE ile spirometre cihazı entegrasyonu</p>
-                              <p className="text-gray-300">• Gerçek zamanlı solunum verisi analizi</p>
+                              <p className="text-gray-300">• Cross-platform mobile app development with Flutter</p>
+                              <p className="text-gray-300">• Data management with Firebase Realtime Database</p>
+                              <p className="text-gray-300">• Spirometer device integration via Bluetooth LE</p>
+                              <p className="text-gray-300">• Real-time respiratory data analysis</p>
                             </>
                           )}
                           {activeFlow === 1 && (
                             <>
-                              <p className="text-gray-300">• Node.js ve Express ile RESTful API geliştirme</p>
-                              <p className="text-gray-300">• MongoDB ile NoSQL veritabanı tasarımı</p>
-                              <p className="text-gray-300">• JWT ile güvenli authentication sistemi</p>
-                              <p className="text-gray-300">• Middleware ile request/response işleme</p>
+                              <p className="text-gray-300">• RESTful API development with Node.js and Express</p>
+                              <p className="text-gray-300">• NoSQL database design with MongoDB</p>
+                              <p className="text-gray-300">• Secure authentication with JWT</p>
+                              <p className="text-gray-300">• Request/response handling via middleware</p>
                             </>
                           )}
                           {activeFlow === 2 && (
                             <>
-                              <p className="text-gray-300">• GitHub Actions ile CI/CD pipeline kurulumu</p>
-                              <p className="text-gray-300">• Docker ile containerization</p>
-                              <p className="text-gray-300">• AWS ile cloud deployment</p>
-                              <p className="text-gray-300">• Performance monitoring ve analytics</p>
+                              <p className="text-gray-300">• CI/CD pipeline setup with GitHub Actions</p>
+                              <p className="text-gray-300">• Containerization with Docker</p>
+                              <p className="text-gray-300">• Cloud deployment on AWS</p>
+                              <p className="text-gray-300">• Performance monitoring and analytics</p>
                             </>
                           )}
                         </>
@@ -665,8 +737,8 @@ export default function ProjectDetail() {
         <section className="py-20 bg-gradient-to-br from-slate-900 to-slate-800">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">Geliştirme Süreci</h2>
-              <p className="text-gray-400 text-lg">MindConnect'in teknik geliştirme aşamaları ve mimarisi</p>
+              <h2 className="text-4xl font-bold text-white mb-4">{t('projectDetail.sections.devProcessTitle')}</h2>
+              <p className="text-gray-400 text-lg">{t('projectDetail.sections.devProcessDesc')}</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -675,7 +747,7 @@ export default function ProjectDetail() {
                   step: "01",
                   icon: MessageCircle,
                   title: "Proje Planlama",
-                  description: "Agile metodoloji ile sprint planlaması, user story'ler ve teknik gereksinimler",
+                  description: t('projectDetail.features.agileMethodology'),
                   color: "from-blue-500 to-cyan-500",
                   tech: "Jira, Confluence, Figma"
                 },
@@ -683,7 +755,7 @@ export default function ProjectDetail() {
                   step: "02", 
                   icon: Users,
                   title: "Full-Stack Development",
-                  description: "React Native frontend ve Node.js backend ile tam stack geliştirme",
+                  description: t('projectDetail.features.fullStackDev'),
                   color: "from-green-500 to-emerald-500",
                   tech: "React Native, Node.js, MongoDB"
                 },
@@ -691,7 +763,7 @@ export default function ProjectDetail() {
                   step: "03",
                   icon: Heart,
                   title: "Test & Deployment",
-                  description: "Unit testler, integration testler ve CI/CD pipeline ile otomatik deployment",
+                  description: t('projectDetail.features.testingDeployment'),
                   color: "from-pink-500 to-rose-500",
                   tech: "Jest, GitHub Actions, AWS"
                 }
@@ -725,43 +797,43 @@ export default function ProjectDetail() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              {project?.slug === 'saglik-takip-platformu' ? 'MindConnect Özellikleri' : 
-               project?.slug === 'solunum-sagligi-uygulamasi' ? 'Spiroble Özellikleri' : 
-               project?.slug === 'haberapron-web-sitesi' ? 'HaberApron Özellikleri' : 'Özellikler'}
+              {project?.slug === 'saglik-takip-platformu' ? t('projectDetail.mindConnectFeatures') : 
+               project?.slug === 'solunum-sagligi-uygulamasi' ? t('projectDetail.spirobleFeatures') : 
+               project?.slug === 'haberapron-web-sitesi' ? t('projectDetail.haberapronFeatures') : t('projectDetail.featuresHeading')}
             </h2>
             <p className="text-gray-400 text-lg">
               {project?.slug === 'saglik-takip-platformu' 
-                ? 'Ruh sağlığı alanında devrim yaratan özellikler' 
+                ? t('projectDetail.sections.featuresIntro.mindConnect')
                 : project?.slug === 'solunum-sagligi-uygulamasi'
-                ? 'Solunum sağlığı takibinde devrim yaratan özellikler'
+                ? t('projectDetail.sections.featuresIntro.spiroble')
                 : project?.slug === 'haberapron-web-sitesi'
-                ? 'Modern web teknolojileri ile geliştirilmiş haber platformu özellikleri'
-                : 'Modern teknolojilerle geliştirilmiş güçlü özellikler'
+                ? t('projectDetail.sections.featuresIntro.haberapron')
+                : t('projectDetail.sections.featuresIntro.default')
               }
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {(project?.slug === 'saglik-takip-platformu' ? [
-              { icon: Shield, title: "Güvenlik & Şifreleme", description: "End-to-end şifreleme, JWT authentication ve güvenli API endpoints" },
-              { icon: Zap, title: "Real-time Communication", description: "Socket.io ile gerçek zamanlı mesajlaşma ve bildirim sistemi" },
-              { icon: Award, title: "Scalable Architecture", description: "MongoDB ile ölçeklenebilir veritabanı ve mikroservis mimarisi" }
+              { icon: Shield, title: t('projectDetail.featureTitles.securityEncryption'), description: t('projectDetail.features.securityEncryption') },
+              { icon: Zap, title: t('projectDetail.featureTitles.realtimeCommunication'), description: t('projectDetail.features.realtimeComm') },
+              { icon: Award, title: t('projectDetail.featureTitles.scalableArchitecture'), description: t('projectDetail.features.scalableArch') }
             ] : project?.slug === 'isaret-dili-ai-uygulamasi' ? [
-              { icon: Brain, title: "AI-Powered Recognition", description: "TensorFlow.js ile %95 doğruluk oranında işaret dili tanıma" },
-              { icon: Eye, title: "Real-time Processing", description: "OpenCV ile gerçek zamanlı video işleme ve anlık çeviri" },
-              { icon: Volume2, title: "Accessibility First", description: "Erişilebilirlik odaklı tasarım ve ses sentezi özellikleri" }
+              { icon: Brain, title: "AI-Powered Recognition", description: t('projectDetail.features.aiRecognition') },
+              { icon: Eye, title: "Real-time Processing", description: t('projectDetail.features.realtimeProcessing') },
+              { icon: Volume2, title: "Accessibility First", description: t('projectDetail.features.accessibilityFirst') }
             ] : project?.slug === 'solunum-sagligi-uygulamasi' ? [
-              { icon: Activity, title: "Gerçek Zamanlı Ölçüm", description: "Bluetooth LE ile spirometre cihazından anlık solunum verisi toplama" },
-              { icon: Shield, title: "Güvenli Veri Saklama", description: "Firebase Realtime Database ile hasta verilerinin güvenli saklanması" },
-              { icon: Zap, title: "Akıllı Analiz", description: "AI destekli solunum analizi ve kişiselleştirilmiş sağlık önerileri" }
+              { icon: Activity, title: t('projectDetail.featureTitles.realtimeMeasurement'), description: t('projectDetail.features.realtimeMeasurement') },
+              { icon: Shield, title: t('projectDetail.featureTitles.secureDataStorage'), description: t('projectDetail.features.secureDataStorage') },
+              { icon: Zap, title: t('projectDetail.featureTitles.smartAnalysis'), description: t('projectDetail.features.smartAnalysis') }
             ] : project?.slug === 'haberapron-web-sitesi' ? [
-              { icon: Zap, title: "Yüksek Performans", description: "Vite build tool, code splitting ve Redis cache ile %95 Lighthouse skoru" },
-              { icon: Shield, title: "Güvenli Altyapı", description: "JWT authentication, Helmet.js, rate limiting ve Docker containerization" },
-              { icon: Monitor, title: "Modern UI/UX", description: "Mobile-first responsive tasarım, dark mode ve accessibility uyumlu" }
+              { icon: Zap, title: t('projectDetail.featureTitles.highPerformance'), description: t('projectDetail.features.highPerformance') },
+              { icon: Shield, title: t('projectDetail.featureTitles.secureInfrastructure'), description: t('projectDetail.features.secureInfrastructure') },
+              { icon: Monitor, title: t('projectDetail.featureTitles.modernUI'), description: t('projectDetail.features.modernUI') }
             ] : [
-              { icon: Zap, title: "Hızlı Performans", description: "Optimize edilmiş kod yapısı ile yıldırım hızında çalışma" },
-              { icon: Shield, title: "Güvenli", description: "End-to-end şifreleme ile verileriniz güvende" },
-              { icon: Users, title: "Sosyal", description: "Arkadaşlarınızla bağlantı kurun ve deneyimlerinizi paylaşın" }
+              { icon: Zap, title: t('projectDetail.featureTitles.fastPerformance'), description: t('projectDetail.features.fastPerformance') },
+              { icon: Shield, title: t('projectDetail.featureTitles.secure'), description: t('projectDetail.features.secure') },
+              { icon: Users, title: t('projectDetail.featureTitles.social'), description: t('projectDetail.features.social') }
             ]).map((feature, index) => (
               <div key={index} className="group">
                 <div className="bg-slate-800/50 border border-slate-700 rounded-2xl p-8 hover:border-slate-600 transition-all duration-300 hover:scale-105">
@@ -781,8 +853,8 @@ export default function ProjectDetail() {
       <section className="py-20 bg-slate-900/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-4">Kullanılan Teknolojiler</h2>
-            <p className="text-gray-400 text-lg">En güncel teknolojilerle geliştirildi</p>
+            <h2 className="text-4xl font-bold text-white mb-4">{t('projectDetail.technologies')}</h2>
+            <p className="text-gray-400 text-lg">{t('projectDetail.developedWithLatestTech')}</p>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6">
@@ -802,32 +874,32 @@ export default function ProjectDetail() {
         <section className="py-20 bg-gradient-to-r from-pink-500/10 to-rose-500/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold text-white mb-4">Başarı Hikayeleri</h2>
-              <p className="text-gray-400 text-lg">MindConnect ile hayatları değişen kullanıcılarımız</p>
+              <h2 className="text-4xl font-bold text-white mb-4">{t('projectDetail.ui.successStories')}</h2>
+              <p className="text-gray-400 text-lg">{t('projectDetail.ui.usersChangedLives')}</p>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  name: "Ayşe K.",
+                  name: t('projectDetail.testimonials.ayse.name'),
                   age: "28",
-                  story: "Anksiyete ile mücadele ederken MindConnect sayesinde doğru psikologu buldum. 3 ayda büyük ilerleme kaydettim.",
+                  story: t('projectDetail.testimonials.ayse.story'),
                   rating: 5,
-                  improvement: "Anksiyete seviyesi %70 azaldı"
+                  improvement: t('projectDetail.testimonials.ayse.improvement')
                 },
                 {
-                  name: "Mehmet S.",
+                  name: t('projectDetail.testimonials.mehmet.name'),
                   age: "35", 
-                  story: "İş stresi ve aile problemleri için destek arıyordum. 7/24 erişim sayesinde ihtiyacım olduğunda hep yanımda oldu.",
+                  story: t('projectDetail.testimonials.mehmet.story'),
                   rating: 5,
-                  improvement: "Stres seviyesi %60 azaldı"
+                  improvement: t('projectDetail.testimonials.mehmet.improvement')
                 },
                 {
-                  name: "Zeynep A.",
+                  name: t('projectDetail.testimonials.zeynep.name'),
                   age: "24",
-                  story: "Üniversite döneminde depresyon yaşıyordum. Güvenli ortamda konuşabilmek beni çok rahatlattı.",
+                  story: t('projectDetail.testimonials.zeynep.story'),
                   rating: 5,
-                  improvement: "Ruh hali %80 iyileşti"
+                  improvement: t('projectDetail.testimonials.zeynep.improvement')
                 }
               ].map((user, index) => (
                 <div key={index} className="group">
@@ -838,7 +910,7 @@ export default function ProjectDetail() {
                       </div>
                       <div>
                         <h4 className="text-white font-semibold">{user.name}</h4>
-                        <p className="text-gray-400 text-sm">{user.age} yaşında</p>
+                        <p className="text-gray-400 text-sm">{user.age} {t('projectDetail.ui.yearsOld')}</p>
                       </div>
                     </div>
                     
@@ -870,31 +942,17 @@ export default function ProjectDetail() {
               <Icon className="w-12 h-12 text-white" />
             </div>
             <h2 className="text-4xl font-bold text-white mb-6">
-              {project?.slug === 'saglik-takip-platformu' 
-                ? 'Teknik Mükemmellik ve İnovasyon' 
-                : project?.slug === 'isaret-dili-ai-uygulamasi'
-                ? 'Yapay Zeka ile Erişilebilir İletişim'
-                : project?.slug === 'haberapron-web-sitesi'
-                ? 'Modern Web Teknolojileri ile Haber Platformu'
-                : 'Projeyi Keşfetmeye Hazır mısın?'
-              }
+              {t('projectDetail.accessibleCommunication')}
             </h2>
             <p className="text-gray-400 text-lg mb-8">
-              {project?.slug === 'saglik-takip-platformu'
-                ? 'Modern teknolojilerle geliştirilmiş, ölçeklenebilir ve güvenli bir platform'
-                : project?.slug === 'isaret-dili-ai-uygulamasi'
-                ? 'AI teknolojisi ile işitme engelli bireylerin iletişimini kolaylaştıran devrim niteliğinde uygulama'
-                : project?.slug === 'haberapron-web-sitesi'
-                ? 'React + TypeScript + Node.js + PostgreSQL ile geliştirilmiş, yüksek performanslı haber platformu'
-                : 'Modern teknolojilerle geliştirilmiş bu uygulamayı deneyimleyin'
-              }
+              {t('projectDetail.ui.conversignDemoDesc')}
             </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               onClick={() => setIsVideoModalOpen(true)}
               className={`px-8 py-4 bg-gradient-to-r ${project.color} text-white rounded-xl font-semibold hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl`}
             >
-              AI Demo İzle
+              {t('projectDetail.ui.aiWatchDemo')}
             </button>
             <a 
               href="https://appgallery.huawei.com/app/C114157203?sharePrepath=ag&locale=tr_TR&source=appshare&subsource=C114157203&shareTo=com.android.chrome&shareFrom=appmarket&shareIds=919e6ea53fa24502888bfc28205e37db_com.android.chrome&callType=SHARE"
@@ -902,7 +960,7 @@ export default function ProjectDetail() {
               rel="noopener noreferrer"
               className="px-8 py-4 bg-slate-800 text-white rounded-xl font-semibold hover:bg-slate-700 transition-all duration-300 border border-slate-700"
             >
-              AppGallery'den İndir
+              {t('projectDetail.ui.downloadFromAppGallery')}
             </a>
           </div>
           </div>
@@ -931,22 +989,22 @@ export default function ProjectDetail() {
               loop
             >
               <source src="/PortfolyoSitemiz/screenshots/signai/demo-video.mp4" type="video/mp4" />
-              Tarayıcınız video oynatmayı desteklemiyor.
+              {t('projectDetail.ui.browserNotSupport')}
             </video>
           </div>
           
           {/* Video Info */}
           <div className="p-6">
             <h3 className="text-2xl font-bold text-white mb-2">
-              {project?.slug === 'isaret-dili-ai-uygulamasi' ? 'Conversign Demo Videosu' : 
-               project?.slug === 'solunum-sagligi-uygulamasi' ? 'Spiroble Demo Videosu' : 'Proje Demo Videosu'}
+              {project?.slug === 'isaret-dili-ai-uygulamasi' ? t('projectDetail.ui.conversignDemo') : 
+               project?.slug === 'solunum-sagligi-uygulamasi' ? t('projectDetail.ui.spirobleDemo') : t('projectDetail.ui.projectDemo')}
             </h3>
             <p className="text-gray-300">
               {project?.slug === 'isaret-dili-ai-uygulamasi' 
-                ? 'Conversign uygulamasının işaret dili tanıma özelliklerini gösteren demo videosu'
+                ? t('projectDetail.ui.conversignDemoDesc')
                 : project?.slug === 'solunum-sagligi-uygulamasi'
-                ? 'RespiraCheck uygulamasının solunum sağlığı takip özelliklerini gösteren demo videosu'
-                : 'Projenin temel özelliklerini gösteren demo videosu'
+                ? t('projectDetail.ui.spirobleDemoDesc')
+                : t('projectDetail.ui.projectDemoDesc')
               }
             </p>
           </div>

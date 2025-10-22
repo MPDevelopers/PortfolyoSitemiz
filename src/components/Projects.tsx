@@ -4,11 +4,55 @@ import LiquidEther from './LiquidEther';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import { Link } from 'react-router-dom';
 import { projects } from '../data/projects';
+import { useTranslation } from 'react-i18next';
 
 export default function Projects() {
   const { ref, isVisible } = useScrollAnimation();
+  const { t } = useTranslation();
 
-  // Veri artık src/data/projects.ts'ten geliyor
+  // Proje verilerini çevirilerden al
+  const translatedProjects = [
+    {
+      ...projects[0],
+      title: t('projects.mindConnect.title'),
+      description: t('projects.mindConnect.description'),
+      details: {
+        ...projects[0].details,
+        longDescription: t('projects.mindConnect.longDescription'),
+        images: t('projects.mindConnect.images')
+      }
+    },
+    {
+      ...projects[1],
+      title: t('projects.spiroble.title'),
+      description: t('projects.spiroble.description'),
+      details: {
+        ...projects[1].details,
+        longDescription: t('projects.spiroble.longDescription'),
+        images: t('projects.spiroble.images')
+      }
+    },
+    {
+      ...projects[2],
+      title: t('projects.conversign.title'),
+      description: t('projects.conversign.description'),
+      details: {
+        ...projects[2].details,
+        longDescription: t('projects.conversign.longDescription'),
+        images: t('projects.conversign.images')
+      }
+    },
+    {
+      ...projects[3],
+      title: t('projects.haberapron.title'),
+      description: t('projects.haberapron.description'),
+      details: {
+        ...projects[3].details,
+        longDescription: t('projects.haberapron.longDescription'),
+        images: t('projects.haberapron.images')
+      }
+    }
+  ];
 
   return (
     <section id="projects" className="py-32 relative overflow-hidden" style={{ backgroundColor: '#0f172a' }}>
@@ -41,10 +85,10 @@ export default function Projects() {
         >
           <div className="text-center mb-16">
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-tight flex items-center justify-center gap-4 sm:gap-6 text-white">
-              <span className="text-dark-200">Yaratıcı</span>
+              <span className="text-dark-200">{t('projects.title')}</span>
               <span className="inline-flex items-center justify-center bg-transparent border border-white rounded-xl sm:rounded-2xl px-8 sm:px-10 md:px-14 py-2 sm:py-3 md:py-4">
                 <RotatingText
-                  texts={["Mobil Uygulama", "Web Uygulama", "MPDevelopers"]}
+                  texts={[t('projects.rotatingTexts.mobileApp'), t('projects.rotatingTexts.webApp'), t('projects.rotatingTexts.mpDevelopers')]}
                   mainClassName="text-white overflow-hidden justify-center"
                   staggerFrom={"last"}
                   initial={{ y: "100%", opacity: 0 }}
@@ -59,16 +103,16 @@ export default function Projects() {
               </span>
             </h1>
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4 mt-4">
-              Projelerimiz
+              {t('projects.subtitle')}
             </h2>
             <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
             <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-              Müşterilerimiz için geliştirdiğimiz başarılı projelerden bazıları
+              {t('projects.description')}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
+            {translatedProjects.map((project, index) => (
               <Link
                 key={index}
                 to={`/projects/${project.slug}`}
@@ -90,7 +134,7 @@ export default function Projects() {
                   </p>
 
                   <span className="flex items-center space-x-2 text-white hover:text-white/80 font-semibold group-hover:translate-x-2 transition-transform">
-                    <span>Detayları Gör</span>
+                    <span>{t('projects.viewDetails')}</span>
                     <ExternalLink className="w-4 h-4" />
                   </span>
                 </div>

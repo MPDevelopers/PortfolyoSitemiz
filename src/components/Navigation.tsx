@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Code2 } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useScrollHide } from '../hooks/useScrollHide';
+import { useTranslation } from 'react-i18next';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -9,6 +11,7 @@ export default function Navigation() {
   const location = useLocation();
   const navigate = useNavigate();
   const isHidden = useScrollHide();
+  const { t } = useTranslation();
   
   // Sadece hizmet detay sayfalarında scroll hide özelliğini aktif et
   const isServiceDetailPage = location.pathname.includes('/services/');
@@ -43,12 +46,12 @@ export default function Navigation() {
   };
 
   const navLinks = [
-    { id: 'about', label: 'Hakkımızda' },
-    { id: 'projects', label: 'Projeler' },
-    { id: 'skills', label: 'Yetenekler' },
-    { id: 'faq', label: 'SSS' },
-    { id: 'contact', label: 'İletişim' },
-    { id: 'pricing', label: 'Ücretlendirme', href: '/pricing' },
+    { id: 'about', label: t('navigation.about') },
+    { id: 'projects', label: t('navigation.projects') },
+    { id: 'skills', label: t('navigation.skills') },
+    { id: 'faq', label: t('navigation.faq') },
+    { id: 'contact', label: t('navigation.contact') },
+    { id: 'pricing', label: t('navigation.pricing'), href: '/pricing' },
   ];
 
   return (
@@ -80,11 +83,10 @@ export default function Navigation() {
             }}
             className="flex items-center space-x-2 group"
           >
-            <Code2 className="w-8 h-8 text-white group-hover:text-white transition-colors" />
             <span className="text-xl font-bold text-white">MPDevelopers</span>
           </button>
 
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <button
                 key={link.id}
@@ -95,6 +97,7 @@ export default function Navigation() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300"></span>
               </button>
             ))}
+            <LanguageSwitcher />
           </div>
 
           <button
@@ -122,6 +125,9 @@ export default function Navigation() {
                 {link.label}
               </button>
             ))}
+            <div className="pt-4 border-t border-slate-700">
+              <LanguageSwitcher />
+            </div>
           </div>
         </div>
       )}

@@ -1,57 +1,29 @@
-import { Link } from "react-router-dom"
-import { ArrowRight } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
+import { useTranslation } from 'react-i18next';
 import DotGridShader from "./DotGridShader"
-
 import AnimatedHeading from "@/components/AnimatedHeading"
 import RevealOnView from "@/components/RevealOnView"
 import { Badge } from "@/components/ui/badge"
 
 export default function MobileDevelopmentDetail() {
-  const processSteps = [
-    {
-      number: "1",
-      title: "Başlangıç Toplantısı",
-      description:
-        "Projeye başlamadan önce müşterinin ihtiyaçlarını, beklentilerini ve hedeflerini anlamak için detaylı bir toplantı gerçekleştiriyoruz. Bu aşama, projenin doğru bir şekilde planlanabilmesi için temel oluşturur.",
-      gradientFrom: "#0f172a",
-      gradientTo: "#6d28d9",
-    },
-    {
-      number: "2",
-      title: "Gereksinim Analizi",
-      description:
-        "Toplantıda elde edilen bilgiler doğrultusunda, projenin iş ve teknik gereksinimleri çıkarılır. Hangi özelliklerin öncelikli olduğu, kullanıcı akışları ve teknik gereklilikler detaylı olarak belirlenir.",
-      gradientFrom: "#111827",
-      gradientTo: "#2563eb",
-    },
-    {
-      number: "3",
-      title: "Haftalık Toplantılar ve Süreç Takibi",
-      description:
-        "Müşteri ile anlaşma sağlandıktan sonra proje süreci, haftalık toplantılar ile yakından takip edilir. Bu aşamada, projenin ilerleyişi düzenli olarak gözden geçirilir ve anlaşılan kriterler doğrultusunda gerekli revizeler yapılır.",
-      note: "Not: Süreç içinde yeni özellikler eklenmesi durumunda, ek çalışmalar için yeniden fiyatlandırma yapılır.",
-      gradientFrom: "#0b132b",
-      gradientTo: "#5bc0be",
-    },
-    {
-      number: "4",
-      title: "Revizeler ve Uygulama Teslimi",
-      description:
-        "Revizeler tamamlandıktan sonra, uygulama anlaşılan kriterler doğrultusunda tamamlanır ve müşteriye teslim edilir. Bu aşama, projenin hedeflenen kalite ve fonksiyonellikte son halini almasını sağlar.",
-      gradientFrom: "#0f172a",
-      gradientTo: "#10b981",
-    },
-    {
-      number: "5",
-      title: "Bakım ve Destek",
-      description:
-        "Uygulamanın tesliminden sonra sunulan bakım ve destek hizmetleri, sistemin sorunsuz çalışmasını ve gerektiğinde güncellemeler yapılmasını kapsar. Bu hizmetler ayrıca ücretlendirilir.",
-      gradientFrom: "#1f2937",
-      gradientTo: "#8b5cf6",
-    },
-  ]
+  const { t } = useTranslation();
+  
+  const processSteps = t('services.mobileDevelopment.processSteps', { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+    note?: string;
+  }>;
+
+  const processStepsWithNumbers = processSteps.map((step, index) => ({
+    number: (index + 1).toString(),
+    title: step.title,
+    description: step.description,
+    note: step.note,
+    gradientFrom: ["#0f172a", "#111827", "#0b132b", "#0f172a", "#1f2937"][index],
+    gradientTo: ["#6d28d9", "#2563eb", "#5bc0be", "#10b981", "#8b5cf6"][index],
+  }));
+
+  const features = t('services.mobileDevelopment.features', { returnObjects: true }) as Record<string, string>;
+  const technologies = t('services.mobileDevelopment.technologies', { returnObjects: true }) as string[];
 
   return (
     <main className="bg-neutral-950 text-white">
@@ -73,47 +45,40 @@ export default function MobileDevelopmentDetail() {
               <div>
                 <AnimatedHeading
                   className="text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl"
-                  lines={["Mobil Uygulama"]}
+                  lines={[t('services.mobileDevelopment.title')]}
                 />
 
-                <p className="mt-6 text-xl font-semibold text-white/90">iOS ve Android mobil uygulamalar</p>
+                <p className="mt-6 text-xl font-semibold text-white/90">{t('services.mobileDevelopment.subtitle')}</p>
 
                 <p className="mt-4 max-w-[42ch] text-base leading-relaxed text-white/70">
-                  Cross-platform mobil uygulamalar. Flutter ve React Native ile tek kod tabanında iOS ve Android için
-                  profesyonel çözümler.
+                  {t('services.mobileDevelopment.description')}
                 </p>
 
                 <div className="mt-6 space-y-2">
                   <div className="flex items-center gap-2">
                     <div className="h-1.5 w-1.5 rounded-full bg-white/60" />
-                    <span className="text-sm text-white/80">Cross-platform geliştirme</span>
+                    <span className="text-sm text-white/80">{features.crossPlatform}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="h-1.5 w-1.5 rounded-full bg-white/60" />
-                    <span className="text-sm text-white/80">Offline çalışma desteği</span>
+                    <span className="text-sm text-white/80">{features.nativePerformance}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="h-1.5 w-1.5 rounded-full bg-white/60" />
-                    <span className="text-sm text-white/80">Sensör entegrasyonu</span>
+                    <span className="text-sm text-white/80">{features.offlineSupport}</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="h-1.5 w-1.5 rounded-full bg-white/60" />
-                    <span className="text-sm text-white/80">Ödeme entegrasyonları</span>
+                    <span className="text-sm text-white/80">{features.pushNotification}</span>
                   </div>
                 </div>
 
-
                 <div className="mt-10">
-                  <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">KULLANDIĞIMIZ TEKNOLOJİLER</p>
+                  <p className="mb-3 text-xs font-semibold tracking-widest text-white/50">{t('skills.technologies')}</p>
                   <ul className="grid grid-cols-2 gap-x-6 gap-y-3 text-xl font-black text-white/25 sm:grid-cols-3">
-                    <li>Flutter</li>
-                    <li>React Native</li>
-                    <li>Firebase</li>
-                    <li>SQLite</li>
-                    <li>Bluetooth</li>
-                    <li>GPS</li>
-                    <li>Stripe</li>
-                    <li>PayPal</li>
+                    {technologies.map((tech, index) => (
+                      <li key={index}>{tech}</li>
+                    ))}
                   </ul>
                 </div>
               </div>
@@ -122,10 +87,10 @@ export default function MobileDevelopmentDetail() {
 
           <div className="space-y-4">
             <RevealOnView className="rounded-3xl border border-white/10 bg-gradient-to-br from-neutral-900/80 to-neutral-900/60 p-8 shadow-[0_10px_60px_-10px_rgba(0,0,0,0.6)]">
-              <h2 className="text-3xl font-black tracking-tight sm:text-4xl">Süreç Yönetimi</h2>
+              <h2 className="text-3xl font-black tracking-tight sm:text-4xl">{t('pricing.features.projectManagement')}</h2>
             </RevealOnView>
 
-            {processSteps.map((step, idx) => (
+            {processStepsWithNumbers.map((step, idx) => (
               <article key={step.number} className="group relative lg:min-h-[280px]">
                 <RevealOnView
                   delay={idx * 0.06}

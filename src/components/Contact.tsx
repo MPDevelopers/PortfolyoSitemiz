@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Mail, Github, Linkedin, Instagram, Send, CheckCircle, AlertCircle } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
+import { useTranslation } from 'react-i18next';
 
 interface FormData {
   name: string;
@@ -15,6 +16,7 @@ interface FormStatus {
 
 export default function Contact() {
   const { ref, isVisible } = useScrollAnimation();
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<FormData>({
     name: '',
     phone: '',
@@ -33,7 +35,7 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus({ type: 'loading', message: 'Outlook açılıyor...' });
+    setStatus({ type: 'loading', message: t('contact.form.openingOutlookStatus') });
 
     // Create email template
     const emailSubject = `İletişim Talebi - ${formData.name}`;
@@ -45,7 +47,7 @@ export default function Contact() {
     // Open Outlook with pre-filled email
     window.location.href = mailtoLink;
     
-    setStatus({ type: 'success', message: 'Outlook açıldı! E-postanızı gönderebilirsiniz.' });
+    setStatus({ type: 'success', message: t('contact.form.outlookOpened') });
     setFormData({ name: '', phone: '', message: '' });
 
     setTimeout(() => {
@@ -70,11 +72,11 @@ export default function Contact() {
         >
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              İletişim
+              {t('contact.title')}
             </h2>
             <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
             <p className="text-lg text-dark-300 max-w-2xl mx-auto">
-              Projeleriniz için bizimle iletişime geçin
+              {t('contact.description')}
             </p>
           </div>
 
@@ -82,12 +84,10 @@ export default function Contact() {
             <div className="space-y-8">
               <div>
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  Hadi Konuşalım
+                  {t('contact.letsTalk')}
                 </h3>
                 <p className="text-dark-300 leading-relaxed mb-6">
-                  Projeniz için profesyonel destek mi arıyorsunuz? Size özel
-                  çözümler sunmak için buradayız. Mesajınızı bırakın, en kısa
-                  sürede geri dönüş yapalım.
+                  {t('contact.letsTalkDescription')}
                 </p>
 
                 <div className="flex items-center space-x-3 text-dark-300">
@@ -103,7 +103,7 @@ export default function Contact() {
 
               <div>
                 <h4 className="text-lg font-semibold text-white mb-4">
-                  Sosyal Medya
+                  {t('contact.socialMedia')}
                 </h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((social) => (
@@ -128,7 +128,7 @@ export default function Contact() {
                   htmlFor="name"
                   className="block text-sm font-medium text-dark-300 mb-2"
                 >
-                  Ad Soyad
+                  {t('contact.form.name')}
                 </label>
                 <input
                   type="text"
@@ -138,7 +138,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                 className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all"
-                  placeholder="Adınız ve soyadınız"
+                  placeholder={t('contact.form.namePlaceholder')}
                 />
               </div>
 
@@ -148,7 +148,7 @@ export default function Contact() {
                   htmlFor="phone"
                   className="block text-sm font-medium text-dark-300 mb-2"
                 >
-                  Telefon Numarası
+                  {t('contact.form.phone')}
                 </label>
                 <input
                   type="tel"
@@ -158,7 +158,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                 className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all"
-                  placeholder="+90 5XX XXX XX XX"
+                  placeholder={t('contact.form.phonePlaceholder')}
                 />
               </div>
 
@@ -167,7 +167,7 @@ export default function Contact() {
                   htmlFor="message"
                   className="block text-sm font-medium text-dark-300 mb-2"
                 >
-                  Mesaj
+                  {t('contact.form.message')}
                 </label>
                 <textarea
                   id="message"
@@ -177,7 +177,7 @@ export default function Contact() {
                   required
                   rows={5}
                 className="w-full px-4 py-3 bg-dark-800 border border-dark-700 rounded-lg text-white placeholder-dark-500 focus:outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all resize-none"
-                  placeholder="Mesajınızı buraya yazın..."
+                  placeholder={t('contact.form.messagePlaceholder')}
                 ></textarea>
               </div>
 
@@ -206,8 +206,8 @@ export default function Contact() {
               >
                 <span>
                   {status.type === 'loading'
-                    ? 'Outlook Açılıyor...'
-                    : 'E-posta Gönder'}
+                    ? t('contact.form.openingOutlook')
+                    : t('contact.form.submit')}
                 </span>
                 <Send className="w-5 h-5" />
               </button>
