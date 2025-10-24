@@ -5,7 +5,8 @@
     "skills": "Yetenekler",
     "faq": "SSS",
     "contact": "İletişim",
-    "pricing": "Ücretlendirme"
+    "pricing": "Ücretlendirme",
+    "team": "Ekibimiz"
   },
   "hero": {
     "title": "Mobil ve Web Geliştirmede",
@@ -408,6 +409,63 @@
         "paymentIntegration": "Ödeme entegrasyonları"
       },
       "technologies": ["Flutter", "React Native", "Firebase", "SQLite", "Bluetooth", "GPS", "İyzico"]
+    }
+  },
+  "team": {
+    "title": "Ekibimiz",
+    "description": "Dijital dünyada fark yaratan projeler geliştiren deneyimli ve yaratıcı ekibimizi tanıyın.",
+    "backButton": "Geri Dön",
+    "skillsTitle": "Uzmanlık Alanları",
+    "cta": {
+      "title": "Ekibimizle Tanışın"
+    },
+    "members": {
+      "ahmet": {
+        "name": "Ahmet Akdemir",
+        "role": "Full-Stack Developer",
+        "description": "React, Node.js ve Flutter konularında uzman. Projelerin teknik mimarisini tasarlar ve geliştirme süreçlerini yönetir."
+      },
+      "gizem": {
+        "name": "Gizem Can",
+        "role": "Full-Stack Developer",
+        "description": "Kullanıcı deneyimini ön planda tutan yaratıcı tasarımcı. Modern ve kullanıcı dostu arayüzler tasarlar. Figma ve Adobe Creative Suite konularında uzman."
+      },
+      "ulas": {
+        "name": "Ulaş Uçan",
+        "role": "Full-Stack Developer",
+        "description": "Yapay zeka ve makine öğrenmesi konularında uzman. Python, TensorFlow ve PyTorch ile AI destekli çözümler geliştirir. Veri bilimi ve analitik konularında deneyimli."
+      }
+    },
+    "skills": {
+      "react": "React",
+      "nodejs": "Node.js",
+      "typescript": "TypeScript",
+      "flutter": "Flutter",
+      "kotlin": "Kotlin",
+      "uiux": "UI/UX Design",
+      "figma": "Figma",
+      "adobe": "Adobe Suite",
+      "responsive": "Responsive Design",
+      "python": "Python",
+      "ai": "Artificial Intelligence",
+      "machineLearning": "Machine Learning",
+      "dataScience": "Data Science"
+    },
+    "values": {
+      "title": "Değerlerimiz",
+      "description": "Ekibimizi bir arada tutan ve projelerimizi başarıya götüren temel değerlerimiz.",
+      "innovation": {
+        "title": "İnovasyon",
+        "description": "En son teknolojileri kullanarak yaratıcı çözümler geliştiriyoruz."
+      },
+      "creativity": {
+        "title": "Yaratıcılık",
+        "description": "Her projede benzersiz ve etkileyici deneyimler sunuyoruz."
+      },
+      "collaboration": {
+        "title": "İş Birliği",
+        "description": "Müşterilerimizle yakın çalışarak en iyi sonuçları elde ediyoruz."
+      }
     }
   },
   "common": {

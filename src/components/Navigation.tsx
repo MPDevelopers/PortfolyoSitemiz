@@ -52,6 +52,7 @@ export default function Navigation() {
     { id: 'faq', label: t('navigation.faq') },
     { id: 'contact', label: t('navigation.contact') },
     { id: 'pricing', label: t('navigation.pricing'), href: '/pricing' },
+    { id: 'team', label: t('navigation.team'), href: '/team' },
   ];
 
   return (

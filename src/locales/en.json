@@ -5,7 +5,8 @@
     "skills": "Skills",
     "faq": "FAQ",
     "contact": "Contact",
-    "pricing": "Pricing"
+    "pricing": "Pricing",
+    "team": "Our Team"
   },
   "hero": {
     "title": "Shaping the Future in",
@@ -496,6 +497,61 @@
         "paymentIntegration": "Payment integrations"
       },
       "technologies": ["Flutter", "React Native", "Firebase", "SQLite", "Bluetooth", "GPS", "İyzico"]
+    }
+  },
+  "team": {
+    "title": "Our Team",
+    "description": "Meet our experienced and creative team that develops projects that make a difference in the digital world.",
+    "backButton": "Go Back",
+    "skillsTitle": "Areas of Expertise",
+    "cta": {
+      "title": "Meet Our Team"
+    },
+    "members": {
+      "ahmet": {
+        "name": "Ahmet Akdemir",
+        "role": "Full-Stack Developer",
+        "description": "Full-stack developer with 5+ years of experience. Expert in React, Node.js and Flutter. Designs technical architecture of projects and manages development processes."
+      },
+      "gizem": {
+        "name": "Gizem Can",
+        "role": "Full-Stack Developer",
+        "description": "Creative designer who prioritizes user experience. Designs modern and user-friendly interfaces. Expert in Figma and Adobe Creative Suite."
+      },
+      "ulas": {
+        "name": "Ulaş Uçan",
+        "role": "Full-Stack Developer",
+        "description": "Expert in artificial intelligence and machine learning. Develops AI-powered solutions with Python, TensorFlow and PyTorch. Experienced in data science and analytics."
+      }
+    },
+    "skills": {
+      "react": "React",
+      "nodejs": "Node.js",
+      "typescript": "TypeScript",
+      "flutter": "Flutter",
+      "kotlin": "Kotlin",
+      "uiux": "UI/UX Design",
+      "figma": "Figma",
+      "python": "Python",
+      "ai": "Artificial Intelligence",
+      "machineLearning": "Machine Learning",
+      "dataScience": "Data Science"
+    },
+    "values": {
+      "title": "Our Values",
+      "description": "The core values that keep our team together and lead our projects to success.",
+      "innovation": {
+        "title": "Innovation",
+        "description": "We develop creative solutions using the latest technologies."
+      },
+      "creativity": {
+        "title": "Creativity",
+        "description": "We offer unique and impressive experiences in every project."
+      },
+      "collaboration": {
+        "title": "Collaboration",
+        "description": "We achieve the best results by working closely with our clients."
+      }
     }
   },
   "common": {

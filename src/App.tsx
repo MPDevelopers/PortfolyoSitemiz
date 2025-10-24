@@ -13,6 +13,7 @@ import MobileDevelopmentDetail from './components/MobileDevelopmentDetail';
 import WebServiceDetail from './components/WebServiceDetail';
 import MobileServiceDetail from './components/MobileServiceDetail';
 import Pricing from './components/Pricing';
+import Team from './components/Team';
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
         <Route path="/services/web-service" element={<WebServiceDetail />} />
         <Route path="/services/mobile-service" element={<MobileServiceDetail />} />
         <Route path="/pricing" element={<Pricing />} />
+        <Route path="/team" element={<Team />} />
       </Routes>
       <Footer />
     </div>
