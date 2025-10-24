@@ -4,6 +4,7 @@ import { useScrollAnimation } from "../hooks/useScrollAnimation"
 import { ArrowLeft, Github, Linkedin, Mail } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { useTranslation } from "react-i18next"
+import ahmetPhoto from "/ahmet-photo.jpeg"
 
 export default function Team() {
   const { ref, isVisible } = useScrollAnimation()
@@ -14,7 +15,7 @@ export default function Team() {
     {
       name: t('team.members.ahmet.name'),
       role: t('team.members.ahmet.role'),
-      image: "/api/placeholder/300/300",
+      image: ahmetPhoto,
       skills: [
         t('team.skills.react'),
         t('team.skills.nodejs'),
@@ -144,7 +145,18 @@ export default function Team() {
                   {/* Profile Image */}
                   <div className="mb-6 flex justify-center">
                     <div className="w-32 h-32 rounded-full bg-gradient-to-br from-purple-500/20 to-blue-500/20 border-2 border-white/20 flex items-center justify-center overflow-hidden">
-                      <div className="w-full h-full bg-gradient-to-br from-purple-400 to-blue-400 flex items-center justify-center text-white text-2xl font-bold">
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full object-cover scale-110"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.style.display = 'none';
+                          const fallback = target.nextElementSibling as HTMLElement;
+                          if (fallback) fallback.style.display = 'flex';
+                        }}
+                      />
+                      <div className="w-full h-full bg-gradient-to-br from-purple-400 to-blue-400 flex items-center justify-center text-white text-2xl font-bold" style={{display: 'none'}}>
                         {member.name.split(' ').map(n => n[0]).join('')}
                       </div>
                     </div>
