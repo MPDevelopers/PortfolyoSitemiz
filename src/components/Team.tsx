@@ -5,6 +5,7 @@ import { ArrowLeft, Github, Linkedin, Mail } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import ahmetPhoto from "/ahmet-photo.jpeg"
+import gizemPhoto from "/gizem-photo.jpg"
 
 export default function Team() {
   const { ref, isVisible } = useScrollAnimation()
@@ -35,10 +36,10 @@ export default function Team() {
         email: "ahmet551977@gmail.com"
       }
     },
-    {
-      name: t('team.members.gizem.name'),
-      role: t('team.members.gizem.role'),
-      image: "/api/placeholder/300/300",
+     {
+       name: t('team.members.gizem.name'),
+       role: t('team.members.gizem.role'),
+       image: gizemPhoto,
       skills: [
         t('team.skills.react'),
         t('team.skills.nodejs'),
