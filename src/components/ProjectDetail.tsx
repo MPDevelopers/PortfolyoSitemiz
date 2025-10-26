@@ -21,7 +21,7 @@ export default function ProjectDetail() {
     let projectKey = '';
     switch (slug) {
       case 'saglik-takip-platformu':
-        projectKey = 'mindConnect';
+        projectKey = 'AnlatmamLazım';
         break;
       case 'solunum-sagligi-uygulamasi':
         projectKey = 'spiroble';
@@ -54,7 +54,7 @@ export default function ProjectDetail() {
   const getProjectKey = (s: string): string | null => {
     switch (s) {
       case 'saglik-takip-platformu':
-        return 'mindConnect'
+        return 'AnlatmamLazım'
       case 'solunum-sagligi-uygulamasi':
         return 'spiroble'
       case 'isaret-dili-ai-uygulamasi':
@@ -316,7 +316,7 @@ export default function ProjectDetail() {
               </h2>
               <p className="text-gray-400 text-lg">
               {project?.slug === 'saglik-takip-platformu' 
-                ? t('projectDetail.ui.screensDesc.mindConnect')
+                ? t('projectDetail.ui.screensDesc.AnlatmamLazım')
                 : project?.slug === 'isaret-dili-ai-uygulamasi'
                 ? t('projectDetail.ui.screensDesc.conversign')
                 : project?.slug === 'haberapron-web-sitesi'
@@ -797,13 +797,13 @@ export default function ProjectDetail() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-white mb-4">
-              {project?.slug === 'saglik-takip-platformu' ? t('projectDetail.mindConnectFeatures') : 
+              {project?.slug === 'saglik-takip-platformu' ? t('projectDetail.AnlatmamLazımFeatures') : 
                project?.slug === 'solunum-sagligi-uygulamasi' ? t('projectDetail.spirobleFeatures') : 
                project?.slug === 'haberapron-web-sitesi' ? t('projectDetail.haberapronFeatures') : t('projectDetail.featuresHeading')}
             </h2>
             <p className="text-gray-400 text-lg">
               {project?.slug === 'saglik-takip-platformu' 
-                ? t('projectDetail.sections.featuresIntro.mindConnect')
+                ? t('projectDetail.sections.featuresIntro.AnlatmamLazım')
                 : project?.slug === 'solunum-sagligi-uygulamasi'
                 ? t('projectDetail.sections.featuresIntro.spiroble')
                 : project?.slug === 'haberapron-web-sitesi'
@@ -869,7 +869,7 @@ export default function ProjectDetail() {
         </div>
       </section>
 
-      {/* Success Stories Section - MindConnect */}
+      {/* Success Stories Section - AnlatmamLazım */}
       {project?.slug === 'saglik-takip-platformu' && (
         <section className="py-20 bg-gradient-to-r from-pink-500/10 to-rose-500/10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

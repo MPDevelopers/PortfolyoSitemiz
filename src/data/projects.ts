@@ -31,14 +31,14 @@ export const projects: Project[] = [
   {
     icon: Heart,
     slug: 'saglik-takip-platformu',
-    title: 'MindConnect - Ruh Sağlığı ve Kişisel Gelişim Platformu',
+    title: 'AnlatmamLazım - Ruh Sağlığı ve Kişisel Gelişim Platformu',
     description:
       'Psikolojik destek arayan kişiler ile profesyonel psikologlar arasında güvenli, erişilebilir ve etkili bir iletişim platformu.',
     technologies: ['React Native', 'Node.js', 'MongoDB', 'Socket.io', 'İyzico'],
     color: 'from-pink-500 to-rose-500',
     details: {
       longDescription:
-        '"MindConnect", ruh sağlığı ve kişisel gelişim alanında destekleyici hizmetler sunan kapsamlı bir mobil uygulamadır. Uygulama, psikolojik destek arayan kişiler ile profesyonel psikologlar arasında güvenli, erişilebilir ve etkili bir iletişim platformu oluşturmaktadır. Kessler psikolojik değerlendirme testi ile kullanıcıların ruh sağlığı durumu değerlendirilir ve kişiselleştirilmiş öneriler sunulur. Gerçek zamanlı mesajlaşma, güvenli ödeme sistemi (İyzico), randevu yönetimi ve kapsamlı psikolog değerlendirme sistemi ile kullanıcıların kişisel gelişim süreçlerinde anlamlı bir gelişim sağlamalarına yardımcı olur.',
+        '"AnlatmamLazım", ruh sağlığı ve kişisel gelişim alanında destekleyici hizmetler sunan kapsamlı bir mobil uygulamadır. Uygulama, psikolojik destek arayan kişiler ile profesyonel psikologlar arasında güvenli, erişilebilir ve etkili bir iletişim platformu oluşturmaktadır. Kessler psikolojik değerlendirme testi ile kullanıcıların ruh sağlığı durumu değerlendirilir ve kişiselleştirilmiş öneriler sunulur. Gerçek zamanlı mesajlaşma, güvenli ödeme sistemi (İyzico), randevu yönetimi ve kapsamlı psikolog değerlendirme sistemi ile kullanıcıların kişisel gelişim süreçlerinde anlamlı bir gelişim sağlamalarına yardımcı olur.',
       images: [
         'Rol seçimi - Psikolog arıyorum / Psikolog olmak istiyorum',
         'Kessler testi - Psikolojik değerlendirme ve onboarding',
@@ -56,7 +56,7 @@ export const projects: Project[] = [
               {
                 title: "Rol Seçimi ve Onboarding",
                 description: "Psikolog arıyorum / Psikolog olmak istiyorum seçimi ve Kessler testi",
-                image: "./PortfolyoSitemiz/screenshots/mindconnect/role-selection.jpg",
+                image: "./PortfolyoSitemiz/screenshots/AnlatmamLazım/role-selection.jpg",
                 icon: "👥",
                 color: "from-blue-500 to-cyan-500",
                 bgPattern: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
               {
                 title: "Kessler Psikolojik Testi",
                 description: "10 soruluk psikolojik durum değerlendirme ve severity belirleme",
-                image: "/PortfolyoSitemiz/screenshots/mindconnect/kessler-test.jpg",
+                image: "/PortfolyoSitemiz/screenshots/AnlatmamLazım/kessler-test.jpg",
                 icon: "🧠",
                 color: "from-purple-500 to-pink-500",
                 bgPattern: "bg-gradient-to-br from-purple-500/20 to-pink-500/20",
@@ -74,7 +74,7 @@ export const projects: Project[] = [
               {
                 title: "Kişiselleştirilmiş Arayüz",
                 description: "Kullanıcı tipine göre farklı arayüzler ve öneriler",
-                image: "/PortfolyoSitemiz/screenshots/mindconnect/personalized-ui.jpg",
+                image: "/PortfolyoSitemiz/screenshots/AnlatmamLazım/personalized-ui.jpg",
                 icon: "🎨",
                 color: "from-green-500 to-emerald-500",
                 bgPattern: "bg-gradient-to-br from-green-500/20 to-emerald-500/20",
@@ -88,7 +88,7 @@ export const projects: Project[] = [
               {
                 title: "Psikolog Listesi ve Filtreleme",
                 description: "Doğrulanmış psikologlar, uzmanlık alanları ve değerlendirmeler",
-                image: "/PortfolyoSitemiz/screenshots/mindconnect/psychologist-list.jpg",
+                image: "/PortfolyoSitemiz/screenshots/AnlatmamLazım/psychologist-list.jpg",
                 icon: "👨‍⚕️",
                 color: "from-indigo-500 to-blue-500",
                 bgPattern: "bg-gradient-to-br from-indigo-500/20 to-blue-500/20",
@@ -97,7 +97,7 @@ export const projects: Project[] = [
               {
                 title: "Psikolog Profili",
                 description: "Detaylı bilgiler, uzmanlık alanları ve terapi paketleri",
-                image: "/PortfolyoSitemiz/screenshots/mindconnect/psychologist-profile.jpg",
+                image: "/PortfolyoSitemiz/screenshots/AnlatmamLazım/psychologist-profile.jpg",
                 icon: "📋",
                 color: "from-emerald-500 to-teal-500",
                 bgPattern: "bg-gradient-to-br from-emerald-500/20 to-teal-500/20",
@@ -106,7 +106,7 @@ export const projects: Project[] = [
               {
                 title: "Değerlendirme Sistemi",
                 description: "Puanlama, yorum sistemi ve güvenilirlik takibi",
-                image: "/PortfolyoSitemiz/screenshots/mindconnect/rating-system.jpg",
+                image: "/PortfolyoSitemiz/screenshots/AnlatmamLazım/rating-system.jpg",
                 icon: "⭐",
                 color: "from-amber-500 to-orange-500",
                 bgPattern: "bg-gradient-to-br from-amber-500/20 to-orange-500/20",
@@ -120,7 +120,7 @@ export const projects: Project[] = [
               {
                 title: "Gerçek Zamanlı Mesajlaşma",
                 description: "Socket.io ile güvenli, şifrelenmiş mesajlaşma sistemi",
-                image: "/PortfolyoSitemiz/screenshots/mindconnect/realtime-chat.jpg",
+                image: "/PortfolyoSitemiz/screenshots/AnlatmamLazım/realtime-chat.jpg",
                 icon: "💬",
                 color: "from-rose-500 to-pink-500",
                 bgPattern: "bg-gradient-to-br from-rose-500/20 to-pink-500/20",
@@ -129,7 +129,7 @@ export const projects: Project[] = [
               {
                 title: "İyzico Ödeme Sistemi",
                 description: "3D Secure güvenli ödeme, ödeme talepleri ve geçmiş takibi",
-                image: "/PortfolyoSitemiz/screenshots/mindconnect/payment-system.jpg",
+                image: "/PortfolyoSitemiz/screenshots/AnlatmamLazım/payment-system.jpg",
                 icon: "💳",
                 color: "from-green-500 to-teal-500",
                 bgPattern: "bg-gradient-to-br from-green-500/20 to-teal-500/20",
@@ -138,7 +138,7 @@ export const projects: Project[] = [
               {
                 title: "Randevu Sistemi",
                 description: "Müsaitlik takibi, randevu onayı ve otomatik chat odası",
-                image: "/PortfolyoSitemiz/screenshots/mindconnect/appointment-system.jpg",
+                image: "/PortfolyoSitemiz/screenshots/AnlatmamLazım/appointment-system.jpg",
                 icon: "📅",
                 color: "from-violet-500 to-purple-500",
                 bgPattern: "bg-gradient-to-br from-violet-500/20 to-purple-500/20",
@@ -152,7 +152,7 @@ export const projects: Project[] = [
               {
                 title: "JWT Authentication",
                 description: "Güvenli kimlik doğrulama ve rol tabanlı erişim kontrolü",
-                image: "/PortfolyoSitemiz/screenshots/mindconnect/authentication.jpg",
+                image: "/PortfolyoSitemiz/screenshots/AnlatmamLazım/authentication.jpg",
                 icon: "🔐",
                 color: "from-red-500 to-rose-500",
                 bgPattern: "bg-gradient-to-br from-red-500/20 to-rose-500/20",
@@ -161,7 +161,7 @@ export const projects: Project[] = [
               {
                 title: "Admin Dashboard",
                 description: "Kullanıcı yönetimi, ödeme takibi ve platform istatistikleri",
-                image: "/PortfolyoSitemiz/screenshots/mindconnect/admin-dashboard.jpg",
+                image: "/PortfolyoSitemiz/screenshots/AnlatmamLazım/admin-dashboard.jpg",
                 icon: "📊",
                 color: "from-indigo-500 to-purple-500",
                 bgPattern: "bg-gradient-to-br from-indigo-500/20 to-purple-500/20",
@@ -170,7 +170,7 @@ export const projects: Project[] = [
               {
                 title: "GDPR Uyumluluğu",
                 description: "Kişisel veri koruma, şifreleme ve gizlilik standartları",
-                image: "/PortfolyoSitemiz/screenshots/mindconnect/gdpr-compliance.jpg",
+                image: "/PortfolyoSitemiz/screenshots/AnlatmamLazım/gdpr-compliance.jpg",
                 icon: "🛡️",
                 color: "from-blue-500 to-indigo-500",
                 bgPattern: "bg-gradient-to-br from-blue-500/20 to-indigo-500/20",

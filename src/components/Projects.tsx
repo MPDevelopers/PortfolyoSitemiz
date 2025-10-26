@@ -14,12 +14,12 @@ export default function Projects() {
   const translatedProjects = [
     {
       ...projects[0],
-      title: t('projects.mindConnect.title'),
-      description: t('projects.mindConnect.description'),
+      title: t('projects.AnlatmamLazım.title'),
+      description: t('projects.AnlatmamLazım.description'),
       details: {
         ...projects[0].details,
-        longDescription: t('projects.mindConnect.longDescription'),
-        images: t('projects.mindConnect.images')
+        longDescription: t('projects.AnlatmamLazım.longDescription'),
+        images: t('projects.AnlatmamLazım.images')
       }
     },
     {

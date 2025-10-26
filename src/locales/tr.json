@@ -156,7 +156,7 @@
     "contactUs": "Bize Ulaşın",
     "usedTechnologies": "Kullanılan Teknolojiler:",
     "developedWithLatestTech": "En güncel teknolojilerle geliştirildi",
-    "mindConnectFeatures": "MindConnect Özellikleri",
+    "AnlatmamLazımFeatures": "AnlatmamLazım Özellikleri",
     "spirobleFeatures": "Spiroble Özellikleri",
     "haberapronFeatures": "HaberApron Özellikleri",
     "technicalExcellence": "Teknik Mükemmellik ve İnovasyon",
@@ -190,7 +190,7 @@
       "ayse": {
         "name": "Ayşe K.",
         "role": "Öğrenci",
-        "story": "Anksiyete ile mücadele ederken MindConnect sayesinde doğru psikologu buldum. 3 ayda büyük ilerleme kaydettim.",
+        "story": "Anksiyete ile mücadele ederken AnlatmamLazım sayesinde doğru psikologu buldum. 3 ayda büyük ilerleme kaydettim.",
         "improvement": "Anksiyete seviyesi %70 azaldı"
       },
       "mehmet": {
@@ -208,9 +208,9 @@
     },
     "sections": {
       "devProcessTitle": "Geliştirme Süreci",
-      "devProcessDesc": "MindConnect'in teknik geliştirme aşamaları ve mimarisi",
+      "devProcessDesc": "AnlatmamLazım'in teknik geliştirme aşamaları ve mimarisi",
       "featuresIntro": {
-        "mindConnect": "Ruh sağlığı alanında devrim yaratan özellikler",
+        "AnlatmamLazım": "Ruh sağlığı alanında devrim yaratan özellikler",
         "spiroble": "Solunum sağlığı takibinde devrim yaratan özellikler",
         "haberapron": "Modern web teknolojileri ile geliştirilmiş haber platformu özellikleri",
         "default": "Modern teknolojilerle geliştirilmiş güçlü özellikler"
@@ -241,7 +241,7 @@
       "fullStack": "Full-Stack Geliştirme",
       "testDeploy": "Test & Deployment",
       "successStories": "Başarı Hikayeleri",
-      "usersChangedLives": "MindConnect ile hayatları değişen kullanıcılarımız",
+      "usersChangedLives": "AnlatmamLazım ile hayatları değişen kullanıcılarımız",
       "watchDemo": "Demo İzle",
       "download": "İndir",
       "aiWatchDemo": "AI Demo İzle",
@@ -265,7 +265,7 @@
         "expertPsychologist": "Uzman Psikolog"
       },
       "screensDesc": {
-        "mindConnect": "Geliştirme sürecindeki farklı aşamalar ve teknik detaylar",
+        "AnlatmamLazım": "Geliştirme sürecindeki farklı aşamalar ve teknik detaylar",
         "conversign": "AI teknolojisi ile işaret dili tanıma sürecinin farklı aşamaları",
         "haberapron": "Modern web teknolojileri ile geliştirilmiş haber platformu ekranları",
         "spiroble": "Spirometre cihazı entegrasyonu ve solunum sağlığı takip süreçleri"
@@ -282,10 +282,10 @@
     "subtitle": "Geliştirdiğimiz",
     "description": "Modern teknolojilerle geliştirdiğimiz projelerimizi keşfedin. Her proje, kullanıcı deneyimini ön planda tutan ve en güncel teknolojileri kullanan çözümler sunar.",
     "viewDetails": "Detayları Gör",
-    "mindConnect": {
-      "title": "MindConnect - Ruh Sağlığı ve Kişisel Gelişim Platformu",
+    "AnlatmamLazım": {
+      "title": "AnlatmamLazım - Ruh Sağlığı ve Kişisel Gelişim Platformu",
       "description": "Psikolojik destek arayan kişiler ile profesyonel psikologlar arasında güvenli, erişilebilir ve etkili bir iletişim platformu.",
-      "longDescription": "\"MindConnect\", ruh sağlığı ve kişisel gelişim alanında destekleyici hizmetler sunan kapsamlı bir mobil uygulamadır. Uygulama, psikolojik destek arayan kişiler ile profesyonel psikologlar arasında güvenli, erişilebilir ve etkili bir iletişim platformu oluşturmaktadır. Kessler psikolojik değerlendirme testi ile kullanıcıların ruh sağlığı durumu değerlendirilir ve kişiselleştirilmiş öneriler sunulur. Gerçek zamanlı mesajlaşma, güvenli ödeme sistemi (İyzico), randevu yönetimi ve kapsamlı psikolog değerlendirme sistemi ile kullanıcıların kişisel gelişim süreçlerinde anlamlı bir gelişim sağlamalarına yardımcı olur.",
+      "longDescription": "\"AnlatmamLazım\", ruh sağlığı ve kişisel gelişim alanında destekleyici hizmetler sunan kapsamlı bir mobil uygulamadır. Uygulama, psikolojik destek arayan kişiler ile profesyonel psikologlar arasında güvenli, erişilebilir ve etkili bir iletişim platformu oluşturmaktadır. Kessler psikolojik değerlendirme testi ile kullanıcıların ruh sağlığı durumu değerlendirilir ve kişiselleştirilmiş öneriler sunulur. Gerçek zamanlı mesajlaşma, güvenli ödeme sistemi (İyzico), randevu yönetimi ve kapsamlı psikolog değerlendirme sistemi ile kullanıcıların kişisel gelişim süreçlerinde anlamlı bir gelişim sağlamalarına yardımcı olur.",
       "images": [
         "Rol seçimi - Psikolog arıyorum / Psikolog olmak istiyorum",
         "Kessler testi - Psikolojik değerlendirme ve onboarding",

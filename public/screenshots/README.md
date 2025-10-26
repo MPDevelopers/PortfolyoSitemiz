@@ -6,7 +6,7 @@ Bu klasör, proje detay sayfalarında gösterilecek mobil uygulama screenshot'la
 
 ```
 public/screenshots/
-├── mindconnect/          # MindConnect projesi screenshot'ları
+├── AnlatmamLazım/          # AnlatmamLazım projesi screenshot'ları
 │   ├── ui-design.jpg
 │   ├── state-management.jpg
 │   ├── chat.jpg

@@ -144,7 +144,7 @@
     "contactUs": "Contact Us",
     "usedTechnologies": "Technologies Used:",
     "developedWithLatestTech": "Developed with the latest technologies",
-    "mindConnectFeatures": "MindConnect Features",
+    "AnlatmamLazımFeatures": "AnlatmamLazım Features",
     "spirobleFeatures": "Spiroble Features",
     "haberapronFeatures": "HaberApron Features",
     "technicalExcellence": "Technical Excellence and Innovation",
@@ -177,9 +177,9 @@
     },
     "sections": {
       "devProcessTitle": "Development Process",
-      "devProcessDesc": "Technical development stages and architecture of MindConnect",
+      "devProcessDesc": "Technical development stages and architecture of AnlatmamLazım",
       "featuresIntro": {
-        "mindConnect": "Revolutionary features in the field of mental health",
+        "AnlatmamLazım": "Revolutionary features in the field of mental health",
         "spiroble": "Revolutionary features in respiratory health tracking",
         "haberapron": "Features of the news platform developed with modern web technologies",
         "default": "Powerful features built with modern technologies"
@@ -203,7 +203,7 @@
       "ayse": {
         "name": "Ayşe K.",
         "role": "Student",
-        "story": "While struggling with anxiety, I found the right psychologist thanks to MindConnect. I made great progress in 3 months.",
+        "story": "While struggling with anxiety, I found the right psychologist thanks to AnlatmamLazım. I made great progress in 3 months.",
         "improvement": "Anxiety level decreased by 70%"
       },
       "mehmet": {
@@ -230,7 +230,7 @@
       "fullStack": "Full-Stack Development",
       "testDeploy": "Test & Deployment",
       "successStories": "Success Stories",
-      "usersChangedLives": "Our users whose lives changed with MindConnect",
+      "usersChangedLives": "Our users whose lives changed with AnlatmamLazım",
       "watchDemo": "Watch Demo",
       "download": "Download",
       "aiWatchDemo": "Watch AI Demo",
@@ -254,7 +254,7 @@
         "expertPsychologist": "Expert Psychologist"
       },
       "screensDesc": {
-        "mindConnect": "Different stages of the development process and technical details",
+        "AnlatmamLazım": "Different stages of the development process and technical details",
         "conversign": "Different stages of the sign language recognition process with AI technology",
         "haberapron": "Screens of the news platform developed with modern web technologies",
         "spiroble": "Spirometer device integration and respiratory health tracking processes"
@@ -271,10 +271,10 @@
     "subtitle": "What We",
     "description": "Discover our projects developed with modern technologies. Each project offers solutions that prioritize user experience and use the latest technologies.",
     "viewDetails": "View Details",
-    "mindConnect": {
-      "title": "MindConnect - Mental Health and Personal Development Platform",
+    "AnlatmamLazım": {
+      "title": "AnlatmamLazım - Mental Health and Personal Development Platform",
       "description": "A secure, accessible and effective communication platform between people seeking psychological support and professional psychologists.",
-      "longDescription": "\"MindConnect\" is a comprehensive mobile application that provides supportive services in the field of mental health and personal development. The application creates a secure, accessible and effective communication platform between people seeking psychological support and professional psychologists. Users' mental health status is evaluated with the Kessler psychological assessment test and personalized recommendations are provided. It helps users achieve meaningful development in their personal development processes with real-time messaging, secure payment system (İyzico), appointment management and comprehensive psychologist evaluation system.",
+      "longDescription": "\"AnlatmamLazım\" is a comprehensive mobile application that provides supportive services in the field of mental health and personal development. The application creates a secure, accessible and effective communication platform between people seeking psychological support and professional psychologists. Users' mental health status is evaluated with the Kessler psychological assessment test and personalized recommendations are provided. It helps users achieve meaningful development in their personal development processes with real-time messaging, secure payment system (İyzico), appointment management and comprehensive psychologist evaluation system.",
       "images": [
         "Role selection - Looking for psychologist / Want to be a psychologist",
         "Kessler test - Psychological assessment and onboarding",
@@ -384,7 +384,7 @@
         }
       ]
     },
-    "mindConnect": {
+    "AnlatmamLazım": {
       "flows": [
         {
           "name": "User Experience",
