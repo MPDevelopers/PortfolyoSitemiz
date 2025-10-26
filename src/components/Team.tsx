@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { useTranslation } from "react-i18next"
 import ahmetPhoto from "/ahmet-photo.jpeg"
 import gizemPhoto from "/gizem-photo.jpg"
+import ulasPhoto from "/ulas-photo.jpeg"
 
 export default function Team() {
   const { ref, isVisible } = useScrollAnimation()
@@ -62,7 +63,7 @@ export default function Team() {
     {
       name: t('team.members.ulas.name'),
       role: t('team.members.ulas.role'),
-      image: "/api/placeholder/300/300",
+      image: ulasPhoto,
       skills: [
         t('team.skills.react'),
         t('team.skills.nodejs'),
