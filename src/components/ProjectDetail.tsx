@@ -9,7 +9,7 @@ export default function ProjectDetail() {
   const { t } = useTranslation();
   const [activeScreen, setActiveScreen] = useState(0);
   const [activeFlow, setActiveFlow] = useState(0);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   
@@ -98,7 +98,6 @@ export default function ProjectDetail() {
   const phoneScreens = currentFlow?.screens || [];
 
   useEffect(() => {
-    setIsVisible(true);
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
     
